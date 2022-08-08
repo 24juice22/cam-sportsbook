@@ -44,9 +44,15 @@ h3 {
   font-size: 3rem;
 }
 
-.flex {
-  display: flex;
-  align-items: center;
+.btn {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: .5rem;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1024px) {
@@ -66,3 +72,55 @@ h3 {
   font-size: 2.4rem;
 }
 }
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(rgb(4, 4, 110), var(--color-primary) 90%);
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.navbar__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  color: var(--color-secondary);
+}
+
+.navbar__logo {
+  margin: 0 1rem 0 0;
+}
+
+.navbar__button-login {
+  background-color: transparent;
+  color: var(--color-secondary);
+}
+
+.navbar__button-join {
+  margin-left: 1rem;
+}
+
+.navbar__bottom-nav {
+  display: flex;
+  justify-content: center;
+  padding: .75rem 0;
+}
+
+.nav-link {
+  padding: 0 1rem;
+  color: white;
+}
+
+
