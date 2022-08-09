@@ -1,4 +1,6 @@
 import React from "react"
+import mlb from "../images/mlb.png"
+import nfl from "../images/nfl.png"
 
 export default function Navbar() {
     return (
@@ -16,9 +18,18 @@ export default function Navbar() {
                 </div>
                 <div className="navbar__bottom">
                     <ul className="navbar__bottom-nav">
-                        <li className="nav__item"><a className="nav-link" href="">MLB</a></li>
-                        <li className="nav__item"><a className="nav-link" href="">NFL</a></li>
-                        <li className="nav__item"><a className="nav-link" href="">NCAAF</a></li>
+                        <li className="nav__item">
+                            <img className="nav__icon nav__icon-baseball" src={mlb}></img>
+                            <a className="nav__link" href="">MLB</a>
+                        </li>
+                        <li className="nav__item">
+                            <img className="nav__icon nav__icon-nfl" src={nfl}></img>
+                            <a className="nav__link" href="">NFL</a>
+                        </li>
+                        <li className="nav__item">
+                            <i class="fa-solid fa-football nav__icon nav__icon-ncaaf"></i>
+                            <a className="nav__link nav__link-baseball" href="">NCAAF</a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -100,7 +100,8 @@ h3 {
 }
 
 .navbar__logo {
-  margin: 0 1rem 0 0;
+  margin: 0 .5rem 0 0;
+  font-size: 2rem;
 }
 
 .navbar__button-login {
@@ -115,12 +116,32 @@ h3 {
 .navbar__bottom-nav {
   display: flex;
   justify-content: center;
-  padding: .75rem 0;
+  padding: .85rem 0;
 }
 
-.nav-link {
-  padding: 0 1rem;
+.nav__item {
+  display: flex;
+  align-items: center;
+  padding: 0 1.1rem;
+}
+
+.nav__icon {
+  width: 3rem;
+}
+
+.nav__icon-baseball {
+  padding-right: .3rem;
+}
+
+.nav__icon-ncaaf {
+  height: 2.2rem;
   color: white;
 }
+
+.nav__link {
+  padding: 0 .3rem;
+  color: white;
+}
+
 
 
