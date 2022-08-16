@@ -1,6 +1,6 @@
 import React from "react"
-import mlb from "../images/mlb.png"
-import nfl from "../images/nfl.png"
+import mlb from "../images/mlb/mlb.png"
+import nfl from "../images/nfl/nfl.png"
 
 export default function Navbar() {
     return (

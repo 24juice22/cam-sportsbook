@@ -20,6 +20,7 @@ function App() {
     return (
       <>
         <Navbar />
+        <h1 className="title">{`${games[0].sport_title} Odds`}</h1>
         {games.map(matchup => <Box matchup={matchup}/>)}
         <Betbar />
       </>

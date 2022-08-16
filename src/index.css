@@ -149,6 +149,11 @@ h3 {
   padding: 0 .3rem;
   color: white;
 }
+/* Body */
+.title {
+  text-align: center;
+  color: var(--color-primary);
+}
 
 /* Box */
 .box {
@@ -163,6 +168,10 @@ h3 {
   align-items: center;
   padding: .5rem;
   font-size: 1.3rem;
+}
+
+.team-logo {
+  width: 2.5rem;
 }
 
 .box__team-name {
@@ -184,10 +193,6 @@ h3 {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-}
-
-.line:hover {
-  background-color: var(--color-secondary);
 }
 
 /*Betbar*/
