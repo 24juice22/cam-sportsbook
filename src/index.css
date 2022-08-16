@@ -16,11 +16,6 @@ img {
   width: 100%;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
 }
@@ -44,17 +39,6 @@ h3 {
   font-size: 3rem;
 }
 
-.btn {
-  background-color: var(--color-secondary);
-  border: 2px solid var(--color-secondary);
-  border-radius: 6px;
-  color: var(--color-primary);
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: .5rem;
-  cursor: pointer;
-}
-
 @media screen and (min-width: 1024px) {
 body {
   font-size: 1.8rem;
@@ -71,6 +55,25 @@ h2 {
 h3 {
   font-size: 2.4rem;
 }
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+/* Lists*/
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 /* Navbar */
@@ -104,41 +107,41 @@ h3 {
   font-size: 2rem;
 }
 
-.navbar__button-login {
+.navbar__btn--login {
   background-color: transparent;
   color: var(--color-secondary);
 }
 
-.navbar__button-join {
+.navbar__btn--join {
   margin-left: 1rem;
 }
 
-.navbar__bottom-nav {
+.navbar__list {
   display: flex;
   justify-content: center;
   padding: .85rem 0;
 }
 
-.nav__item {
+.navbar__list-item {
   display: flex;
   align-items: center;
   padding: 0 1.1rem;
 }
 
-.nav__icon {
+.navbar__icon {
   width: 3rem;
 }
 
-.nav__icon-baseball {
+.navbar__icon--baseball {
   padding-right: .3rem;
 }
 
-.nav__icon-ncaaf {
+.navbar__icon--ncaaf {
   height: 2.2rem;
   color: white;
 }
 
-.nav__link {
+.navbar__link {
   padding: 0 .3rem;
   color: white;
 }
@@ -155,16 +158,19 @@ h3 {
   justify-content: center;
 }
 
-.betbar__nav {
+.betbar__list {
   display: flex;
   justify-content: center;
   padding-left: 0;
 }
 
-.betbar__nav > li {
+.betbar__list-item {
+  padding: 1.5rem 1.75rem;
+}
+
+.betbar__link {
   color: white;
   font-size: 2rem;
-  padding: 1.5rem 1.75rem;
 }
 
 

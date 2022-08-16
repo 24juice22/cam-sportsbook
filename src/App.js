@@ -4,10 +4,10 @@ import Betbar from "./components/Betbar"
 
 function App() {
   return (
-    <div className="everything">
+    <>
       <Navbar />
       <Betbar />
-    </div>
+    </>
   );
 }
 
