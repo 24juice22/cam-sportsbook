@@ -18,12 +18,12 @@ function App() {
 
   if(games) {
     return (
-      <>
+      <div className="body">
         <Navbar />
         <h1 className="title">{`${games[0].sport_title} Odds`}</h1>
         {games.map(matchup => <Box matchup={matchup}/>)}
         <Betbar />
-      </>
+      </div>
     )
   }
 
