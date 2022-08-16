@@ -7,20 +7,20 @@ export default function Box({matchup}) {
 
     return (
         <div className="box">
-            <div className="box__away">
-                <p>{awayTeam}</p>
+            <div className="box__team box__away">
+                <p className="box__team-name">{awayTeam}</p>
                 <div className="box__lines">
-                    <p className="lines__spread">{matchup.bookmakers[index].markets[1].outcomes[0].point}</p>
-                    <p className="lines__total">{matchup.bookmakers[index].markets[2].outcomes[0].point}</p>
-                    <p className="lines__moneyline">{matchup.bookmakers[index].markets[0].outcomes[0].price}</p>
+                    <p className="line line__spread">{matchup.bookmakers[index].markets[1].outcomes[0].point}</p>
+                    <p className="line line__total">{matchup.bookmakers[index].markets[2].outcomes[0].point}</p>
+                    <p className="line line__moneyline">{matchup.bookmakers[index].markets[0].outcomes[0].price}</p>
                 </div>
             </div>
-            <div className="box__home">
-                <p>{homeTeam}</p>
+            <div className="box__team box__home">
+                <p className="box__team-name">{homeTeam}</p>
                 <div className="box__lines">
-                    <p className="lines__spread">{matchup.bookmakers[index].markets[1].outcomes[1].point}</p>
-                    <p className="lines__total">{matchup.bookmakers[index].markets[2].outcomes[1].point}</p>
-                    <p className="lines__moneyline">{matchup.bookmakers[index].markets[0].outcomes[1].price}</p>
+                    <p className="line line__spread">{matchup.bookmakers[index].markets[1].outcomes[1].point}</p>
+                    <p className="line line__total">{matchup.bookmakers[index].markets[2].outcomes[1].point}</p>
+                    <p className="line line__moneyline">{matchup.bookmakers[index].markets[0].outcomes[1].price}</p>
                 </div>
             </div>
         </div>

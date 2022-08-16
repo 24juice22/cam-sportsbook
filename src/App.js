@@ -5,6 +5,7 @@ import Box from "./components/Box";
 
 function App() {
   const [games, setGames] = React.useState(null)
+  const content = null;
 
   React.useEffect(() => {
     fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -15,12 +16,18 @@ function App() {
     }) 
   }, [])
 
+  if(games) {
+    return (
+      <>
+        <Navbar />
+        {games.map(matchup => <Box matchup={matchup}/>)}
+        <Betbar />
+      </>
+    )
+  }
+
   return (
-    <>
-      <Navbar />
-      {games.map(matchup => <Box matchup={matchup}/>)}
-      <Betbar />
-    </>
+    <div>{content}</div>
   )
 }
 

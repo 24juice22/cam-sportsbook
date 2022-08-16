@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: .25rem 0;
+}
+
 h1,
 h2,
 h3 {
@@ -144,6 +148,46 @@ h3 {
 .navbar__link {
   padding: 0 .3rem;
   color: white;
+}
+
+/* Box */
+.box {
+  border: 3px solid var(--color-primary);
+  border-radius: .8rem;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.box__team {
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  font-size: 1.3rem;
+}
+
+.box__team-name {
+  margin: 0 auto 0 .3rem;
+}
+
+.box__lines {
+  display: flex;
+  justify-content: center;
+}
+
+.line {
+  color: var(--color-primary);
+  border: 2px solid lightblue;
+  border-radius: .8rem;
+  width: 3rem;
+  padding: .25rem;
+  margin: 0 .3rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.line:hover {
+  background-color: var(--color-secondary);
 }
 
 /*Betbar*/
