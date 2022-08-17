@@ -197,6 +197,13 @@ h3 {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.price {
+  color: #5c555c;
 }
 
 /*Betbar*/

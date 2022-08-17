@@ -22,6 +22,7 @@ export default function Box({matchup}) {
     let spreadPointAway = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadAwayTeam].point;
     if (spreadPointAway > 0)
         spreadPointAway = `+${spreadPointAway}`;
+    let spreadPriceAway = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadAwayTeam].price;
 
     console.log(awayTeamImageName);
     let homeTeam = matchup.home_team;
@@ -30,21 +31,29 @@ export default function Box({matchup}) {
     let spreadPointHome = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadHomeTeam].point;
     if (spreadPointHome > 0)
         spreadPointHome = `+${spreadPointHome}`;
+    let spreadPriceHome = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadHomeTeam].price;
 
 /* Totals */
     if (indexTotal >= 0) totalExists = true;
     if (indexTotal < 0) indexTotal = indexMoneyline;
     if (indexTotal < 0) indexTotal = indexSpread;
 
-    let indexTotalOver = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes.findIndex(item => item.name === 'Over')
+    let indexTotalOver = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes.findIndex(item => item.name === 'Over');
+    let indexTotalUnder = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes.findIndex(item => item.name === 'Under');
     let totalPoint = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes[indexTotalOver].point;
+    let totalPriceOver = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes[indexTotalOver].price;
+    if (totalPriceOver > 0)
+        totalPriceOver = `+${totalPriceOver}`;
+    let totalPriceUnder = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes[indexTotalUnder].price;
+    if (totalPriceUnder > 0)
+        totalPriceUnder = `+${totalPriceUnder}`;
 
 /* Moneyline */
     if (indexMoneyline >= 0) moneylineExists = true;
     if (indexMoneyline < 0) indexMoneyline = indexTotal;
     if (indexMoneyline < 0) indexMoneyline = indexSpread;
 
-    let indexMoneylineAway = matchup.bookmakers[unibetIndex].markets[indexMoneyline].outcomes.findIndex(item => item.name === awayTeam)
+    let indexMoneylineAway = matchup.bookmakers[unibetIndex].markets[indexMoneyline].outcomes.findIndex(item => item.name === awayTeam);
     let moneylinePriceAway = matchup.bookmakers[unibetIndex].markets[indexMoneyline].outcomes[indexMoneylineAway].price;
     if (moneylinePriceAway > 0)
         moneylinePriceAway = `+${moneylinePriceAway}`;
@@ -60,9 +69,15 @@ export default function Box({matchup}) {
                 <img className="team-logo" src={require(`../images/mlb/${awayTeamImageName}.png`)}></img>
                 <p className="box__team-name">{awayTeam}</p>
                 <div className="box__lines">
-                    {spreadExists ? <p className="line line__spread">{spreadPointAway}</p> : <p className="line line__spread"></p>}
-                    {totalExists ? <p className="line line__total">{`O ${totalPoint}`}</p> : <p className="line line__total"></p>}
-                    {moneylineExists ? <p className="line line__moneyline">{moneylinePriceAway}</p> : <p className="line line__moneyline"></p>}
+                    <div className="line line__spread">
+                        {spreadExists ? <p className="line__spread-point">{spreadPointAway}</p> : <p className="line__spread-point"></p>}
+                        {spreadExists ? <p className="price line__spread-price">{spreadPriceAway}</p> : <p className="line__spread-price"></p>}
+                    </div>
+                    <div className="line line__total">
+                        {totalExists ? <p className="line__total-point">{`O ${totalPoint}`}</p> : <p className="line__total-point"></p>}  
+                        {totalExists ? <p className="price line__total-price">{totalPriceOver}</p> : <p className="line__total-price"></p>}
+                    </div>
+                    {moneylineExists ? <p className="price line line__moneyline">{moneylinePriceAway}</p> : <p className="line line__moneyline"></p>}
                     
                 </div>
             </div>
@@ -70,9 +85,15 @@ export default function Box({matchup}) {
                 <img className="team-logo" src={require(`../images/mlb/${homeTeamImageName}.png`)}></img>
                 <p className="box__team-name">{homeTeam}</p>
                 <div className="box__lines">
-                    {spreadExists ? <p className="line line__spread">{spreadPointHome}</p> : <p className="line line__spread"></p>}
-                    {totalExists ? <p className="line line__total">{`U ${totalPoint}`}</p> : <p className="line line__total"></p>}  
-                    {moneylineExists ? <p className="line line__moneyline">{moneylinePriceHome}</p> : <p className="line line__moneyline"></p>}
+                    <div className="line line__spread">
+                        {spreadExists ? <p className="line__spread-point">{spreadPointHome}</p> : <p className="line__spread-point"></p>}
+                        {spreadExists ? <p className="price line__spread-price">{spreadPriceHome}</p> : <p className="line__spread-price"></p>}
+                    </div>
+                    <div className="line line__total">
+                        {totalExists ? <p className="line__total-point">{`U ${totalPoint}`}</p> : <p className="line__total-point"></p>}  
+                        {totalExists ? <p className="price line__total-price">{totalPriceUnder}</p> : <p className="line__total-price"></p>}
+                    </div>
+                    {moneylineExists ? <p className="price line line__moneyline">{moneylinePriceHome}</p> : <p className="line line__moneyline"></p>}
                 </div>
             </div>
         </div>
