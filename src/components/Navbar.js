@@ -2,7 +2,7 @@ import React from "react"
 import mlb from "../images/mlb/mlb.png"
 import nfl from "../images/nfl/nfl.png"
 
-export default function Navbar({setGames, setSport}) {
+export default function Navbar({setGames, setSport, baseball}) {
     const [football, setFootball] = React.useState(null)
 
     React.useEffect(() => {
@@ -17,6 +17,11 @@ export default function Navbar({setGames, setSport}) {
     function nflClick() {
         setGames(football);
         setSport("NFL");
+    }
+
+    function mlbClick() {
+        setGames(baseball);
+        setSport("MLB");
     }
 
     return (
@@ -36,7 +41,7 @@ export default function Navbar({setGames, setSport}) {
                     <ul className="list navbar__list">
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--baseball" src={mlb}></img>
-                            <a className="navbar__link" href="#">MLB</a>
+                            <a className="navbar__link" href="#" onClick={mlbClick}>MLB</a>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nfl" src={nfl}></img>

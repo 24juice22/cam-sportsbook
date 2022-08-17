@@ -6,6 +6,7 @@ import Box from "./components/Box";
 function App() {
   const [games, setGames] = React.useState(null);
   const [sport, setSport] = React.useState("MLB");
+  const [baseball, setBaseball] = React.useState(null)
   const content = null;
 
   React.useEffect(() => {
@@ -14,13 +15,14 @@ function App() {
     .then(data => {
       console.log(data);
       setGames(data);
+      setBaseball(data);
     }) 
   }, [])
 
   if(games) {
     return (
       <div className="body">
-        <Navbar setGames={setGames} setSport={setSport}/>
+        <Navbar setGames={setGames} setSport={setSport} baseball={baseball}/>
         <h1 className="title">{`${sport} Odds`}</h1>
         <ul className="container__line-descriptions list line-descriptions">
           <li className="line-descriptions__item">Spread</li>
