@@ -204,6 +204,7 @@ h3 {
 
 .box__team-name {
   margin: 0 auto 0 .3rem;
+  font-weight: 500;
 }
 
 .box__lines {
@@ -232,6 +233,7 @@ h3 {
 
 .date {
   font-size: 1.3rem;
+  font-weight: bold;
   margin: 0 0 .3rem .3rem;
 }
 
