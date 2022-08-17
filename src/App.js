@@ -4,7 +4,8 @@ import Betbar from "./components/Betbar";
 import Box from "./components/Box";
 
 function App() {
-  const [games, setGames] = React.useState(null)
+  const [games, setGames] = React.useState(null);
+  const [sport, setSport] = React.useState("MLB");
   const content = null;
 
   React.useEffect(() => {
@@ -19,8 +20,8 @@ function App() {
   if(games) {
     return (
       <div className="body">
-        <Navbar />
-        <h1 className="title">{`${games[0].sport_title} Odds`}</h1>
+        <Navbar setGames={setGames} setSport={setSport}/>
+        <h1 className="title">{`${sport} Odds`}</h1>
         <ul className="container__line-descriptions list line-descriptions">
           <li className="line-descriptions__item">Spread</li>
           <li className="line-descriptions__item">Total</li>

@@ -13,11 +13,16 @@ export default function Box({matchup}) {
     let indexMoneyline = betMarkets.findIndex(item => item.key === 'h2h');
 
 /* Point Spreads */
+    let awayTeam = matchup.away_team;
+    let homeTeam = matchup.home_team;
     if (indexSpread >= 0) spreadExists = true;
     if (indexSpread < 0) indexSpread = indexMoneyline;
-    if (indexSpread < 0) indexSpread = indexTotal;
+    if (indexSpread < 0) {
+        indexSpread = indexTotal;
+        awayTeam = "Over";
+        homeTeam = "Under";
+    }
     
-    let awayTeam = matchup.away_team;
     let awayTeamImageName = awayTeam.split(" ").join("-");
     let indexSpreadAwayTeam = betMarkets[indexSpread].outcomes.findIndex(item => item.name === awayTeam)
     let spreadPointAway = betMarkets[indexSpread].outcomes[indexSpreadAwayTeam].point;
@@ -26,7 +31,7 @@ export default function Box({matchup}) {
     let spreadPriceAway = betMarkets[indexSpread].outcomes[indexSpreadAwayTeam].price;
 
     console.log(awayTeamImageName);
-    let homeTeam = matchup.home_team;
+    
     let homeTeamImageName = homeTeam.split(" ").join("-");
     let indexSpreadHomeTeam = betMarkets[indexSpread].outcomes.findIndex(item => item.name === homeTeam);
     let spreadPointHome = betMarkets[indexSpread].outcomes[indexSpreadHomeTeam].point;
@@ -35,12 +40,18 @@ export default function Box({matchup}) {
     let spreadPriceHome = betMarkets[indexSpread].outcomes[indexSpreadHomeTeam].price;
 
 /* Totals */
+let over = 'Over';
+let under = 'Under';
     if (indexTotal >= 0) totalExists = true;
-    if (indexTotal < 0) indexTotal = indexMoneyline;
+    if (indexTotal < 0) {
+        indexTotal = indexMoneyline;
+        over = matchup.away_team;
+        under = matchup.away_team;
+    }
     if (indexTotal < 0) indexTotal = indexSpread;
 
-    let indexTotalOver = betMarkets[indexTotal].outcomes.findIndex(item => item.name === 'Over');
-    let indexTotalUnder = betMarkets[indexTotal].outcomes.findIndex(item => item.name === 'Under');
+    let indexTotalOver = betMarkets[indexTotal].outcomes.findIndex(item => item.name === over);
+    let indexTotalUnder = betMarkets[indexTotal].outcomes.findIndex(item => item.name === under);
     let totalPoint = betMarkets[indexTotal].outcomes[indexTotalOver].point;
     let totalPriceOver = betMarkets[indexTotal].outcomes[indexTotalOver].price;
     if (totalPriceOver > 0)
@@ -70,7 +81,7 @@ export default function Box({matchup}) {
     return (
         <div className="box">
             <div className="box__team box__away">
-                <img className="team-logo" src={require(`../images/mlb/${awayTeamImageName}.png`)}></img>
+                <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${awayTeamImageName}.png`)}></img>
                 <p className="box__team-name">{awayTeam}</p>
                 <div className="box__lines">
                     <div className="line line__spread">
@@ -86,7 +97,7 @@ export default function Box({matchup}) {
                 </div>
             </div>
             <div className="box__team box__home">
-                <img className="team-logo" src={require(`../images/mlb/${homeTeamImageName}.png`)}></img>
+                <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${homeTeamImageName}.png`)}></img>
                 <p className="box__team-name">{homeTeam}</p>
                 <div className="box__lines">
                     <div className="line line__spread">
