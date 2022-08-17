@@ -64,6 +64,9 @@ export default function Box({matchup}) {
     if (moneylinePriceHome > 0)
         moneylinePriceHome = `+${moneylinePriceHome}`;
 
+    /* Date and Time */
+    let date = new Date(matchup.commence_time).toLocaleString('en-US').split(":00").join("");
+
     return (
         <div className="box">
             <div className="box__team box__away">
@@ -97,6 +100,7 @@ export default function Box({matchup}) {
                     {moneylineExists ? <p className="price line line__moneyline">{moneylinePriceHome}</p> : <p className="line line__moneyline"></p>}
                 </div>
             </div>
+            <p className="date">{date}</p>
         </div>
     )
 }
