@@ -83,11 +83,13 @@ h3 {
 /* Body */
 .body {
   padding-bottom: 5rem;
+  background-color: rgb(48, 46, 46);
 }
 
 .title {
   text-align: center;
   color: var(--color-primary);
+  text-shadow: 1px 1px 3px white;
 }
 
 .container__line-descriptions {
@@ -105,6 +107,7 @@ h3 {
   width: 5.5rem;
   text-align: center;
   font-weight: 500;
+  color: var(--color-secondary);
 }
 
 /* Navbar */
@@ -151,6 +154,8 @@ h3 {
   display: flex;
   justify-content: center;
   padding: .85rem 0;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .navbar__list-item {
@@ -183,6 +188,7 @@ h3 {
   border-radius: .8rem;
   width: 90%;
   margin: 1rem auto;
+  background-color: white;
 }
 
 .box__team {

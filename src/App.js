@@ -19,6 +19,14 @@ function App() {
     }) 
   }, [])
 
+  React.useEffect(() => {
+    fetch("https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    }) 
+  }, [])
+
   if(games) {
     return (
       <div className="body">

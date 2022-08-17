@@ -62,8 +62,8 @@ let under = 'Under';
 
 /* Moneyline */
     if (indexMoneyline >= 0) moneylineExists = true;
-    if (indexMoneyline < 0) indexMoneyline = indexTotal;
     if (indexMoneyline < 0) indexMoneyline = indexSpread;
+    if (indexMoneyline < 0) indexMoneyline = indexTotal;
 
     let indexMoneylineAway = betMarkets[indexMoneyline].outcomes.findIndex(item => item.name === awayTeam);
     let moneylinePriceAway = betMarkets[indexMoneyline].outcomes[indexMoneylineAway].price;
