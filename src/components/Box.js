@@ -7,9 +7,10 @@ export default function Box({matchup}) {
 
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
-    let indexSpread = matchup.bookmakers[unibetIndex].markets.findIndex(item => item.key === 'spreads');
-    let indexTotal = matchup.bookmakers[unibetIndex].markets.findIndex(item => item.key === 'totals');
-    let indexMoneyline = matchup.bookmakers[unibetIndex].markets.findIndex(item => item.key === 'h2h');
+    let betMarkets = matchup.bookmakers[unibetIndex].markets; /* Shorthand */
+    let indexSpread = betMarkets.findIndex(item => item.key === 'spreads');
+    let indexTotal = betMarkets.findIndex(item => item.key === 'totals');
+    let indexMoneyline = betMarkets.findIndex(item => item.key === 'h2h');
 
 /* Point Spreads */
     if (indexSpread >= 0) spreadExists = true;
@@ -18,33 +19,33 @@ export default function Box({matchup}) {
     
     let awayTeam = matchup.away_team;
     let awayTeamImageName = awayTeam.split(" ").join("-");
-    let indexSpreadAwayTeam = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes.findIndex(item => item.name === awayTeam)
-    let spreadPointAway = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadAwayTeam].point;
+    let indexSpreadAwayTeam = betMarkets[indexSpread].outcomes.findIndex(item => item.name === awayTeam)
+    let spreadPointAway = betMarkets[indexSpread].outcomes[indexSpreadAwayTeam].point;
     if (spreadPointAway > 0)
         spreadPointAway = `+${spreadPointAway}`;
-    let spreadPriceAway = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadAwayTeam].price;
+    let spreadPriceAway = betMarkets[indexSpread].outcomes[indexSpreadAwayTeam].price;
 
     console.log(awayTeamImageName);
     let homeTeam = matchup.home_team;
     let homeTeamImageName = homeTeam.split(" ").join("-");
-    let indexSpreadHomeTeam = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes.findIndex(item => item.name === homeTeam);
-    let spreadPointHome = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadHomeTeam].point;
+    let indexSpreadHomeTeam = betMarkets[indexSpread].outcomes.findIndex(item => item.name === homeTeam);
+    let spreadPointHome = betMarkets[indexSpread].outcomes[indexSpreadHomeTeam].point;
     if (spreadPointHome > 0)
         spreadPointHome = `+${spreadPointHome}`;
-    let spreadPriceHome = matchup.bookmakers[unibetIndex].markets[indexSpread].outcomes[indexSpreadHomeTeam].price;
+    let spreadPriceHome = betMarkets[indexSpread].outcomes[indexSpreadHomeTeam].price;
 
 /* Totals */
     if (indexTotal >= 0) totalExists = true;
     if (indexTotal < 0) indexTotal = indexMoneyline;
     if (indexTotal < 0) indexTotal = indexSpread;
 
-    let indexTotalOver = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes.findIndex(item => item.name === 'Over');
-    let indexTotalUnder = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes.findIndex(item => item.name === 'Under');
-    let totalPoint = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes[indexTotalOver].point;
-    let totalPriceOver = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes[indexTotalOver].price;
+    let indexTotalOver = betMarkets[indexTotal].outcomes.findIndex(item => item.name === 'Over');
+    let indexTotalUnder = betMarkets[indexTotal].outcomes.findIndex(item => item.name === 'Under');
+    let totalPoint = betMarkets[indexTotal].outcomes[indexTotalOver].point;
+    let totalPriceOver = betMarkets[indexTotal].outcomes[indexTotalOver].price;
     if (totalPriceOver > 0)
         totalPriceOver = `+${totalPriceOver}`;
-    let totalPriceUnder = matchup.bookmakers[unibetIndex].markets[indexTotal].outcomes[indexTotalUnder].price;
+    let totalPriceUnder = betMarkets[indexTotal].outcomes[indexTotalUnder].price;
     if (totalPriceUnder > 0)
         totalPriceUnder = `+${totalPriceUnder}`;
 
@@ -53,13 +54,13 @@ export default function Box({matchup}) {
     if (indexMoneyline < 0) indexMoneyline = indexTotal;
     if (indexMoneyline < 0) indexMoneyline = indexSpread;
 
-    let indexMoneylineAway = matchup.bookmakers[unibetIndex].markets[indexMoneyline].outcomes.findIndex(item => item.name === awayTeam);
-    let moneylinePriceAway = matchup.bookmakers[unibetIndex].markets[indexMoneyline].outcomes[indexMoneylineAway].price;
+    let indexMoneylineAway = betMarkets[indexMoneyline].outcomes.findIndex(item => item.name === awayTeam);
+    let moneylinePriceAway = betMarkets[indexMoneyline].outcomes[indexMoneylineAway].price;
     if (moneylinePriceAway > 0)
         moneylinePriceAway = `+${moneylinePriceAway}`;
     
-    let indexMoneylineHome = matchup.bookmakers[unibetIndex].markets[indexMoneyline].outcomes.findIndex(item => item.name === homeTeam)
-    let moneylinePriceHome = matchup.bookmakers[unibetIndex].markets[indexMoneyline].outcomes[indexMoneylineHome].price;
+    let indexMoneylineHome = betMarkets[indexMoneyline].outcomes.findIndex(item => item.name === homeTeam)
+    let moneylinePriceHome = betMarkets[indexMoneyline].outcomes[indexMoneylineHome].price;
     if (moneylinePriceHome > 0)
         moneylinePriceHome = `+${moneylinePriceHome}`;
 
