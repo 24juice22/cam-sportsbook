@@ -21,6 +21,11 @@ function App() {
       <div className="body">
         <Navbar />
         <h1 className="title">{`${games[0].sport_title} Odds`}</h1>
+        <ul className="container__line-descriptions list line-descriptions">
+          <li className="line-descriptions__item">Spread</li>
+          <li className="line-descriptions__item">Total</li>
+          <li className="line-descriptions__item">Money</li>
+        </ul>
         {games.map(matchup => <Box matchup={matchup}/>)}
         <Betbar />
       </div>

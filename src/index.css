@@ -80,6 +80,33 @@ h3 {
   padding-left: 0;
 }
 
+/* Body */
+.body {
+  padding-bottom: 5rem;
+}
+
+.title {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.container__line-descriptions {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.line-descriptions {
+  display: flex;
+  justify-content: end;
+  padding-right: 1.2rem;
+}
+
+.line-descriptions__item {
+  width: 5.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
 /* Navbar */
 .navbar {
   background: linear-gradient(rgb(4, 4, 110), var(--color-primary) 90%);
@@ -148,15 +175,6 @@ h3 {
 .navbar__link {
   padding: 0 .3rem;
   color: white;
-}
-/* Body */
-.body {
-  padding-bottom: 5rem;
-}
-
-.title {
-  text-align: center;
-  color: var(--color-primary);
 }
 
 /* Box */
