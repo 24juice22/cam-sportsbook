@@ -76,7 +76,12 @@ let under = 'Under';
         moneylinePriceHome = `+${moneylinePriceHome}`;
 
     /* Date and Time */
-    let date = new Date(matchup.commence_time).toLocaleString('en-US').split(":00").join("");
+    let date = new Date(matchup.commence_time).toLocaleString('en-US').split(":00 ").join("").split(",").join("");
+    let dateToCompare = date.split(" ")
+    let currentDate = `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`;
+    if (dateToCompare[0] === currentDate)
+        date = `Today ${dateToCompare[1]}`;
+    console.log(currentDate + " hi");
 
     return (
         <div className="box">
@@ -96,6 +101,7 @@ let under = 'Under';
                     
                 </div>
             </div>
+            <p className="box__at-symbol">@--</p>
             <div className="box__team box__home">
                 <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${homeTeamImageName}.png`)}></img>
                 <p className="box__team-name">{homeTeam}</p>
