@@ -81,12 +81,12 @@ let under = 'Under';
     let currentDate = `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`;
     if (dateToCompare[0] === currentDate)
         date = `Today ${dateToCompare[1]}`;
-    console.log(currentDate + " hi");
+
 
     return (
         <div className="box">
             <div className="box__team box__away">
-                <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${awayTeamImageName}.png`)}></img>
+                {matchup.sport_title !== 'NCAAF' ? <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${awayTeamImageName}.png`)}></img> : <img className="team-logo" src=""></img>}
                 <p className="box__team-name">{awayTeam}</p>
                 <div className="box__lines">
                     <div className="line line__spread">
@@ -103,7 +103,7 @@ let under = 'Under';
             </div>
             <p className="box__at-symbol">@--</p>
             <div className="box__team box__home">
-                <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${homeTeamImageName}.png`)}></img>
+                {matchup.sport_title !== 'NCAAF' ? <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${homeTeamImageName}.png`)}></img> : <img className="team-logo" src=""></img>}
                 <p className="box__team-name">{homeTeam}</p>
                 <div className="box__lines">
                     <div className="line line__spread">

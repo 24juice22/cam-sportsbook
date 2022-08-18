@@ -89,8 +89,8 @@ h3 {
 
 .title {
   text-align: center;
-  color: var(--color-primary);
-  text-shadow: 1px 1px 3px white;
+  color: white;
+  text-shadow: 2px 2px 4px rgb(12, 182, 238);
 }
 
 .container__line-descriptions {
