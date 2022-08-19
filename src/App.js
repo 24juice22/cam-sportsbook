@@ -7,7 +7,7 @@ import Ncaaf from "./pages/Ncaaf"
 import Navbar from "./components/Navbar"
 import Betbar from "./components/Betbar"
 import Home from "./pages/Home"
-import Betslip from ".pages/Betslip"
+import Betslip from "./pages/Betslip"
 
 
 function App() {
@@ -34,11 +34,9 @@ function App() {
             <Route path="nfl" element={<Nfl games={games} sport={sport}/>} />
             <Route path="nba" element={<Nba games={games} sport={sport}/>} />
             <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
+            <Route path="betslip" element={<Betslip />} />
         </Routes>
         <Betbar />
-        <Routes>
-          <Route path="betslip" element={<Betslip />} />
-        </Routes>
       </div>
     </Router>
   );
