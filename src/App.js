@@ -1,51 +1,46 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Betbar from "./components/Betbar";
-import Box from "./components/Box";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Mlb from "./pages/Mlb"
+import Nfl from "./pages/Nfl"
+import Nba from "./pages/Nba"
+import Ncaaf from "./pages/Ncaaf"
+import Navbar from "./components/Navbar"
+import Betbar from "./components/Betbar"
+import Home from "./pages/Home"
+
 
 function App() {
   const [games, setGames] = React.useState(null);
   const [sport, setSport] = React.useState("MLB");
-  const [baseball, setBaseball] = React.useState(null)
-  const content = null;
+  const [baseball, setBaseball] = React.useState(null);
 
   React.useEffect(() => {
     fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      setGames(data);
-      setBaseball(data);
+      setGames(data)
     }) 
   }, [])
 
-  React.useEffect(() => {
-    fetch("https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-    }) 
-  }, [])
 
-  if(games) {
-    return (
+  if(games) return (
+    <Router>
       <div className="body">
-        <Navbar setGames={setGames} setSport={setSport} baseball={baseball}/>
-        <h1 className="title">{`${sport} Odds`}</h1>
-        <ul className="container__line-descriptions list line-descriptions">
-          <li className="line-descriptions__item">Spread</li>
-          <li className="line-descriptions__item">Total</li>
-          <li className="line-descriptions__item">Money</li>
-        </ul>
-        {games.map(matchup => <Box matchup={matchup}/>)}
+        <Navbar setGames={setGames} setSport={setSport} />
+        <Routes>
+            <Route path="/" element={<Home games={games} sport={sport} />} />
+            <Route path="mlb" element={<Mlb games={games} setGames={setGames} sport={sport} setSport={setSport} setBaseball={setBaseball}/>} />
+            <Route path="nfl" element={<Nfl games={games} sport={sport}/>} />
+            <Route path="nba" element={<Nba games={games} sport={sport}/>} />
+            <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
+        </Routes>
         <Betbar />
       </div>
-    )
-  }
-
-  return (
-    <div>{content}</div>
-  )
+    </Router>
+  );
 }
 
 export default App;
+
+

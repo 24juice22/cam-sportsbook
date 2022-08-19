@@ -1,12 +1,23 @@
-import React from "react"
-import mlb from "../images/mlb/mlb.png"
-import nfl from "../images/nfl/nfl.png"
-import nba from "../images/nba/nba.png"
+import React from "react";
+import { Link } from "react-router-dom";
+import mlb from "../images/mlb/mlb.png";
+import nfl from "../images/nfl/nfl.png";
+import nba from "../images/nba/nba.png";
 
-export default function Navbar({setGames, setSport, baseball}) {
+export default function Navbar({setGames, setSport}) {
     const [footballNfl, setFootballNfl] = React.useState(null);
     const [basketball, setBasketball] = React.useState(null);
     const [footballNcaa, setFootballNcaa] = React.useState(null);
+    const [baseball, setBaseball] = React.useState(null);
+
+    React.useEffect(() => {
+        fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          setBaseball(data);
+        }) 
+    }, [])
 
     React.useEffect(() => {
         fetch("https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -21,6 +32,7 @@ export default function Navbar({setGames, setSport, baseball}) {
         fetch("https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
         .then(res => res.json())
         .then(data => {
+          console.log(data);
           setBasketball(data);
         }) 
       }, [])
@@ -29,6 +41,7 @@ export default function Navbar({setGames, setSport, baseball}) {
         fetch("https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
         .then(res => res.json())
         .then(data => {
+          console.log(data);
           setFootballNcaa(data);
         }) 
     }, [])
@@ -37,6 +50,7 @@ export default function Navbar({setGames, setSport, baseball}) {
     function nflClick() {
         setGames(footballNfl);
         setSport("NFL");
+        console.log("footballclicked");
     }
 
     function mlbClick() {
@@ -51,7 +65,7 @@ export default function Navbar({setGames, setSport, baseball}) {
 
     function ncaafClick() {
         setGames(footballNcaa);
-        setSport("NCAAF")
+        setSport("NCAAF");
     }
 
     return (
@@ -71,19 +85,19 @@ export default function Navbar({setGames, setSport, baseball}) {
                     <ul className="list navbar__list">
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--baseball" src={mlb}></img>
-                            <a className="navbar__link" href="#" onClick={mlbClick}>MLB</a>
+                            <Link className="navbar__link" to="/mlb" onClick={mlbClick}>MLB</Link>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nfl" src={nfl}></img>
-                            <a className="navbar__link" href="#" onClick={nflClick}>NFL</a>
+                            <Link className="navbar__link" to="/nfl" onClick={nflClick}>NFL</Link>
                         </li>
                         <li className="navbar__list-item">
                             <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
-                            <a className="navbar__link nav__link-baseball" href="#" onClick={ncaafClick}>NCAAF</a>
+                            <Link className="navbar__link nav__link-baseball" to="/ncaaf" onClick={ncaafClick}>NCAAF</Link>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nba" src={nba}></img>
-                            <a className="navbar__link" href="#" onClick={nbaClick}>NBA</a>
+                            <Link className="navbar__link" to="/nba" onClick={nbaClick}>NBA</Link>
                         </li>
                     </ul>
                 </div>
