@@ -10,7 +10,7 @@ function Mlb({games, sport}) {
                 <li className="line-descriptions__item">Total</li>
                 <li className="line-descriptions__item">Money</li>
             </ul>
-            {games.map(matchup => <Box matchup={matchup}/>)}
+            {games.map(matchup => <Box matchup={matchup} key={matchup.id}/>)}
         </ div>
     )
 }  

@@ -3,6 +3,8 @@ import Box from "../components/Box"
 
 
 function Home({games, sport}) {
+    const boxElements = games.map(matchup => <Box matchup={matchup} key={matchup.id}/>);
+    
     return (
         <div className="idk">
             <h1 className="title">{`${sport} Odds`}</h1>
@@ -11,7 +13,7 @@ function Home({games, sport}) {
                 <li className="line-descriptions__item">Total</li>
                 <li className="line-descriptions__item">Money</li>
             </ul>
-            {games.map(matchup => <Box matchup={matchup}/>)}
+            {boxElements}
         </ div>
     )
 }  
