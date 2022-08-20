@@ -3,7 +3,7 @@ import Spread from "./Spread"
 import Total from "./Total"
 import Moneyline from "./Moneyline"
 
-function BoxTeam({team, teamImageName, matchup, awayTeam}) {
+function BoxTeam({team, teamImageName, matchup, totalTeam}) {
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
     let betMarkets = matchup.bookmakers[unibetIndex].markets; /* Shorthand */
@@ -11,7 +11,6 @@ function BoxTeam({team, teamImageName, matchup, awayTeam}) {
     let indexTotal = betMarkets.findIndex(item => item.key === 'totals');
     let indexMoneyline = betMarkets.findIndex(item => item.key === 'h2h');
 
-    /* Totals */
     let over = 'Over';
     let under = 'Under';
 
@@ -20,9 +19,9 @@ function BoxTeam({team, teamImageName, matchup, awayTeam}) {
         {matchup.sport_title !== 'NCAAF' ? <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${teamImageName}.png`)}></img> : <img className="team-logo" src=""></img>}
         <p className="box__team-name">{team}</p>
         <div className="box__lines">
-            <Spread team={team} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
-            <Total team={over} awayTeam={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
-            <Moneyline team={team} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
+            <Spread team={team} betMarkets={betMarkets} indexSpread={indexSpread} />
+            <Total team={totalTeam} betMarkets={betMarkets} indexTotal={indexTotal}/>
+            <Moneyline team={team} betMarkets={betMarkets} indexMoneyline={indexMoneyline}/>
         </div>
     </div> 
     )

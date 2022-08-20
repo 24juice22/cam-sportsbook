@@ -4,15 +4,17 @@ import GameDate from "./GameDate"
 
 export default function Box({matchup}) {
     let awayTeam = matchup.away_team;
-    let homeTeam = matchup.home_team
+    let homeTeam = matchup.home_team;
     let awayTeamImageName = awayTeam.split(" ").join("-");
     let homeTeamImageName = homeTeam.split(" ").join("-");
+    let overTeam = 'Over';
+    let underTeam = 'Under';
 
     return (
         <div className="box" >
-            <BoxTeam team={awayTeam} awayTeam={awayTeam} teamImageName={awayTeamImageName} matchup={matchup}/>
+            <BoxTeam team={awayTeam} totalTeam={overTeam}teamImageName={awayTeamImageName} matchup={matchup}/>
             <p className="box__at-symbol">@--</p>
-            <BoxTeam team={homeTeam} awayTeam={awayTeam} teamImageName={homeTeamImageName} matchup={matchup}/>
+            <BoxTeam team={homeTeam} totalTeam={underTeam}teamImageName={homeTeamImageName} matchup={matchup}/>
             <GameDate matchup={matchup}/>
         </div>
     )
