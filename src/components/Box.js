@@ -1,8 +1,9 @@
 import React from "react"
+import Spread from "./Spread"
+import Total from "./Total"
 
 export default function Box({matchup}) {
-    let spreadExists = null;
-    let totalExists = null;
+    
     let moneylineExists = null;
 
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
@@ -14,51 +15,13 @@ export default function Box({matchup}) {
 
 /* Point Spreads */
     let awayTeam = matchup.away_team;
-    let homeTeam = matchup.home_team;
-    if (indexSpread >= 0) spreadExists = true;
-    if (indexSpread < 0) indexSpread = indexMoneyline;
-    if (indexSpread < 0) {
-        indexSpread = indexTotal;
-        awayTeam = "Over";
-        homeTeam = "Under";
-    }
-    
+    let homeTeam = matchup.home_team
     let awayTeamImageName = awayTeam.split(" ").join("-");
-    let indexSpreadAwayTeam = betMarkets[indexSpread].outcomes.findIndex(item => item.name === awayTeam)
-    let spreadPointAway = betMarkets[indexSpread].outcomes[indexSpreadAwayTeam].point;
-    if (spreadPointAway > 0)
-        spreadPointAway = `+${spreadPointAway}`;
-    let spreadPriceAway = betMarkets[indexSpread].outcomes[indexSpreadAwayTeam].price;
-
-    console.log(awayTeamImageName);
-    
     let homeTeamImageName = homeTeam.split(" ").join("-");
-    let indexSpreadHomeTeam = betMarkets[indexSpread].outcomes.findIndex(item => item.name === homeTeam);
-    let spreadPointHome = betMarkets[indexSpread].outcomes[indexSpreadHomeTeam].point;
-    if (spreadPointHome > 0)
-        spreadPointHome = `+${spreadPointHome}`;
-    let spreadPriceHome = betMarkets[indexSpread].outcomes[indexSpreadHomeTeam].price;
 
 /* Totals */
-let over = 'Over';
-let under = 'Under';
-    if (indexTotal >= 0) totalExists = true;
-    if (indexTotal < 0) {
-        indexTotal = indexMoneyline;
-        over = matchup.away_team;
-        under = matchup.away_team;
-    }
-    if (indexTotal < 0) indexTotal = indexSpread;
-
-    let indexTotalOver = betMarkets[indexTotal].outcomes.findIndex(item => item.name === over);
-    let indexTotalUnder = betMarkets[indexTotal].outcomes.findIndex(item => item.name === under);
-    let totalPoint = betMarkets[indexTotal].outcomes[indexTotalOver].point;
-    let totalPriceOver = betMarkets[indexTotal].outcomes[indexTotalOver].price;
-    if (totalPriceOver > 0)
-        totalPriceOver = `+${totalPriceOver}`;
-    let totalPriceUnder = betMarkets[indexTotal].outcomes[indexTotalUnder].price;
-    if (totalPriceUnder > 0)
-        totalPriceUnder = `+${totalPriceUnder}`;
+    let over = 'Over';
+    let under = 'Under';
 
 /* Moneyline */
     if (indexMoneyline >= 0) moneylineExists = true;
@@ -84,21 +47,14 @@ let under = 'Under';
 
 
     return (
-        <div className="box">
+        <div className="box" >
             <div className="box__team box__away">
                 {matchup.sport_title !== 'NCAAF' ? <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${awayTeamImageName}.png`)}></img> : <img className="team-logo" src=""></img>}
                 <p className="box__team-name">{awayTeam}</p>
                 <div className="box__lines">
-                    <div className="line line__spread">
-                        {spreadExists ? <p className="line__spread-point">{spreadPointAway}</p> : <p className="line__spread-point"></p>}
-                        {spreadExists ? <p className="price line__spread-price">{spreadPriceAway}</p> : <p className="line__spread-price"></p>}
-                    </div>
-                    <div className="line line__total">
-                        {totalExists ? <p className="line__total-point">{`O ${totalPoint}`}</p> : <p className="line__total-point"></p>}  
-                        {totalExists ? <p className="price line__total-price">{totalPriceOver}</p> : <p className="line__total-price"></p>}
-                    </div>
+                    <Spread team={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
+                    <Total team={over} awayTeam={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
                     {moneylineExists ? <p className="price line line__moneyline">{moneylinePriceAway}</p> : <p className="line line__moneyline"></p>}
-                    
                 </div>
             </div>
             <p className="box__at-symbol">@--</p>
@@ -106,14 +62,8 @@ let under = 'Under';
                 {matchup.sport_title !== 'NCAAF' ? <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${homeTeamImageName}.png`)}></img> : <img className="team-logo" src=""></img>}
                 <p className="box__team-name">{homeTeam}</p>
                 <div className="box__lines">
-                    <div className="line line__spread">
-                        {spreadExists ? <p className="line__spread-point">{spreadPointHome}</p> : <p className="line__spread-point"></p>}
-                        {spreadExists ? <p className="price line__spread-price">{spreadPriceHome}</p> : <p className="line__spread-price"></p>}
-                    </div>
-                    <div className="line line__total">
-                        {totalExists ? <p className="line__total-point">{`U ${totalPoint}`}</p> : <p className="line__total-point"></p>}  
-                        {totalExists ? <p className="price line__total-price">{totalPriceUnder}</p> : <p className="line__total-price"></p>}
-                    </div>
+                    <Spread team={homeTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
+                    <Total team={under} awayTeam={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
                     {moneylineExists ? <p className="price line line__moneyline">{moneylinePriceHome}</p> : <p className="line line__moneyline"></p>}
                 </div>
             </div>
