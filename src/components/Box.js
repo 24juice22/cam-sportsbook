@@ -1,10 +1,9 @@
 import React from "react"
 import Spread from "./Spread"
 import Total from "./Total"
+import Moneyline from "./Moneyline"
 
 export default function Box({matchup}) {
-    
-    let moneylineExists = null;
 
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
@@ -24,21 +23,8 @@ export default function Box({matchup}) {
     let under = 'Under';
 
 /* Moneyline */
-    if (indexMoneyline >= 0) moneylineExists = true;
-    if (indexMoneyline < 0) indexMoneyline = indexSpread;
-    if (indexMoneyline < 0) indexMoneyline = indexTotal;
-
-    let indexMoneylineAway = betMarkets[indexMoneyline].outcomes.findIndex(item => item.name === awayTeam);
-    let moneylinePriceAway = betMarkets[indexMoneyline].outcomes[indexMoneylineAway].price;
-    if (moneylinePriceAway > 0)
-        moneylinePriceAway = `+${moneylinePriceAway}`;
     
-    let indexMoneylineHome = betMarkets[indexMoneyline].outcomes.findIndex(item => item.name === homeTeam)
-    let moneylinePriceHome = betMarkets[indexMoneyline].outcomes[indexMoneylineHome].price;
-    if (moneylinePriceHome > 0)
-        moneylinePriceHome = `+${moneylinePriceHome}`;
-
-    /* Date and Time */
+/* Date and Time */
     let date = new Date(matchup.commence_time).toLocaleString('en-US').split(":00 ").join("").split(",").join("");
     let dateToCompare = date.split(" ")
     let currentDate = `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`;
@@ -54,7 +40,7 @@ export default function Box({matchup}) {
                 <div className="box__lines">
                     <Spread team={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
                     <Total team={over} awayTeam={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
-                    {moneylineExists ? <p className="price line line__moneyline">{moneylinePriceAway}</p> : <p className="line line__moneyline"></p>}
+                    <Moneyline team={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
                 </div>
             </div>
             <p className="box__at-symbol">@--</p>
@@ -64,7 +50,7 @@ export default function Box({matchup}) {
                 <div className="box__lines">
                     <Spread team={homeTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
                     <Total team={under} awayTeam={awayTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
-                    {moneylineExists ? <p className="price line line__moneyline">{moneylinePriceHome}</p> : <p className="line line__moneyline"></p>}
+                    <Moneyline team={homeTeam} matchup={matchup} betMarkets={betMarkets} indexSpread={indexSpread} indexTotal={indexTotal} indexMoneyline={indexMoneyline}/>
                 </div>
             </div>
             <p className="date">{date}</p>
