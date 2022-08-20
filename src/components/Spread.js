@@ -1,12 +1,13 @@
 import React from "react"
 
-function Spread({betMarkets, indexSpread, indexTotal, indexMoneyline, team}) {
-    let spreadExists = null;
-    if (indexSpread >= 0) spreadExists = true;
-    if (indexSpread < 0) indexSpread = indexMoneyline;
+function Spread({betMarkets, indexSpread, team}) {
     if (indexSpread < 0) {
-        indexSpread = indexTotal;
-        team = "Over";
+        return (
+            <div className="line line__spread">
+                <p className="line__spread-point"></p>
+                <p className="line__spread-price"></p>
+            </div>
+        )
     }
     
     let indexSpreadTeam = betMarkets[indexSpread].outcomes.findIndex(item => item.name === team)
@@ -17,11 +18,10 @@ function Spread({betMarkets, indexSpread, indexTotal, indexMoneyline, team}) {
     if (spreadPrice > 0)
         spreadPrice = `+${spreadPrice}`;
     
-    
     return (
         <div className="line line__spread">
-            {spreadExists ? <p className="line__spread-point">{spreadPoint}</p> : <p className="line__spread-point"></p>}
-            {spreadExists ? <p className="price line__spread-price">{spreadPrice}</p> : <p className="line__spread-price"></p>}
+            <p className="line__spread-point">{spreadPoint}</p>
+            <p className="price line__spread-price">{spreadPrice}</p>
         </div>
     )
 }

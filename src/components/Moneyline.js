@@ -1,11 +1,11 @@
 import React from "react"
 
-function Moneyline({betMarkets, indexSpread, indexTotal, indexMoneyline, team}) {
-    let moneylineExists = null;
-
-    if (indexMoneyline >= 0) moneylineExists = true;
-    if (indexMoneyline < 0) indexMoneyline = indexSpread;
-    if (indexMoneyline < 0) indexMoneyline = indexTotal;
+function Moneyline({betMarkets, indexMoneyline, team}) {
+    if (indexMoneyline < 0) {
+        return (
+            <p className="line line__moneyline"></p>
+        )
+    }
         
     let indexMoneylineTeam = betMarkets[indexMoneyline].outcomes.findIndex(item => item.name === team);
     let moneylinePrice = betMarkets[indexMoneyline].outcomes[indexMoneylineTeam].price;
@@ -13,9 +13,7 @@ function Moneyline({betMarkets, indexSpread, indexTotal, indexMoneyline, team}) 
         moneylinePrice = `+${moneylinePrice}`;
  
     return (
-        <>
-            {moneylineExists ? <p className="price line line__moneyline">{moneylinePrice}</p> : <p className="line line__moneyline"></p>}
-        </>
+            <p className="price line line__moneyline">{moneylinePrice}</p>
     )
 }
 
