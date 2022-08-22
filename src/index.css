@@ -280,6 +280,46 @@ h3 {
   color: white;
 }
 
+/* Slip */
+.slip {
+  border-color: var(--color-secondary);
+  padding: 1.5rem 0;
+}
+
+.slip__exit {
+  position: absolute;
+  left: 1%;
+  border: 2px solid red;
+  border-radius: .3rem;
+  color: red;
+  padding: .075rem .45rem;
+}
+
+.slip__line-numbers {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.slip__line-type {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.slip__game-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+}
+
+.wager-form {
+  border: 2px solid var(--color-primary);
+  padding: .5rem 1rem;
+  color: var(--color-primary);
+}
+
 
 
 
