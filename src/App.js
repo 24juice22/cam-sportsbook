@@ -8,11 +8,12 @@ import Navbar from "./components/Navbar"
 import Betbar from "./components/Betbar"
 import Home from "./pages/Home"
 import Betslip from "./pages/Betslip"
-
+import { SportsbookContext } from "./contexts/SportsbookContexts"
 
 function App() {
   const [games, setGames] = React.useState(null);
   const [sport, setSport] = React.useState("MLB");
+  const [betbarActive, setBetbarActive] = React.useState([])
 
   React.useEffect(() => {
     fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -27,16 +28,18 @@ function App() {
   if(games) return (
     <Router>
       <div className="body">
-        <Navbar setGames={setGames} setSport={setSport} />
-        <Routes>
-            <Route path="/" element={<Home games={games} sport={sport} />} />
-            <Route path="mlb" element={<Mlb games={games} setGames={setGames} sport={sport} setSport={setSport} />} />
-            <Route path="nfl" element={<Nfl games={games} sport={sport}/>} />
-            <Route path="nba" element={<Nba games={games} sport={sport}/>} />
-            <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
-            <Route path="betslip" element={<Betslip />} />
-        </Routes>
-        <Betbar />
+        <SportsbookContext.Provider value={{betbarActive, setBetbarActive}}>
+          <Navbar setGames={setGames} setSport={setSport} />
+          <Routes>
+              <Route path="/" element={<Home games={games} sport={sport} />} />
+              <Route path="mlb" element={<Mlb games={games} setGames={setGames} sport={sport} setSport={setSport} />} />
+              <Route path="nfl" element={<Nfl games={games} sport={sport}/>} />
+              <Route path="nba" element={<Nba games={games} sport={sport}/>} />
+              <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
+              <Route path="betslip" element={<Betslip />} />
+          </Routes>
+          <Betbar />
+        </SportsbookContext.Provider>
       </div>
     </Router>
   );

@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import Lines from "./Lines"
+import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 
 function BoxTeam({team, teamImageName, matchup, totalTeam}) {
+    const {setBetbarActive} = useContext(SportsbookContext)
+
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
     let betMarkets = matchup.bookmakers[unibetIndex].markets; /* Shorthand */
@@ -11,16 +14,14 @@ function BoxTeam({team, teamImageName, matchup, totalTeam}) {
     let indexMoneyline = betMarkets.findIndex(item => item.key === 'h2h');
     
     const [bettingLines, setBettingLines] = React.useState(allNewLines())
-
+    
     function wasClicked(id, point, price) {
         setBettingLines(oldLines => oldLines.map(line => {
             return line.id === id ?
                 {...line, isClicked: !line.isClicked} :
                 line
         }))
-        console.log(id, point, price)
     }
-
 
     function allNewLines() {
         const newLines = [   
@@ -46,7 +47,6 @@ function BoxTeam({team, teamImageName, matchup, totalTeam}) {
         return newLines
     }
 
-    console.log(bettingLines);
     const lineElements = bettingLines.map(line => (
         <Lines 
             key={line.id}

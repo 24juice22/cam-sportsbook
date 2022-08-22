@@ -1,16 +1,30 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
+import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 export default function Betbar() {
+    const {betbarActive} = useContext(SportsbookContext)
+
+    const betbarStyles = {
+        backgroundColor: betbarActive.length ? "var(--color-secondary)" : "var(--color-primary)",
+        color: betbarActive.length ? "var(--color-primary)" : "white"
+    }
+
+    console.log(betbarActive)
+
     return (
         <nav className="betbar">
             <div className="container">
                 <ul className="list betbar__list">
-                    <li className="betbar__list-item"><a className="betbar__link" href="#">Top</a></li>
                     <li className="betbar__list-item">
-                        <Link className="betbar__link betslip__link" to="/betslip">Betslip</Link>
+                        <a className="betbar__link" href="#">Top</a>
                     </li>
-                    <li className="betbar__list-item"><a className="betbar__link" href="#">My Bets</a></li>
+                    <li className="betbar__list-item">
+                        <Link className="betbar__link betslip__link" to="/betslip" style={betbarStyles} >Betslip</Link>
+                    </li>
+                    <li className="betbar__list-item">
+                        <Link className="betbar__link" to="/MyBets">My Bets</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
