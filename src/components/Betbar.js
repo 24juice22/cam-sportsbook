@@ -19,8 +19,8 @@ export default function Betbar() {
                     <li className="betbar__list-item">
                         <a className="betbar__link" href="#">Top</a>
                     </li>
-                    <li className="betbar__list-item">
-                        <Link className="betbar__link betslip__link" to="/betslip" style={betbarStyles} >Betslip</Link>
+                    <li className="betbar__list-item" style={betbarStyles}>
+                        <Link className="betbar__link betslip__link" to="/betslip" style={betbarStyles}>Betslip</Link>
                     </li>
                     <li className="betbar__list-item">
                         <Link className="betbar__link" to="/MyBets">My Bets</Link>
