@@ -21,6 +21,13 @@ function BoxTeam({team, teamImageName, matchup, totalTeam}) {
                 {...line, isClicked: !line.isClicked} :
                 line
         }))
+        setBetbarActive(prevValues => {
+            if (prevValues.length) {
+                let something = prevValues.filter(value => value.id !== id)
+                if (something.length < prevValues.length) return something
+            }
+            return [...prevValues, {id: id, point: point, price: price}]
+        })
     }
 
     function allNewLines() {
