@@ -4,12 +4,13 @@ import Slip from "../components/Slip"
 
 function Betslip() {
     const {betbarActive} = useContext(SportsbookContext)
-    let stuff = [...betbarActive]
+
+    const slipElements = betbarActive.map(matchup => <Slip matchup={matchup}/>);
 
     return (
         <div className="betslip">
             <h1 className="betslip__title">Betslip</h1>
-            <Slip betbarActive={betbarActive}/>
+            {slipElements}
         </div>
         
     )
