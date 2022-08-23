@@ -93,7 +93,7 @@ h3 {
   text-shadow: 2px 2px 4px rgb(12, 182, 238);
 }
 
-.container__line-descriptions {
+.container--wide {
   width: 90%;
   margin: 0 auto;
 }
@@ -300,11 +300,13 @@ h3 {
 
 .slip__exit {
   position: absolute;
+  top: 0;
   left: 1%;
   border: 2px solid red;
   border-radius: .3rem;
+  font-size: 1.2rem;
   color: red;
-  padding: .075rem .45rem;
+  padding: 0 .3rem;
 }
 
 .slip__line-numbers {

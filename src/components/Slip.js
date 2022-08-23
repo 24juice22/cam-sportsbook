@@ -8,7 +8,7 @@ function Slip() {
     return (
         <div className="box slip">
             <p className="slip__exit">X</p>
-            <div className="container">
+            <div className="container--wide">
                 <div className="slip__line-numbers">
                     <p className="slip__team">{betbarActive[0].team}</p>
                     <p className="slip__point">{betbarActive[0].point}</p>
