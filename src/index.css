@@ -267,12 +267,24 @@ h3 {
 }
 
 .betbar__list-item {
+  position: relative;
   padding: 1.5rem 1.75rem;
 }
 
 .betbar__link {
   color: white;
   font-size: 2rem;
+}
+
+.betslip__count {
+  position: absolute;
+  color: white;
+  top: -2%;
+  left: 2%;
+  background: var(--color-primary);
+  border-radius: 50%;
+  padding: .15rem .55rem;
+  visibility: hidden;
 }
 
 /* Betslip */

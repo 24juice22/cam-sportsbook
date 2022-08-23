@@ -10,6 +10,10 @@ export default function Betbar() {
         color: betbarActive.length ? "var(--color-primary)" : "white"
     }
 
+    const slipCountStyles = {
+        visibility: betbarActive.length ? "visible" : "hidden"
+    }
+
     console.log(betbarActive)
 
     return (
@@ -20,6 +24,7 @@ export default function Betbar() {
                         <a className="betbar__link" href="#">Top</a>
                     </li>
                     <li className="betbar__list-item" style={betbarStyles}>
+                        <p className="betslip__count" style={slipCountStyles}>{betbarActive.length}</p>
                         <Link className="betbar__link betslip__link" to="/betslip" style={betbarStyles}>Betslip</Link>
                     </li>
                     <li className="betbar__list-item">
