@@ -1,6 +1,6 @@
 import React from "react"
 
-function Lines({index, betMarkets, wasClicked, isClicked, team, id}) {
+function Lines({index, betMarkets, wasClicked, isClicked, team, id, indexType, matchupInfo, matchup}) {
     if (index < 0) {
         return (
             <div className="line">
@@ -31,7 +31,7 @@ function Lines({index, betMarkets, wasClicked, isClicked, team, id}) {
         price = `+${price}`;
 
     return (
-        <div className="line" onClick={() => wasClicked(id, point, price)} style={styles}>
+        <div className="line" onClick={() => wasClicked(id, point, price, team, indexType, matchupInfo, matchup)} style={styles}>
             <p className="line__point">{point}</p>
             <p className="price line__price">{price}</p>
         </div>

@@ -319,9 +319,7 @@ h3 {
   font-weight: 500;
 }
 
-.slip__game-info {
-  display: flex;
-  justify-content: space-between;
+.slip__matchup-info {
   font-size: 1.3rem;
   padding: 1rem 0;
 }

@@ -9,7 +9,7 @@ function Betslip() {
     return (
         <div className="betslip">
             <h1 className="betslip__title">Betslip</h1>
-            <Slip />
+            <Slip betbarActive={betbarActive}/>
         </div>
         
     )
