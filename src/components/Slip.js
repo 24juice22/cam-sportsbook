@@ -1,5 +1,6 @@
 import React from "react"
 import GameDate from "./GameDate"
+import SlipForm from "./SlipForm"
 
 function Slip({matchup}) {
     return (
@@ -7,8 +8,7 @@ function Slip({matchup}) {
             <p className="slip__exit">X</p>
             <div className="container--wide">
                 <div className="slip__line-numbers">
-                    <p className="slip__team">{matchup.team}</p>
-                    <p className="slip__point">{matchup.point}</p>
+                    <p className="slip__point">{matchup.team} {matchup.point}</p>
                     <p className="slip__price">{matchup.price}</p>
                 </div>
                 <p className="slip__line-type">{matchup.indexType}</p>
@@ -16,7 +16,7 @@ function Slip({matchup}) {
                     <p className="slip__matchup">{matchup.matchupInfo}</p>
                     <GameDate matchup={matchup.matchup}/>
                 </div>
-                <form className="form wager-form">dsfsdf</form>
+                <SlipForm price={matchup.price}/>
             </div>
         </div>
     )

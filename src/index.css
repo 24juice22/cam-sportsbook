@@ -294,8 +294,14 @@ h3 {
 }
 
 /* Betslip */
+.betslip {
+  height: 100vh;
+  background-color: white;
+}
+
 .betslip__title {
-  color: white;
+  color: var(--color-primary);
+  text-align: center;
 }
 
 /* Slip */
@@ -336,11 +342,30 @@ h3 {
   padding: 1rem 0;
 }
 
-.wager-form {
-  border: 2px solid var(--color-primary);
-  padding: .5rem 1rem;
-  color: var(--color-primary);
+.slip__form {
+  display: flex;
+  align-items: center;
 }
+
+.wager-label {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.wager-input {
+  width: 9rem;
+  padding: .25rem;
+}
+
+.wager-output {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.wager-output__amount {
+  color: var(--color-primary)
+}
+
 
 
 
