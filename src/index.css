@@ -304,17 +304,24 @@ h3 {
   text-align: center;
 }
 
+.betslip__message {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
 /* Slip */
 .slip {
   border-color: var(--color-secondary);
   padding: 1.5rem 0;
 }
 
-.slip__exit {
+.slip__btn--exit {
   position: absolute;
-  top: 0;
+  top: 2%;
   left: 1%;
   border: 2px solid red;
+  background-color: transparent;
   border-radius: .3rem;
   font-size: 1.2rem;
   color: red;

@@ -2,10 +2,11 @@ import React from "react"
 import GameDate from "./GameDate"
 import SlipForm from "./SlipForm"
 
-function Slip({matchup}) {
+function Slip({matchup, exitClicked}) {
+
     return (
         <div className="box slip">
-            <p className="slip__exit">X</p>
+            <button className="btn slip__btn--exit" onClick={() => exitClicked(matchup.id)}>X</button>
             <div className="container--wide">
                 <div className="slip__line-numbers">
                     <p className="slip__point">{matchup.team} {matchup.point}</p>
