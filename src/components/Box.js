@@ -12,10 +12,12 @@ export default function Box({matchup}) {
 
     return (
         <div className="box" >
+            <div className="container--widest">
             <BoxTeam team={awayTeam} awayTeam={awayTeam} homeTeam={homeTeam} totalTeam={overTeam} teamImageName={awayTeamImageName} matchup={matchup}/>
             <p className="box__at-symbol">@--</p>
             <BoxTeam team={homeTeam} awayTeam={awayTeam} homeTeam={homeTeam} totalTeam={underTeam} teamImageName={homeTeamImageName} matchup={matchup}/>
             <GameDate matchup={matchup}/>
+            </div>
         </div>
     )
 }
