@@ -228,7 +228,7 @@ h3 {
   border-radius: .8rem;
   width: 4.75rem;
   height: 4rem;
-  padding: .2rem;
+  padding: 0.2rem;
   margin: 0 .3rem;
   font-weight: bold;
   text-align: center;
@@ -278,9 +278,19 @@ h3 {
   padding: 1.5rem 1.75rem;
 }
 
+.betbar__list-item:hover {
+  transform: scale(1.1);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
 .betbar__link {
   color: white;
   font-size: 2rem;
+}
+
+.betbar__link:hover {
+  color: var(--color-primary);
 }
 
 .betslip__count {
@@ -296,7 +306,7 @@ h3 {
 
 /* Betslip */
 .betslip {
-  min-height: 100vh;
+  min-height: calc(100vh - 14.665rem);
   background-color: rgb(189, 252, 252);
   padding-bottom: 1rem;
 }
@@ -312,6 +322,16 @@ h3 {
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
+}
+
+.betslip__button {
+  font-size: 1.7rem;
+  border-color: var(--color-primary);
+  padding: .75rem;
+  width: 50vw;
+  display: block;
+  margin: 1.5rem auto;
+  
 }
 
 /* Slip */
@@ -381,6 +401,50 @@ h3 {
   color: var(--color-primary)
 }
 
+/* Login */
+.login {
+  background-color: white;
+  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
+  width: 100vw;
+  height: 0%;
+  margin: auto auto;
+  position: fixed;
+  padding: 2rem;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  transition: height .7s, visibility .7s, opacity .7s ease-in-out;
+}
+
+.login__title {
+  color: var(--color-primary);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem auto;
+  opacity: hidden;
+  transition: visibility 3s;
+}
+.login__input {
+  margin: .3rem;
+}
+
+.login__button {
+  font-size: 1.6rem;
+  border-color: blue;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.join-link {
+  font-size: 1.5rem;
+  color: blue;
+}
 
 
 
