@@ -1,6 +1,6 @@
 import React from "react"
 
-function Login({loginIsVisible}) {
+function Login({loginIsVisible, setLoginIsVisible}) {
     
     const loginVisibleStyle = {
         visibility: loginIsVisible ? "visible" : "hidden",
@@ -8,16 +8,17 @@ function Login({loginIsVisible}) {
         opacity: loginIsVisible ? "1" : "0"
     }
 
-    const poop = {
-        visibility: loginIsVisible ? "visible" : "hidden"
+    function hideLogin() {
+        setLoginIsVisible(false);
     }
 
     return (
         <div className="login" style={loginVisibleStyle}>
             <div className="container--wide">
-                <button className="btn btn--exit">X</button>
+                <button className="btn btn--exit" onClick={hideLogin}>X</button>
+                <div className="container--widest">
                 <h2 className="login__title">Sign In</h2>
-                <div className="input-container" style={poop}>
+                <div className="input-container">
                     <label>Username </label>
                     <input 
                         type="text"
@@ -26,7 +27,7 @@ function Login({loginIsVisible}) {
                         required
                     />
                 </div>
-                <div className="input-container" style={poop}>
+                <div className="input-container">
                     <label>Password </label>
                     <input 
                         type="password"
@@ -42,6 +43,7 @@ function Login({loginIsVisible}) {
                     Login
                 </button>
                 <a className="join-link"href="#">Don't have an account? JOIN NOW</a>
+                </div>
             </div>
         </div>
     )
