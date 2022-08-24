@@ -7,13 +7,16 @@ function SlipForm({price}) {
         setWagerAmount(event.target.value)
     }
 
-    let winAmount = price < 0 ? Math.round((wagerAmount / Math.abs(price)) * 100) : Math.round(((wagerAmount/100) * price));
+    let winAmount = price < 0 ? 
+                    (Math.round(((wagerAmount / Math.abs(price)) * 100) * 100) / 100).toFixed(2) : 
+                    (Math.round(((wagerAmount/100) * price) * 100) / 100).toFixed(2);
     
-    return(
+    return (
         <>
             <form className="slip__form">
                 <label className="wager-label">Bet Amount $ </label>
-                <input className="wager-input"
+                <input 
+                    className="wager-input"
                     type="text"
                     name="wager"
                     placeholder="Amount"
