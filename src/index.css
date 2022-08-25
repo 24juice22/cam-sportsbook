@@ -91,6 +91,10 @@ h3 {
   cursor: pointer;
 }
 
+.btn:active {
+ filter: brightness(75%);
+}
+
 /* Lists*/
 .list {
   list-style-type: none;
@@ -153,6 +157,12 @@ h3 {
 .navbar__btn--login {
   background-color: transparent;
   color: var(--color-secondary);
+  transition-duration: .2s;
+}
+
+.navbar__btn--login:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .navbar__btn--join {
