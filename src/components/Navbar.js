@@ -11,7 +11,7 @@ export default function Navbar({setGames, setSport}) {
     const [footballNcaa, setFootballNcaa] = React.useState(null);
     const [baseball, setBaseball] = React.useState(null);
 
-    const {setLoginIsVisible} = useContext(SportsbookContext)
+    const {setLoginIsVisible, loggedIn} = useContext(SportsbookContext)
 
     React.useEffect(() => {
         fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -84,7 +84,7 @@ export default function Navbar({setGames, setSport}) {
                         <span>Sportsbook</span>
                     </a>
                     <div className="navbar__buttons">
-                        <button className="btn navbar__btn navbar__btn--login" onClick={loginDisplay}>Log In</button>
+                        {!loggedIn && <button className="btn navbar__btn navbar__btn--login" onClick={loginDisplay}>Login</button>}
                         <button className="btn navbar__btn navbar__btn--join">JOIN NOW</button>
                     </div>
                 </div>
