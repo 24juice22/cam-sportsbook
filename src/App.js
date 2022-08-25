@@ -14,6 +14,8 @@ function App() {
   const [games, setGames] = React.useState(null);
   const [sport, setSport] = React.useState("MLB");
   const [betbarActive, setBetbarActive] = React.useState([])
+  const [loggedIn, setLoggedIn] = React.useState(false)
+  const [loginIsVisible, setLoginIsVisible] = React.useState(false)
 
   React.useEffect(() => {
     fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -28,7 +30,7 @@ function App() {
   if(games) return (
     <Router>
       <div className="body">
-        <SportsbookContext.Provider value={{betbarActive, setBetbarActive}}>
+        <SportsbookContext.Provider value={{betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible}}>
           <Navbar setGames={setGames} setSport={setSport} />
           <Routes>
               <Route path="/" element={<Home games={games} sport={sport} />} />

@@ -20,6 +20,7 @@ function SlipForm({price}) {
                     type="text"
                     name="wager"
                     placeholder="Amount"
+                    required
                     value={wagerAmount}
                     onChange={handleChange}
                 />

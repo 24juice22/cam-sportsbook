@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { SportsbookContext } from "../contexts/SportsbookContexts"
 import mlb from "../images/mlb/mlb.png";
 import nfl from "../images/nfl/nfl.png";
 import nba from "../images/nba/nba.png";
@@ -9,6 +10,8 @@ export default function Navbar({setGames, setSport}) {
     const [basketball, setBasketball] = React.useState(null);
     const [footballNcaa, setFootballNcaa] = React.useState(null);
     const [baseball, setBaseball] = React.useState(null);
+
+    const {setLoginIsVisible} = useContext(SportsbookContext)
 
     React.useEffect(() => {
         fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -68,6 +71,10 @@ export default function Navbar({setGames, setSport}) {
         setSport("NCAAF");
     }
 
+    function loginDisplay() {
+        setLoginIsVisible(true)
+    }
+
     return (
         <nav className="navbar">
             <div className="container">
@@ -77,7 +84,7 @@ export default function Navbar({setGames, setSport}) {
                         <span>Sportsbook</span>
                     </a>
                     <div className="navbar__buttons">
-                        <button className="btn navbar__btn navbar__btn--login">Log In</button>
+                        <button className="btn navbar__btn navbar__btn--login" onClick={loginDisplay}>Log In</button>
                         <button className="btn navbar__btn navbar__btn--join">JOIN NOW</button>
                     </div>
                 </div>

@@ -4,8 +4,7 @@ import Slip from "../components/Slip"
 import Login from "../components/Login"
 
 function Betslip() {
-    const {betbarActive, setBetbarActive, loggedIn} = useContext(SportsbookContext)
-    const [loginIsVisible, setLoginIsVisible] = React.useState(false)
+    const {betbarActive, setBetbarActive, loggedIn, loginIsVisible, setLoginIsVisible} = useContext(SportsbookContext)
 
     const slipElements = betbarActive.map(matchup => <Slip matchup={matchup} exitClicked={exitClicked}/>);
 
@@ -30,7 +29,7 @@ function Betslip() {
             {!betbarActive.length && <p className="betslip__message">The betslip is empty! Please add selections to make a bet.</p>}
             {slipElements}
             {betbarActive.length > 0 && !loggedIn && <button className="btn betslip__button" onClick={loginDisplay}>Login to Bet</button>}
-            {betbarActive.length > 0 && loggedIn && <button className="btn betslip__button">Make Bet</button>}
+            {betbarActive.length > 0 && loggedIn && <button className="btn betslip__button">Bet</button>}
             <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
         </div>
     )
