@@ -2,7 +2,8 @@ import React, {useContext} from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Login({loginIsVisible, setLoginIsVisible}) {
-    const { setLoggedIn } = useContext(SportsbookContext)
+    const { loggedIn, setLoggedIn } = useContext(SportsbookContext);
+    const [errorMessage, setErrorMessage] = React.useState(false);
     
     const loginVisibleStyle = {
         visibility: loginIsVisible ? "visible" : "hidden",
@@ -20,17 +21,22 @@ function Login({loginIsVisible, setLoginIsVisible}) {
         if (fakeAccounts.length > 0) {
             for (let account of fakeAccounts ) {
                 if (username === account.username && password === account.password) {
-                    setLoggedIn(true)
-                    hideLogin()
+                     setLoggedIn(true);
+                     hideLogin();
                 }
             }
+            {loggedIn && setErrorMessage(true)}
         }
         else    
-            console.log("incorrect username and/or password")
+            setErrorMessage(true);
     }
-    
+
     function hideLogin() {
         setLoginIsVisible(false);
+    }
+
+    function inputChange(event) {
+        setErrorMessage(false)
     }
 
     return (
@@ -46,6 +52,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                             type="text"
                             name="username"
                             className="login__input"
+                            onChange={inputChange}
                             required
                         />
                     </div>
@@ -55,6 +62,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                             type="password"
                             name="pword"
                             className="login__input"
+                            onChange={inputChange}
                             required
                         />
                     </div>
@@ -66,6 +74,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                     </button>
                 </form>
                 <a className="join-link"href="#">Don't have an account? JOIN NOW</a>
+                {errorMessage && <p className="login__error">Incorrect username and/or password</p>}
                 </div>
             </div>
         </div>

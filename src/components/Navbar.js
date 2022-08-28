@@ -85,7 +85,9 @@ export default function Navbar({setGames, setSport}) {
                     </a>
                     <div className="navbar__buttons">
                         {!loggedIn && <button className="btn navbar__btn navbar__btn--login" onClick={loginDisplay}>Login</button>}
-                        <button className="btn navbar__btn navbar__btn--join">JOIN NOW</button>
+                        {!loggedIn && <button className="btn navbar__btn navbar__btn--join">JOIN NOW</button>}
+                        {loggedIn && <button className="btn navbar__btn navbar__btn--deposit">Deposit</button>}
+
                     </div>
                 </div>
                 <div className="navbar__bottom">
