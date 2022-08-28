@@ -2,7 +2,7 @@ import React, {useContext} from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Login({loginIsVisible, setLoginIsVisible}) {
-    const { loggedIn, setLoggedIn } = useContext(SportsbookContext);
+    const { loggedIn, setLoggedIn, accounts } = useContext(SportsbookContext);
     const [errorMessage, setErrorMessage] = React.useState(false);
     
     const loginVisibleStyle = {
@@ -11,21 +11,19 @@ function Login({loginIsVisible, setLoginIsVisible}) {
         opacity: loginIsVisible ? "1" : "0"
     }
 
-    let fakeAccounts = [{username: "mike", password: "nasir"}, 
-                        {username: "cameron", password: "football"}];
-
     function handleSubmit(event) {
         event.preventDefault();
         let username = event.target[0].value
         let password = event.target[1].value
-        if (fakeAccounts.length > 0) {
-            for (let account of fakeAccounts ) {
+        if (accounts.length > 0) {
+            for (let account of accounts ) {
                 if (username === account.username && password === account.password) {
-                     setLoggedIn(true);
-                     hideLogin();
+                    let correctAccountIndex = accounts.findIndex(item => item.username === username);
+                    setLoggedIn(accounts[correctAccountIndex]);
+                    hideLogin();
                 }
             }
-            {loggedIn && setErrorMessage(true)}
+            {!loggedIn && setErrorMessage(true)}
         }
         else    
             setErrorMessage(true);

@@ -18,6 +18,11 @@ function App() {
   const [betbarActive, setBetbarActive] = React.useState([])
   const [loggedIn, setLoggedIn] = React.useState(null)
   const [loginIsVisible, setLoginIsVisible] = React.useState(false)
+  const [joinIsVisible, setJoinIsVisible] = React.useState(false)
+  const [accounts, setAccounts] = React.useState(
+    JSON.parse(localStorage.getItem("accounts")) || []
+  )
+  
 
   React.useEffect(() => {
     fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -32,7 +37,7 @@ function App() {
   if(games) return (
     <Router>
       <div className="body">
-        <SportsbookContext.Provider value={{betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible}}>
+        <SportsbookContext.Provider value={{betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts}}>
           <Navbar setGames={setGames} setSport={setSport} />
           <Routes>
               <Route path="/" element={<Home games={games} sport={sport} />}>

@@ -4,6 +4,8 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import mlb from "../images/mlb/mlb.png";
 import nfl from "../images/nfl/nfl.png";
 import nba from "../images/nba/nba.png";
+import Login from "./Login"
+import Join from "./Join"
 
 export default function Navbar({setGames, setSport}) {
     const [footballNfl, setFootballNfl] = React.useState(null);
@@ -11,13 +13,12 @@ export default function Navbar({setGames, setSport}) {
     const [footballNcaa, setFootballNcaa] = React.useState(null);
     const [baseball, setBaseball] = React.useState(null);
 
-    const {setLoginIsVisible, loggedIn} = useContext(SportsbookContext)
+    const { loginIsVisible, setLoginIsVisible, setJoinIsVisible, loggedIn } = useContext(SportsbookContext)
 
     React.useEffect(() => {
         fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           setBaseball(data);
         }) 
     }, [])
@@ -26,7 +27,6 @@ export default function Navbar({setGames, setSport}) {
         fetch("https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           setFootballNfl(data)
         }) 
     }, [])
@@ -35,7 +35,6 @@ export default function Navbar({setGames, setSport}) {
         fetch("https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           setBasketball(data);
         }) 
       }, [])
@@ -44,7 +43,6 @@ export default function Navbar({setGames, setSport}) {
         fetch("https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           setFootballNcaa(data);
         }) 
     }, [])
@@ -53,7 +51,6 @@ export default function Navbar({setGames, setSport}) {
     function nflClick() {
         setGames(footballNfl);
         setSport("NFL");
-        console.log("footballclicked");
     }
 
     function mlbClick() {
@@ -75,6 +72,10 @@ export default function Navbar({setGames, setSport}) {
         setLoginIsVisible(true)
     }
 
+    function joinDisplay() {
+        setJoinIsVisible(true)
+    }
+    console.log(loggedIn)
     return (
         <nav className="navbar">
             <div className="container">
@@ -85,9 +86,8 @@ export default function Navbar({setGames, setSport}) {
                     </a>
                     <div className="navbar__buttons">
                         {!loggedIn && <button className="btn navbar__btn navbar__btn--login" onClick={loginDisplay}>Login</button>}
-                        {!loggedIn && <button className="btn navbar__btn navbar__btn--join">JOIN NOW</button>}
+                        {!loggedIn && <button className="btn navbar__btn navbar__btn--join" onClick={joinDisplay}>JOIN NOW</button>}
                         {loggedIn && <button className="btn navbar__btn navbar__btn--deposit">Deposit</button>}
-
                     </div>
                 </div>
                 <div className="navbar__bottom">
@@ -111,6 +111,8 @@ export default function Navbar({setGames, setSport}) {
                     </ul>
                 </div>
             </div>
+            <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
+            <Join />
         </nav>
     )
 }
