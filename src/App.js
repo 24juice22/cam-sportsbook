@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar"
 import Betbar from "./components/Betbar"
 import Home from "./pages/Home"
 import Betslip from "./pages/Betslip"
+import MyBets from "./pages/MyBets"
 import { SportsbookContext } from "./contexts/SportsbookContexts"
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
               <Route path="nba" element={<Nba games={games} sport={sport}/>} />
               <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
               <Route path="betslip" element={<Betslip />} />
+              <Route path="mybets" element={<MyBets />} />
           </Routes>
           <Betbar />
         </SportsbookContext.Provider>
