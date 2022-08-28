@@ -117,14 +117,19 @@ h3 {
 .line-descriptions {
   display: flex;
   justify-content: end;
-  padding-right: 1.2rem;
+  margin: 0 auto;
 }
 
 .line-descriptions__item {
-  width: 5.5rem;
+  width: 5.55rem;
   text-align: center;
   font-weight: 500;
   color: var(--color-secondary);
+  margin-left: .5rem;
+}
+
+.line-descriptions__item:last-of-type {
+  padding-right: .7rem;
 }
 
 /* Navbar */
@@ -167,6 +172,12 @@ h3 {
 
 .navbar__btn--join {
   margin-left: 1rem;
+}
+
+.navbar__btn--deposit {
+  background-color: rgb(189, 252, 252);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .navbar__list {
@@ -464,6 +475,12 @@ h3 {
 .join-link {
   font-size: 1.5rem;
   color: blue;
+}
+
+.login__error {
+  color: red;
+  text-align: center;
+  font-size: 2rem;
 }
 
 
