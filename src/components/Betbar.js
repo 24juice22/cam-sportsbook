@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 export default function Betbar() {
-    const {betbarActive} = useContext(SportsbookContext)
+    const {betbarActive, loggedIn} = useContext(SportsbookContext)
 
     const betbarStyles = {
         backgroundColor: betbarActive.length ? "var(--color-secondary)" : "var(--color-primary)",
@@ -18,7 +18,7 @@ export default function Betbar() {
 
     return (
         <nav className="betbar">
-            <div className="container">
+            <div className="container--widest">
                 <ul className="list betbar__list">
                     <li className="betbar__list-item">
                         <a className="betbar__link" href="#">Top</a>
@@ -30,6 +30,10 @@ export default function Betbar() {
                     <li className="betbar__list-item">
                         <Link className="betbar__link" to="/MyBets">My Bets</Link>
                     </li>
+                    {loggedIn && <li className="betbar__list-item">
+                        <p>${(loggedIn.bankroll).toFixed(2)}</p>
+                        <Link className="betbar__link" to="/Account">Account</Link>
+                    </li>}
                 </ul>
             </div>
         </nav>

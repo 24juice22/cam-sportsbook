@@ -9,13 +9,14 @@ import Betbar from "./components/Betbar"
 import Home from "./pages/Home"
 import Betslip from "./pages/Betslip"
 import MyBets from "./pages/MyBets"
+import Account from "./pages/Account"
 import { SportsbookContext } from "./contexts/SportsbookContexts"
 
 function App() {
   const [games, setGames] = React.useState(null);
   const [sport, setSport] = React.useState("MLB");
   const [betbarActive, setBetbarActive] = React.useState([])
-  const [loggedIn, setLoggedIn] = React.useState(false)
+  const [loggedIn, setLoggedIn] = React.useState(null)
   const [loginIsVisible, setLoginIsVisible] = React.useState(false)
 
   React.useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
               </Route>
               <Route path="betslip" element={<Betslip />} />
               <Route path="mybets" element={<MyBets />} />
+              <Route path="account" element={<Account />} />
           </Routes>
           <Betbar />
         </SportsbookContext.Provider>
