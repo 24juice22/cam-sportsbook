@@ -34,11 +34,12 @@ function App() {
         <SportsbookContext.Provider value={{betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible}}>
           <Navbar setGames={setGames} setSport={setSport} />
           <Routes>
-              <Route path="/" element={<Home games={games} sport={sport} />} />
-              <Route path="mlb" element={<Mlb games={games} setGames={setGames} sport={sport} setSport={setSport} />} />
-              <Route path="nfl" element={<Nfl games={games} sport={sport}/>} />
-              <Route path="nba" element={<Nba games={games} sport={sport}/>} />
-              <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
+              <Route path="/" element={<Home games={games} sport={sport} />}>
+                <Route path="mlb" element={<Mlb games={games} setGames={setGames} sport={sport} setSport={setSport} />} />
+                <Route path="nfl" element={<Nfl games={games} sport={sport}/>} />
+                <Route path="nba" element={<Nba games={games} sport={sport}/>} />
+                <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
+              </Route>
               <Route path="betslip" element={<Betslip />} />
               <Route path="mybets" element={<MyBets />} />
           </Routes>

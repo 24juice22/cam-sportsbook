@@ -6,7 +6,7 @@ function Home({games, sport}) {
     const boxElements = games.map(matchup => <Box matchup={matchup} key={matchup.id}/>);
     
     return (
-        <div className="idk">
+        <div>
             <h1 className="title">{`${sport} Odds`}</h1>
             <ul className="container--wide list line-descriptions">
                 <li className="line-descriptions__item">Spread</li>
