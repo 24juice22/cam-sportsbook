@@ -552,6 +552,28 @@ h3 {
   transition: height .7s, visibility .7s, opacity .7s ease-in-out;
 }
 
+.deposit__title {
+  color: var(--color-primary);
+}
+
+.deposit-container {
+  display: flex;
+  align-items: center;
+  margin: 5rem 0 1rem;
+}
+
+.deposit__input {
+  width: 15rem;
+  margin-left: .5rem;
+}
+
+.deposit__button {
+  font-size: 1.6rem;
+  border-color: blue;
+  width: 100%;
+  margin: 1rem 0;
+}
+
 
 
 
