@@ -14,8 +14,6 @@ export default function Betbar() {
         visibility: betbarActive.length ? "visible" : "hidden"
     }
 
-    console.log(betbarActive)
-
     return (
         <nav className="betbar">
             <div className="container--widest">
@@ -31,7 +29,7 @@ export default function Betbar() {
                         <Link className="betbar__link" to="/MyBets">My Bets</Link>
                     </li>
                     {loggedIn && <li className="betbar__list-item">
-                        <p>${(loggedIn.bankroll).toFixed(2)}</p>
+                        <p>${(loggedIn.bankroll)}</p>
                         <Link className="betbar__link" to="/Account">Account</Link>
                     </li>}
                 </ul>

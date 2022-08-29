@@ -535,6 +535,23 @@ h3 {
   margin: 1rem 0;
 }
 
+/* Deposit */
+.deposit {
+  background-color: white;
+  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
+  width: 100vw;
+  height: 0%;
+  margin: auto auto;
+  position: fixed;
+  padding: 2rem;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  transition: height .7s, visibility .7s, opacity .7s ease-in-out;
+}
+
 
 
 

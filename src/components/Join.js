@@ -27,6 +27,10 @@ function Join() {
         setJoinIsVisible(false);
     }
 
+    React.useEffect(() => {
+        localStorage.setItem("accounts", JSON.stringify(accounts))
+      }, [accounts])
+
     return (
         <div className="join" style={joinVisibleStyle}>
             <div className="container--wide">

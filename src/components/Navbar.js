@@ -6,6 +6,7 @@ import nfl from "../images/nfl/nfl.png";
 import nba from "../images/nba/nba.png";
 import Login from "./Login"
 import Join from "./Join"
+import Deposit from "./Deposit"
 
 export default function Navbar({setGames, setSport}) {
     const [footballNfl, setFootballNfl] = React.useState(null);
@@ -13,7 +14,7 @@ export default function Navbar({setGames, setSport}) {
     const [footballNcaa, setFootballNcaa] = React.useState(null);
     const [baseball, setBaseball] = React.useState(null);
 
-    const { loginIsVisible, setLoginIsVisible, setJoinIsVisible, loggedIn } = useContext(SportsbookContext)
+    const { loginIsVisible, setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn } = useContext(SportsbookContext)
 
     React.useEffect(() => {
         fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -75,7 +76,12 @@ export default function Navbar({setGames, setSport}) {
     function joinDisplay() {
         setJoinIsVisible(true)
     }
-    console.log(loggedIn)
+
+    function depositDisplay() {
+        console.log("clicked")
+        setDepositIsVisible(true)
+    }
+    
     return (
         <nav className="navbar">
             <div className="container">
@@ -87,7 +93,7 @@ export default function Navbar({setGames, setSport}) {
                     <div className="navbar__buttons">
                         {!loggedIn && <button className="btn navbar__btn navbar__btn--login" onClick={loginDisplay}>Login</button>}
                         {!loggedIn && <button className="btn navbar__btn navbar__btn--join" onClick={joinDisplay}>JOIN NOW</button>}
-                        {loggedIn && <button className="btn navbar__btn navbar__btn--deposit">Deposit</button>}
+                        {loggedIn && <button className="btn navbar__btn navbar__btn--deposit" onClick={depositDisplay}>Deposit</button>}
                     </div>
                 </div>
                 <div className="navbar__bottom">
@@ -113,6 +119,7 @@ export default function Navbar({setGames, setSport}) {
             </div>
             <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
             <Join />
+            <Deposit />
         </nav>
     )
 }
