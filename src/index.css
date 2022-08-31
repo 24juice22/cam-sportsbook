@@ -428,12 +428,12 @@ h3 {
 .login {
   background-color: white;
   box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 50vw;
+  width: 85vw;
   height: 75vh;
   position: absolute;
   padding: 2rem;
-  top: 0;
-  bottom: 0;
+  top: 8.365rem;
+  bottom: 4.84rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -492,17 +492,20 @@ h3 {
 .join {
   background-color: white;
   box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 100vw;
-  height: 0%;
-  margin: auto auto;
-  position: fixed;
+  width: 85vw;
+  height: 90vh;
+  position: absolute;
   padding: 2rem;
   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: scale(0.1);
   visibility: hidden;
-  opacity: 0;
   z-index: 10;
   box-sizing: border-box;
-  transition: height .7s, visibility .7s, opacity .7s ease-in-out;
+  transition: transform .4s, visibility .05s ease-in-out;
 }
 
 .btn--exit {
@@ -542,17 +545,20 @@ h3 {
 .deposit {
   background-color: white;
   box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 100vw;
-  height: 0%;
-  margin: auto auto;
-  position: fixed;
+  width: 85vw;
+  height: 75vh;
+  position: absolute;
   padding: 2rem;
-  top: 0;
+  top: 8.365rem;
+  bottom: 7.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: scale(0.1);
   visibility: hidden;
-  opacity: 0;
   z-index: 10;
   box-sizing: border-box;
-  transition: height .7s, visibility .7s, opacity .7s ease-in-out;
+  transition: transform .4s, visibility .05s ease-in-out;
 }
 
 .deposit__title {
@@ -575,6 +581,23 @@ h3 {
   border-color: blue;
   width: 100%;
   margin: 1rem 0;
+}
+
+/* BetConfirm */
+.bet-confirm {
+  background-color: white;
+  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
+  width: 85vw;
+  height: 75vh;
+  position: absolute;
+  padding: 2rem;
+  top: 8.365rem;
+  bottom: 7.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  box-sizing: border-box;
 }
 
 
