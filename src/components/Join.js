@@ -6,8 +6,7 @@ function Join() {
     
     const joinVisibleStyle = {
         visibility: joinIsVisible ? "visible" : "hidden",
-        height: joinIsVisible ? "80vh" : "0%",
-        opacity: joinIsVisible ? "1" : "0"
+        transform: joinIsVisible ? "scale(1)" : "scale(0.1)"
     }
 
     function handleSubmit(event) {
