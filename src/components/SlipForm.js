@@ -19,7 +19,6 @@ function SlipForm({price, id}) {
                 {...value, betAmount: event.target.value, winAmount: winAmount(event.target.value)} :
                 value
         }))
-        console.log(event)
     }
 
     

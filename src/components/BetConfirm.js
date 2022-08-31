@@ -1,11 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
+import { SportsbookContext } from "../contexts/SportsbookContexts"
+import BetConfirmBox from "./BetConfirmBox"
 
-function BetConfirm({bets}) {
-    console.log("wahhhhhhhh")
+function BetConfirm() {
+    const {betbarActive} = useContext(SportsbookContext)
+
+    let betElements = betbarActive.map(item => <BetConfirmBox item={item} />);
+
     return (
         <div className="bet-confirm">
             <h2>Confirm Wager</h2>
-            <p>{bets[0].id}</p>
+            {betElements}
+            <button className="btn">Confirm</button>
         </div>
     )
 }
