@@ -117,7 +117,6 @@ export default function Navbar({setGames, setSport}) {
                     </ul>
                 </div>
             </div>
-            <Join />
             <Deposit />
         </nav>
     )

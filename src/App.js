@@ -11,6 +11,7 @@ import Betslip from "./pages/Betslip"
 import MyBets from "./pages/MyBets"
 import Account from "./pages/Account"
 import Login from "./components/Login"
+import Join from "./components/Join"
 import { SportsbookContext } from "./contexts/SportsbookContexts"
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
               <Route path="account" element={<Account />} />
           </Routes>
           <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
+          <Join />
           <Betbar />
         </SportsbookContext.Provider>
       </div>
