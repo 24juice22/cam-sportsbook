@@ -7,8 +7,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
     
     const loginVisibleStyle = {
         visibility: loginIsVisible ? "visible" : "hidden",
-        height: loginIsVisible ? "70vh" : "0%",
-        opacity: loginIsVisible ? "1" : "0"
+        transform: loginIsVisible ? "scale(1)" : "scale(0.1)"
     }
 
     function handleSubmit(event) {

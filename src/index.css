@@ -428,17 +428,20 @@ h3 {
 .login {
   background-color: white;
   box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 100vw;
-  height: 0%;
-  margin: auto auto;
-  position: fixed;
+  width: 50vw;
+  height: 75vh;
+  position: absolute;
   padding: 2rem;
   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: scale(0.1);
   visibility: hidden;
-  opacity: 0;
   z-index: 10;
   box-sizing: border-box;
-  transition: height .7s, visibility .7s, opacity .7s ease-in-out;
+  transition: transform .4s, visibility .05s ease-in-out;
 }
 
 .btn--exit {

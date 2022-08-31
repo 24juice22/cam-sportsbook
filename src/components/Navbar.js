@@ -117,7 +117,6 @@ export default function Navbar({setGames, setSport}) {
                     </ul>
                 </div>
             </div>
-            <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
             <Join />
             <Deposit />
         </nav>
