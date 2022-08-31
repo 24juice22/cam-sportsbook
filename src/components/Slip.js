@@ -3,7 +3,6 @@ import GameDate from "./GameDate"
 import SlipForm from "./SlipForm"
 
 function Slip({matchup, exitClicked}) {
-
     return (
         <div className="box slip">
             <button className="btn slip__btn--exit" onClick={() => exitClicked(matchup.id)}>X</button>
@@ -17,7 +16,7 @@ function Slip({matchup, exitClicked}) {
                     <p className="slip__matchup">{matchup.matchupInfo}</p>
                     <GameDate matchup={matchup.matchup}/>
                 </div>
-                <SlipForm price={matchup.price}/>
+                <SlipForm price={matchup.price} id={matchup.id}/>
             </div>
         </div>
     )
