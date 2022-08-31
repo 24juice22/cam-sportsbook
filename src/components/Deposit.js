@@ -6,8 +6,7 @@ function Deposit() {
 
     const depositVisibleStyle = {
         visibility: depositIsVisible ? "visible" : "hidden",
-        height: depositIsVisible ? "80vh" : "0%",
-        opacity: depositIsVisible ? "1" : "0"
+        transform: depositIsVisible ? "scale(1)" : "scale(0.1)"
     }
 
     function handleDeposit(event) {
