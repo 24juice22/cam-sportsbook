@@ -600,6 +600,39 @@ h3 {
   box-sizing: border-box;
 }
 
+.bet-confirm__title {
+  font-size: 3.5rem;
+  padding-bottom: 2rem;
+  color: blue;
+  text-align: center;
+}
+
+/* BetConfirmBox */
+.bet-confirm__box {
+  padding-bottom: 2.5rem;
+}
+
+.wager {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wager__amount {
+  color: blue;
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.bet-confirm__button {
+  font-size: 1.6rem;
+  border-color: blue;
+  width: 100%;
+}
+
 
 
 

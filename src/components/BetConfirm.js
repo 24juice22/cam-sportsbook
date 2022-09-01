@@ -5,13 +5,18 @@ import BetConfirmBox from "./BetConfirmBox"
 function BetConfirm() {
     const {betbarActive} = useContext(SportsbookContext)
 
-    let betElements = betbarActive.map(item => <BetConfirmBox item={item} />);
+    let betElements = betbarActive.map(item => {
+        if (item.betAmount > 0)
+            return <BetConfirmBox item={item} />
+});
 
     return (
         <div className="bet-confirm">
-            <h2>Confirm Wager</h2>
+            <h2 className="bet-confirm__title">Confirm Wager</h2>
             {betElements}
-            <button className="btn">Confirm</button>
+            <div className="flex">
+                <button className="btn bet-confirm__button">Confirm</button>
+            </div>
         </div>
     )
 }
