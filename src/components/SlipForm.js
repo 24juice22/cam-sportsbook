@@ -8,15 +8,15 @@ function SlipForm({price, id}) {
 
     function winAmount(bet) {
         return price < 0 ? 
-            (Math.round(((bet / Math.abs(price)) * 100) * 100) / 100).toFixed(2) : 
-            (Math.round(((bet/100) * price) * 100) / 100).toFixed(2);
+            parseInt((Math.round(((bet / Math.abs(price)) * 100) * 100) / 100).toFixed(2)) : 
+            parseInt((Math.round(((bet/100) * price) * 100) / 100).toFixed(2));
     }
 
     function handleChange(event) {
         setWagerAmount(event.target.value)
         setBetbarActive(prevValue => prevValue.map(value =>{
             return value.id === event.target.attributes.id.nodeValue ?
-                {...value, betAmount: parseInt(event.target.value), winAmount: winAmount(parseInt(event.target.value))} :
+                {...value, betAmount: parseInt(event.target.value), winAmount: winAmount(event.target.value)} :
                 value
         }))
     }

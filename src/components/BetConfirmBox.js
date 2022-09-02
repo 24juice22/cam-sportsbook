@@ -2,7 +2,6 @@ import React from "react"
 import GameDate from "./GameDate"
 
 function BetConfirmBox({item}) {
-    console.log(item)
     return (
         <div className="bet-confirm__box">
             <div className="slip__line-numbers">
