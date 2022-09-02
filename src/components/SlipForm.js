@@ -21,9 +21,6 @@ function SlipForm({price, id}) {
         }))
     }
 
-    
-    
-    console.log(betbarActive)
     return (
         <>
             <form className="slip__form">

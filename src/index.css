@@ -596,8 +596,11 @@ h3 {
   left: 0;
   right: 0;
   margin: auto;
+  transform: scale(0.1);
+  visibility: hidden;
   z-index: 10;
   box-sizing: border-box;
+  transition: transform .4s, visibility .05s ease-in-out;
 }
 
 .bet-confirm__title {

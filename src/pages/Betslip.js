@@ -4,7 +4,7 @@ import Slip from "../components/Slip"
 import BetConfirm from "../components/BetConfirm"
 
 function Betslip() {
-    const [betConfirmationVisible, setBetConfirmationVisible] = React.useState(false);
+    const [betConfirmVisible, setBetConfirmVisible] = React.useState(false);
     const {betbarActive, setBetbarActive, loggedIn, loginIsVisible, setLoginIsVisible} = useContext(SportsbookContext)
 
     const slipElements = betbarActive.map(matchup => <Slip matchup={matchup} exitClicked={exitClicked}/>);
@@ -23,7 +23,7 @@ function Betslip() {
     }
 
     function betDisplay() {
-        setBetConfirmationVisible(true)
+        setBetConfirmVisible(true)
     }
 
 
@@ -34,7 +34,7 @@ function Betslip() {
             {slipElements}
             {betbarActive.length > 0 && !loggedIn && <button className="btn betslip__button" onClick={loginDisplay}>Login to Bet</button>}
             {betbarActive.length > 0 && loggedIn && <button className="btn betslip__button" onClick={betDisplay}>Bet</button>}
-            {betConfirmationVisible && <BetConfirm bets={betbarActive}/>}
+            {betConfirmVisible && <BetConfirm bets={betbarActive} betConfirmVisible={betConfirmVisible} setBetConfirmVisible={setBetConfirmVisible}/>}
         </div>
     )
 }
