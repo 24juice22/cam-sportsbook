@@ -18,9 +18,9 @@ function BetConfirm() {
 
             <h2 className="bet-confirm__title">Confirm Wager</h2>
             {betElements}
-            <div className="wager-total">
-                <p className="wager-total__amount">Total Bet Amount: ${betTotal}</p>
-                <p className="wager-total__amount">Total Payout ${winTotal}</p>
+            <div className="bet-confirm__totals">
+                <p className="bet-confirm__total">Total Bet Amount: <span>${betTotal}</span></p>
+                <p className="bet-confirm__total">Total Payout: <span>${winTotal}</span></p>
             </div>
             <div className="flex">
                 <button className="btn bet-confirm__button">Confirm</button>

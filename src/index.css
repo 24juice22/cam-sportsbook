@@ -588,11 +588,11 @@ h3 {
   background-color: white;
   box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
   width: 85vw;
-  height: 75vh;
+  height: fit-content;
   position: absolute;
   padding: 2rem;
-  top: 8.365rem;
-  bottom: 7.18rem;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
@@ -620,6 +620,16 @@ h3 {
 .wager__amount {
   color: blue;
   font-weight: bold;
+}
+
+.bet-confirm__totals {
+  font-weight: bold;
+  font-size: 2.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.bet-confirm__total > span {
+  color: blue;
 }
 
 .flex {
