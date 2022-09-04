@@ -14,7 +14,7 @@ function SlipForm({price, id}) {
     }
 
     function handleChange(event) {
-        setWagerAmount(Number(event.target.value))
+        setWagerAmount(event.target.value)
         setBetbarActive(prevValue => prevValue.map(value => {
             return value.id === event.target.attributes.id.nodeValue ?
                 {...value, betAmount: Number(event.target.value), winAmount: Number(winAmount(event.target.value))} :
@@ -37,7 +37,7 @@ function SlipForm({price, id}) {
                     id={id}
                 />
             </form>
-            <p className="wager-output">You Will Win <span className="wager-output__amount">${winAmount(wagerAmount)}</span></p>
+            <p className="wager-output">You Will Win <span className="wager-output__amount">${winAmount(Number(wagerAmount))}</span></p>
 
         </>
     )
