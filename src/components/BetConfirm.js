@@ -15,8 +15,23 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
             return <BetConfirmBox item={item} />
     });
 
-    let betTotal = betbarActive.reduce((a, b) => a.betAmount + b.betAmount);
-    let winTotal = betbarActive.reduce((a, b) => a.winAmount + b.winAmount)
+    function betTotal() {
+        let betTotal = 0;
+        for (let bets of betbarActive)
+            if (bets.betAmount > 0)
+                betTotal += bets.betAmount
+        return betTotal.toFixed(2)
+    }
+
+    function winTotal() {
+        let winTotal = 0;
+        for (let bets of betbarActive)
+            if (bets.winAmount > 0) {
+                console.log(bets)
+                winTotal += bets.winAmount
+            }
+        return winTotal.toFixed(2)
+    }
 
     function hideBetConfirm() {
         setBetConfirmVisible(false);
@@ -28,8 +43,8 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
             <h2 className="bet-confirm__title">Confirm Wager</h2>
             {betElements}
             <div className="bet-confirm__totals">
-                <p className="bet-confirm__total">Total Bet Amount: <span>${betTotal}</span></p>
-                <p className="bet-confirm__total">Total Payout: <span>${winTotal}</span></p>
+                <p className="bet-confirm__total">Total Bet Amount: <span>${betTotal()}</span></p>
+                <p className="bet-confirm__total">Total Payout: <span>${winTotal()}</span></p>
             </div>
             <div className="flex">
                 <button className="btn bet-confirm__button">Confirm</button>
