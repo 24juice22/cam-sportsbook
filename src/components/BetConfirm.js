@@ -3,7 +3,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import BetConfirmBox from "./BetConfirmBox"
 
 function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
-    const {betbarActive} = useContext(SportsbookContext);
+    const {betbarActive, accounts, setAccounts, loggedIn, setLoggedIn} = useContext(SportsbookContext);
 
     const betConfirmStyles = {
         visibility: betConfirmVisible ? "visible" : "hidden",
@@ -37,6 +37,22 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
         setBetConfirmVisible(false);
     }
 
+    function betConfirmed() {
+        setAccounts(prevValue => prevValue.map(value =>{
+            return value.username === loggedIn.username ?
+                {...value, bankroll: value.bankroll - betTotal()} :
+                value
+        }))
+        setLoggedIn(prevValue => {
+            return {...prevValue, bankroll: prevValue.bankroll - betTotal()}
+        })
+        hideBetConfirm()
+    }
+
+    React.useEffect(() => {
+        localStorage.setItem("accounts", JSON.stringify(accounts))
+    }, [accounts])
+
     return (
         <div className="bet-confirm" style={betConfirmStyles}>
             <button className="btn--exit" onClick={hideBetConfirm}>X</button>
@@ -47,7 +63,7 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
                 <p className="bet-confirm__total">Total Payout: <span>${winTotal()}</span></p>
             </div>
             <div className="flex">
-                <button className="btn bet-confirm__button">Confirm</button>
+                <button className="btn bet-confirm__button" onClick={betConfirmed}>Confirm</button>
             </div>
         </div>
     )
