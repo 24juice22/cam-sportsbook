@@ -646,6 +646,19 @@ h3 {
   width: 100%;
 }
 
+/* MyBets */
+.bets {
+  min-height: calc(100vh - 14.665rem);
+  background-color: white;
+}
+
+.bets__title {
+  color: var(--color-primary);
+  text-align: center;
+  margin: 0;
+  padding: 2rem 0;
+}
+
 
 
 

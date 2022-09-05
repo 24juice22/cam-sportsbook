@@ -23,6 +23,7 @@ function App() {
   const [loginIsVisible, setLoginIsVisible] = React.useState(false)
   const [joinIsVisible, setJoinIsVisible] = React.useState(false)
   const [depositIsVisible, setDepositIsVisible] = React.useState(false)
+  const [confirmedBets, setConfirmedBets] = React.useState([])
   const [accounts, setAccounts] = React.useState(
     JSON.parse(localStorage.getItem("accounts")) || []
   )
@@ -41,7 +42,7 @@ function App() {
   if(games) return (
     <Router>
       <div className="body">
-        <SportsbookContext.Provider value={{betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible}}>
+        <SportsbookContext.Provider value={{betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, confirmedBets, setConfirmedBets}}>
           <Navbar setGames={setGames} setSport={setSport} />
           <Routes>
               <Route path="/" element={<Home games={games} sport={sport} />}>
