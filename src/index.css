@@ -679,7 +679,24 @@ h3 {
   padding-bottom: 1.5rem;
 }
 
+.account__message {
+  font-weight: 500;
+}
 
+.account__btn {
+  border-color: var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-size: 2rem;
+  transition-duration: .2s;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.account__btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
 
 
 

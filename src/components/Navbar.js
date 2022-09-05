@@ -14,7 +14,7 @@ export default function Navbar({setGames, setSport}) {
     const [footballNcaa, setFootballNcaa] = React.useState(null);
     const [baseball, setBaseball] = React.useState(null);
 
-    const { loginIsVisible, setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn } = useContext(SportsbookContext)
+    const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn } = useContext(SportsbookContext)
 
     React.useEffect(() => {
         fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -78,8 +78,11 @@ export default function Navbar({setGames, setSport}) {
     }
 
     function depositDisplay() {
-        console.log("clicked")
         setDepositIsVisible(true)
+    }
+
+    function logoff() {
+        setLoggedIn(null)
     }
     
     return (
@@ -93,6 +96,7 @@ export default function Navbar({setGames, setSport}) {
                     <div className="navbar__buttons">
                         {!loggedIn && <button className="btn navbar__btn navbar__btn--login" onClick={loginDisplay}>Login</button>}
                         {!loggedIn && <button className="btn navbar__btn navbar__btn--join" onClick={joinDisplay}>JOIN NOW</button>}
+                        {loggedIn && <button className="btn navbar__btn navbar__btn--logoff" onClick={logoff}>Log Off</button>}
                         {loggedIn && <button className="btn navbar__btn navbar__btn--deposit" onClick={depositDisplay}>Deposit</button>}
                     </div>
                 </div>
