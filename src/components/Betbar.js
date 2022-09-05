@@ -26,12 +26,9 @@ export default function Betbar() {
                         <Link className="betbar__link betslip__link" to="/betslip" style={betbarStyles}>Betslip</Link>
                     </li>
                     <li className="betbar__list-item">
-                        <Link className="betbar__link" to="/MyBets">My Bets</Link>
-                    </li>
-                    {loggedIn && <li className="betbar__list-item">
-                        <p>${(loggedIn.bankroll)}</p>
+                        {loggedIn && <p>${(loggedIn.bankroll)}</p>}
                         <Link className="betbar__link" to="/Account">Account</Link>
-                    </li>}
+                    </li>
                 </ul>
             </div>
         </nav>

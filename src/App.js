@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar"
 import Betbar from "./components/Betbar"
 import Home from "./pages/Home"
 import Betslip from "./pages/Betslip"
-import MyBets from "./pages/MyBets"
 import Account from "./pages/Account"
 import Login from "./components/Login"
 import Join from "./components/Join"
@@ -52,7 +51,6 @@ function App() {
                 <Route path="ncaaf" element={<Ncaaf games={games} sport={sport}/>} />
               </Route>
               <Route path="betslip" element={<Betslip />} />
-              <Route path="mybets" element={<MyBets />} />
               <Route path="account" element={<Account />} />
           </Routes>
           <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>

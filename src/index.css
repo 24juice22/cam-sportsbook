@@ -646,18 +646,40 @@ h3 {
   width: 100%;
 }
 
-/* MyBets */
-.bets {
+/* Account */
+.account {
   min-height: calc(100vh - 14.665rem);
   background-color: white;
+  padding: 2rem 0 4rem;
 }
 
-.bets__title {
+.account__title {
   color: var(--color-primary);
   text-align: center;
   margin: 0;
-  padding: 2rem 0;
+  padding: 2rem 0 3rem;
 }
+
+.account__name {
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+
+.account__bankroll {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  padding-bottom: 2rem;
+}
+
+.bets__title {
+  font-size: 3rem;
+  color: var(--color-secondary);
+  padding-bottom: 1.5rem;
+}
+
+
 
 
 
