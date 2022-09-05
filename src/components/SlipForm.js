@@ -7,7 +7,6 @@ function SlipForm({price, id}) {
     const {setBetbarActive} = useContext(SportsbookContext)
 
     function winAmount(bet) {
-        console.log(bet)
         return price < 0 ? 
            (Math.round(((bet / Math.abs(price)) * 100) * 100) / 100).toFixed(2) : 
            (Math.round(((bet/100) * price) * 100) / 100).toFixed(2);

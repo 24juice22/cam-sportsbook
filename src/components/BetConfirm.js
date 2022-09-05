@@ -3,7 +3,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import BetConfirmBox from "./BetConfirmBox"
 
 function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
-    const {betbarActive, accounts, setAccounts, loggedIn, setLoggedIn} = useContext(SportsbookContext);
+    const {betbarActive, setBetbarActive, accounts, setAccounts, loggedIn, setLoggedIn} = useContext(SportsbookContext);
 
     const betConfirmStyles = {
         visibility: betConfirmVisible ? "visible" : "hidden",
@@ -47,6 +47,9 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
             return {...prevValue, bankroll: prevValue.bankroll - betTotal()}
         })
         hideBetConfirm()
+        setBetbarActive(prevValues => {
+            return prevValues.filter(value => !value.betAmount)
+        })
     }
 
     React.useEffect(() => {
