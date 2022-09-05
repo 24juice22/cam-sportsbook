@@ -16,7 +16,8 @@ function Join() {
             last: event.target[1].value,
             username: event.target[2].value,
             password: event.target[3].value,
-            bankroll: 0
+            bankroll: 0,
+            bets: []
         };
         setAccounts([...accounts, newAccount]);
         hideJoin();

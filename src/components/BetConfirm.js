@@ -3,7 +3,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import BetConfirmBox from "./BetConfirmBox"
 
 function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
-    const {betbarActive, setBetbarActive, accounts, setAccounts, loggedIn, setLoggedIn, setConfirmedBets} = useContext(SportsbookContext);
+    const {betbarActive, setBetbarActive, accounts, setAccounts, loggedIn, setLoggedIn, confirmedBets, setConfirmedBets} = useContext(SportsbookContext);
 
     const betConfirmStyles = {
         visibility: betConfirmVisible ? "visible" : "hidden",
@@ -38,22 +38,21 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
     }
 
     function betConfirmed() {
+        setConfirmedBets(prevValues => {
+            for (let bet of betbarActive)
+                if (bet.betAmount > 0) 
+                    prevValues.push(bet)
+                return prevValues; 
+        });
         setAccounts(prevValue => prevValue.map(value =>{
             return value.username === loggedIn.username ?
-                {...value, bankroll: value.bankroll - betTotal()} :
+                {...value, bankroll: value.bankroll - betTotal(), bets: confirmedBets} :
                 value
         }))
         setLoggedIn(prevValue => {
-            return {...prevValue, bankroll: prevValue.bankroll - betTotal()}
+            return {...prevValue, bankroll: prevValue.bankroll - betTotal(), bets: confirmedBets}
         })
         hideBetConfirm()
-        setConfirmedBets(prevValues => {
-            for (let bet of betbarActive)
-                if (bet.betAmount > 0) {
-                    prevValues.push(bet)
-                }
-                return prevValues; 
-        });
         setBetbarActive(prevValues => {
             return prevValues.filter(value => !value.betAmount)
         })

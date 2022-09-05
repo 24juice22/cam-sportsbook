@@ -3,9 +3,10 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import BetConfirmBox from "../components/BetConfirmBox"
 
 function Account() {
-    const { loggedIn, confirmedBets } = useContext(SportsbookContext);
+    const { loggedIn } = useContext(SportsbookContext);
 
-    let confirmedBetElements = confirmedBets.map(item => {
+    let previousBets = loggedIn.bets;
+    let confirmedBetElements = previousBets.map(item => {
             return <BetConfirmBox item={item} />
     });
 
