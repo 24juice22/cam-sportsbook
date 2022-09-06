@@ -2,7 +2,7 @@ import React, {useContext} from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Login({loginIsVisible, setLoginIsVisible}) {
-    const { loggedIn, setLoggedIn, accounts } = useContext(SportsbookContext);
+    const { loggedIn, setLoggedIn, accounts, setJoinIsVisible } = useContext(SportsbookContext);
     const [errorMessage, setErrorMessage] = React.useState(false);
     
     const loginVisibleStyle = {
@@ -34,6 +34,10 @@ function Login({loginIsVisible, setLoginIsVisible}) {
 
     function inputChange(event) {
         setErrorMessage(false)
+    }
+
+    function joinDisplay() {
+        setJoinIsVisible(true)
     }
 
     return (
@@ -70,7 +74,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                         Login
                     </button>
                 </form>
-                <a className="join-link"href="#">Don't have an account? JOIN NOW</a>
+                <a className="join-link" onClick={joinDisplay}>Don't have an account? JOIN NOW</a>
                 {errorMessage && <p className="login__error">Incorrect username and/or password</p>}
                 </div>
             </div>
