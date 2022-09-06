@@ -33,7 +33,7 @@ function Account() {
                 <p className="account__bankroll">Bankroll: {loggedIn.bankroll}</p>
                 <div className="account__bets">
                     <h2 className="bets__title">My Bets</h2>
-                    {confirmedBetElements}
+                    {loggedIn.bets.length > 0 ? confirmedBetElements : <p>You have not made any bets.</p>}
                 </div>
             </div>
         </div>
