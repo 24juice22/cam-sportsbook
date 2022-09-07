@@ -13,7 +13,7 @@ function Account() {
         return (
             <div className="account">
                 <div className="container--wide">
-                    <h1 className="account__title">Account</h1>
+                    <h1 className="title account__title">Account</h1>
                     <p className="account__message">You are not currently logged in. Please log in to access your account.</p>
                     <button className="btn btn--outline account__btn" onClick={loginDisplay}>Login</button>
                 </div>
@@ -28,7 +28,7 @@ function Account() {
     return (
         <div className="account">
             <div className="container--wide">
-                <h1 className="account__title">Account</h1>
+                <h1 className="title title--page">Account</h1>
                 <p className="account__name">{loggedIn.first} {loggedIn.last}</p>
                 <p className="account__bankroll">Bankroll: {loggedIn.bankroll}</p>
                 <div className="account__bets">

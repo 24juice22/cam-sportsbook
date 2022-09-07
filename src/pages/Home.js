@@ -7,7 +7,7 @@ function Home({games, sport}) {
     
     return (
         <div>
-            <h1 className="title">{`${sport} Odds`}</h1>
+            <h1 className="odds__title">{`${sport} Odds`}</h1>
             <ul className="container--wide list line-descriptions">
                 <li className="line-descriptions__item">Spread</li>
                 <li className="line-descriptions__item">Total</li>

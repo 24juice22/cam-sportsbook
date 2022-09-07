@@ -45,7 +45,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
             <div className="container--wide">
                 <button className="btn btn--exit" onClick={hideLogin}>X</button>
                 <div className="container--widest">
-                <h2 className="login__title">Sign In</h2>
+                <h2 className="title">Sign In</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-container">
                         <label>Username </label>

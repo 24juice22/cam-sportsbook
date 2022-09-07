@@ -33,7 +33,7 @@ function Deposit() {
     return (
         <div className="popup" style={depositVisibleStyle}>
             <div className="container--wide">
-            <h2 className="deposit__title">Deposit Money</h2>
+            <h2 className="title">Deposit Money</h2>
             <button className="btn btn--exit" onClick={hideDeposit}>X</button>
             <form className="deposit__form">
                 <div className="deposit-container">

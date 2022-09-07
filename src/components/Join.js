@@ -36,7 +36,7 @@ function Join() {
             <div className="container--wide">
                 <button className="btn btn--exit" onClick={hideJoin}>X</button>
                 <div className="container--widest">
-                <h2 className="join__title">Create Account</h2>
+                <h2 className="title">Create Account</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-container">
                         <label>First Name </label>
