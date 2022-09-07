@@ -69,7 +69,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                     </div>
                     <button 
                         type="submit"
-                        className="btn login__button"
+                        className="btn btn--popup"
                     >
                         Login
                     </button>

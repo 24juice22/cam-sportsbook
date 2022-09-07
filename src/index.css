@@ -110,6 +110,13 @@ h3 {
   padding: 0 .45rem;
 }
 
+.btn--popup {
+  font-size: 1.6rem;
+  border-color: var(--color-primary);
+  width: 100%;
+  margin: 1rem 0;
+}
+
 .btn:active {
  filter: brightness(75%);
 }
@@ -226,7 +233,7 @@ h3 {
   background-color: rgb(189, 252, 252);
   border-color: var(--color-primary);
   color: var(--color-primary);
-  margin-left: 1REM;
+  margin-left: 1rem;
 }
 
 .navbar__list {
@@ -331,7 +338,7 @@ h3 {
   bottom: 0;
   position: fixed;
   overflow: hidden;
-  background-color: blue;
+  background-color: var(--color-primary);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -341,7 +348,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 0;
 }
 
 .betbar__list-item {
@@ -476,13 +482,6 @@ h3 {
   margin: 2rem auto;
 }
 
-.login__button {
-  font-size: 1.6rem;
-  border-color: blue;
-  width: 100%;
-  margin: 1rem 0;
-}
-
 .join-link {
   font-size: 1.5rem;
   color: blue;
@@ -506,13 +505,6 @@ h3 {
   margin: .5rem;
 }
 
-.join__button {
-  font-size: 1.6rem;
-  border-color: blue;
-  width: 100%;
-  margin: 1rem 0;
-}
-
 /* Deposit */
 .deposit-container {
   display: flex;
@@ -523,13 +515,6 @@ h3 {
 .deposit__input {
   width: 15rem;
   margin-left: .5rem;
-}
-
-.deposit__button {
-  font-size: 1.6rem;
-  border-color: blue;
-  width: 100%;
-  margin: 1rem 0;
 }
 
 /* BetConfirm */
@@ -571,12 +556,6 @@ h3 {
 .flex {
   display: flex;
   justify-content: center;
-}
-
-.bet-confirm__button {
-  font-size: 1.6rem;
-  border-color: blue;
-  width: 100%;
 }
 
 /* Account */

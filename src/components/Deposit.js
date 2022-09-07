@@ -48,7 +48,7 @@ function Deposit() {
                 </div>
                 <button 
                     type="submit"
-                    className="btn deposit__button"
+                    className="btn btn--popup"
                     onClick={handleDeposit}
                 >
                     Add Money

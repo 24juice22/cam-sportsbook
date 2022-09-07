@@ -76,7 +76,7 @@ function Join() {
                     </div>
                     <button 
                         type="submit"
-                        className="btn join__button"
+                        className="btn btn--popup"
                     >
                         Create Account
                     </button>
