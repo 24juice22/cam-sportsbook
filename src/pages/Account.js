@@ -15,7 +15,7 @@ function Account() {
                 <div className="container--wide">
                     <h1 className="account__title">Account</h1>
                     <p className="account__message">You are not currently logged in. Please log in to access your account.</p>
-                    <button className="btn account__btn" onClick={loginDisplay}>Login</button>
+                    <button className="btn btn--outline account__btn" onClick={loginDisplay}>Login</button>
                 </div>
             </div>
         )

@@ -5,7 +5,7 @@ import SlipForm from "./SlipForm"
 function Slip({matchup, exitClicked}) {
     return (
         <div className="box slip">
-            <button className="btn slip__btn--exit" onClick={() => exitClicked(matchup.id)}>X</button>
+            <button className="btn btn--exit slip__btn--exit" onClick={() => exitClicked(matchup.id)}>X</button>
             <div className="container--wide">
                 <div className="slip__line-numbers">
                     <p className="slip__point">{matchup.team} {matchup.point}</p>
