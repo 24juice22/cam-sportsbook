@@ -23,9 +23,8 @@ function Betslip() {
     }
 
     function betDisplay() {
-        setBetConfirmVisible(true)
+        setBetConfirmVisible(true);
     }
-
 
     return (
         <div className="betslip">
