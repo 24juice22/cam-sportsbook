@@ -32,7 +32,7 @@ function Join() {
       }, [accounts])
 
     return (
-        <div className="join" style={joinVisibleStyle}>
+        <div className="popup" style={joinVisibleStyle}>
             <div className="container--wide">
                 <button className="btn btn--exit" onClick={hideJoin}>X</button>
                 <div className="container--widest">

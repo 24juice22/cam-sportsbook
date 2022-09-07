@@ -64,14 +64,14 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
 
     if (betTotal() > loggedIn.bankroll)
         return (
-            <div className="bet-confirm" style={betConfirmStyles}>
+            <div className="popup bet-confirm" style={betConfirmStyles}>
                 <button className="btn--exit" onClick={hideBetConfirm}>X</button>
                 <p>Your total bet amount exceeds your bankroll. Please adjust your bets.</p>
             </div>
         )
 
     return (
-        <div className="bet-confirm" style={betConfirmStyles}>
+        <div className="popup" style={betConfirmStyles}>
             <button className="btn--exit" onClick={hideBetConfirm}>X</button>
             <h2 className="bet-confirm__title">Confirm Wager</h2>
             {betElements}

@@ -41,7 +41,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
     }
 
     return (
-        <div className="login" style={loginVisibleStyle}>
+        <div className="popup" style={loginVisibleStyle}>
             <div className="container--wide">
                 <button className="btn btn--exit" onClick={hideLogin}>X</button>
                 <div className="container--widest">

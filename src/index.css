@@ -121,6 +121,26 @@ h3 {
   padding-left: 0;
 }
 
+/* Popup */
+.popup {
+  background-color: white;
+  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
+  width: 85vw;
+  height: 75vh;
+  position: absolute;
+  padding: 2rem;
+  top: 8.365rem;
+  bottom: 4.84rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: scale(0.1);
+  visibility: hidden;
+  z-index: 10;
+  box-sizing: border-box;
+  transition: transform .4s, visibility .05s ease-in-out;
+}
+
 /* Body */
 .body {
   height: 100%;
@@ -440,25 +460,6 @@ h3 {
 }
 
 /* Login */
-.login {
-  background-color: white;
-  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 85vw;
-  height: 75vh;
-  position: absolute;
-  padding: 2rem;
-  top: 8.365rem;
-  bottom: 4.84rem;
-  left: 0;
-  right: 0;
-  margin: auto;
-  transform: scale(0.1);
-  visibility: hidden;
-  z-index: 10;
-  box-sizing: border-box;
-  transition: transform .4s, visibility .05s ease-in-out;
-}
-
 .login__title {
   color: var(--color-primary);
 }
@@ -490,25 +491,6 @@ h3 {
 }
 
 /* Join */
-.join {
-  background-color: white;
-  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 85vw;
-  height: 90vh;
-  position: absolute;
-  padding: 2rem;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  transform: scale(0.1);
-  visibility: hidden;
-  z-index: 10;
-  box-sizing: border-box;
-  transition: transform .4s, visibility .05s ease-in-out;
-}
-
 .join__title {
   color: var(--color-primary);
 }
@@ -531,25 +513,6 @@ h3 {
 }
 
 /* Deposit */
-.deposit {
-  background-color: white;
-  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 85vw;
-  height: 75vh;
-  position: absolute;
-  padding: 2rem;
-  top: 8.365rem;
-  bottom: 7.18rem;
-  left: 0;
-  right: 0;
-  margin: auto;
-  transform: scale(0.1);
-  visibility: hidden;
-  z-index: 10;
-  box-sizing: border-box;
-  transition: transform .4s, visibility .05s ease-in-out;
-}
-
 .deposit__title {
   color: var(--color-primary);
 }
@@ -574,22 +537,7 @@ h3 {
 
 /* BetConfirm */
 .bet-confirm {
-  background-color: white;
-  box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
-  width: 85vw;
   height: fit-content;
-  position: absolute;
-  padding: 2rem;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  transform: scale(0.1);
-  visibility: hidden;
-  z-index: 10;
-  box-sizing: border-box;
-  transition: transform .4s, visibility .05s ease-in-out;
 }
 
 .bet-confirm__title {
