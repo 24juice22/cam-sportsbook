@@ -31,6 +31,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
     function hideLogin(event) {
         setLoginIsVisible(false);
         clearInputs(event);
+        setErrorMessage(false);
     }
 
     function clearInputs(event) {
