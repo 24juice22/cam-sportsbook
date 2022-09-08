@@ -41,6 +41,7 @@ h1 {
 
 h2 {
   font-size: 4rem;
+  margin-top: 1rem;
 }
 
 h3 {
@@ -145,10 +146,11 @@ h3 {
   box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
   width: 85vw;
   height: 75vh;
-  position: absolute;
+  position: fixed;
+  overflow: auto;
   padding: 2rem;
   top: 8.365rem;
-  bottom: 4.84rem;
+  bottom: 6.34rem;
   left: 0;
   right: 0;
   margin: auto;
