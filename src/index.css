@@ -337,33 +337,32 @@ h3 {
 .betbar {
   bottom: 0;
   position: fixed;
-  overflow: hidden;
   background-color: var(--color-primary);
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .betbar__list {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .betbar__list-item {
   position: relative;
-  padding: 1.5rem 1.75rem;
   color: white;
+  display: flex;
 }
 
 .betbar__list-item:hover {
-  transform: scale(1.1);
   background-color: var(--color-secondary);
+}
+
+.betbar__list-item:hover > .betbar__bankroll {
   color: var(--color-primary);
 }
 
 .betbar__link {
   color: white;
+  padding: 2.25rem 1.75rem;
   font-size: 1.6rem;
 }
 
@@ -372,15 +371,21 @@ h3 {
 }
 
 .betbar__bankroll {
+  position: absolute;
+  font-weight: 500;
+  top: .5rem;
+  left: 25%;
+  margin: 0 auto;
   color: var(--color-secondary);
 }
 
 .betslip__count {
   position: absolute;
-  color: white;
-  top: -2%;
-  left: 2%;
-  background: var(--color-primary);
+  color: blue;
+  font-weight: 500;
+  top: .25rem;
+  left: .25rem;
+  background: var(--color-secondary);
   border-radius: 50%;
   padding: .15rem .55rem;
   visibility: hidden;
@@ -391,12 +396,6 @@ h3 {
   min-height: calc(100vh - 14.665rem);
   background-color: rgb(189, 252, 252);
   padding-bottom: 1rem;
-}
-
-.betslip__title {
-  text-align: center;
-  margin: 0;
-  padding: 2rem 0;
 }
 
 .betslip__message {
@@ -418,10 +417,6 @@ h3 {
 .slip {
   border-color: var(--color-secondary);
   padding: 1.5rem 0;
-}
-
-.slip:last-of-type {
-  margin-bottom: 0;
 }
 
 .slip__btn--exit {
@@ -449,6 +444,8 @@ h3 {
   font-size: 1.3rem;
   padding: 1rem 0;
 }
+
+/* Slip Form */
 
 .slip__form {
   display: flex;
