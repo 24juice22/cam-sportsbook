@@ -20,11 +20,21 @@ function Join() {
             bets: []
         };
         setAccounts([...accounts, newAccount]);
-        hideJoin();
+        hideJoin(event);
     }
 
-    function hideJoin() {
+    function hideJoin(event) {
         setJoinIsVisible(false);
+        clearInputs(event);
+    }
+
+    function clearInputs(event) {
+        for (let i = 0; i < 4; i++) {
+            if (event.type === "submit") 
+                event.target[i].value = "";
+            else 
+                event.target.nextSibling.childNodes[1][i].value = "";
+        } 
     }
 
     React.useEffect(() => {

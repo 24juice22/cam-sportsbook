@@ -19,7 +19,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                 if (username === account.username && password === account.password) {
                     let correctAccountIndex = accounts.findIndex(item => item.username === username);
                     setLoggedIn(accounts[correctAccountIndex]);
-                    hideLogin();
+                    hideLogin(event);
                 }
             }
             {!loggedIn && setErrorMessage(true)}
@@ -28,8 +28,18 @@ function Login({loginIsVisible, setLoginIsVisible}) {
             setErrorMessage(true);
     }
 
-    function hideLogin() {
+    function hideLogin(event) {
         setLoginIsVisible(false);
+        clearInputs(event);
+    }
+
+    function clearInputs(event) {
+        for (let i = 0; i < 2; i++) {
+            if (event.type === "submit") 
+                event.target[i].value = "";
+            else 
+                event.target.nextSibling.childNodes[1][i].value = ""; 
+        }
     }
 
     function inputChange(event) {
@@ -55,6 +65,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                             className="login__input"
                             onChange={inputChange}
                             required
+                            autoComplete="off"
                         />
                     </div>
                     <div className="input-container">
@@ -65,6 +76,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                             className="login__input"
                             onChange={inputChange}
                             required
+                            autoComplete="off"
                         />
                     </div>
                     <button 
