@@ -240,7 +240,6 @@ h3 {
   display: flex;
   justify-content: center;
   padding: .85rem 0;
-  width: 95%;
   margin: 0 auto;
 }
 
@@ -379,6 +378,10 @@ h3 {
   color: var(--color-secondary);
 }
 
+.betbar__bankroll:hover {
+  color: var(--color-primary);
+}
+
 .betslip__count {
   position: absolute;
   color: blue;
@@ -393,7 +396,7 @@ h3 {
 
 /* Betslip */
 .betslip {
-  min-height: calc(100vh - 14.665rem);
+  min-height: 100vh;
   background-color: rgb(189, 252, 252);
   padding-bottom: 1rem;
 }
