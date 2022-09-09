@@ -55,6 +55,7 @@ function Join() {
                             name="first"
                             className="join__input"
                             required
+                            autoComplete="off"
                         />
                     </div>
                     <div className="input-container">
@@ -64,6 +65,7 @@ function Join() {
                             name="last"
                             className="join__input"
                             required
+                            autoComplete="off"
                         />
                     </div>
                     <div className="input-container">
@@ -73,6 +75,7 @@ function Join() {
                             name="username"
                             className="join__input"
                             required
+                            autoComplete="off"
                         />
                     </div>
                     <div className="input-container">
@@ -82,6 +85,7 @@ function Join() {
                             name="pword"
                             className="join__input"
                             required
+                            autoComplete="off"
                         />
                     </div>
                     <button 
