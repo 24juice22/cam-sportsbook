@@ -518,7 +518,14 @@ h3 {
 
 /* BetConfirm */
 .bet-confirm {
-  height: fit-content;
+  height: 65vh;
+  color: red;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.bet-confirm__error {
+  padding: 1.5rem 0;
 }
 
 .bet-confirm__title {
@@ -529,17 +536,15 @@ h3 {
 
 /* BetConfirmBox */
 .bet-confirm__box {
-  padding-bottom: 2.5rem;
-}
-
-.wager {
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 .wager__amount {
-  color: blue;
   font-weight: bold;
+}
+
+.wager__amount > span{
+  color: blue;
 }
 
 .bet-confirm__totals {

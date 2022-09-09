@@ -66,6 +66,7 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
         return (
             <div className="popup bet-confirm" style={betConfirmStyles}>
                 <button className="btn--exit" onClick={hideBetConfirm}>X</button>
+                <h2 className="bet-confirm__error">Error</h2>
                 <p>Your total bet amount exceeds your bankroll. Please adjust your bets.</p>
             </div>
         )
