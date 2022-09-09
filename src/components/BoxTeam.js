@@ -4,7 +4,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 
 function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) {
-    const {setBetbarActive} = useContext(SportsbookContext)
+    const {betbarActive, setBetbarActive} = useContext(SportsbookContext)
 
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
@@ -31,13 +31,14 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
     }
 
     function allNewLines() {
+        let betID = betbarActive.map(item => item.id)
         const newLines = [   
             {
                 index: indexSpread,
                 indexType: "Point Spread",
                 team: team,
                 matchupInfo: `${awayTeam} @ ${homeTeam}`,
-                isClicked: false,
+                isClicked:  betID.includes(`spread-${team}`) ? true : false,
                 id: `spread-${team}`
             },
             {
@@ -45,7 +46,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
                 indexType: "Total",
                 team: totalTeam,
                 matchupInfo: `${awayTeam} @ ${homeTeam}`,
-                isClicked: false,
+                isClicked: betID.includes(`total-${team}`) ? true : false,
                 id: `total-${team}`
             },
             {
@@ -53,7 +54,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
                 indexType: "Moneyline",
                 team: team,
                 matchupInfo: `${awayTeam} @ ${homeTeam}`,
-                isClicked: false,
+                isClicked: betID.includes(`moneyline-${team}`) ? true : false,
                 id: `moneyline-${team}`
             }
         ];
