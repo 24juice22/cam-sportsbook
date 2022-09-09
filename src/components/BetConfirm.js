@@ -73,7 +73,7 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
 
     return (
         <div className="popup" style={betConfirmStyles}>
-            <button className="btn--exit" onClick={hideBetConfirm}>X</button>
+            <button className="btn btn--exit" onClick={hideBetConfirm}>X</button>
             <h2 className="title bet-confirm__title">Confirm Wager</h2>
             {betElements}
             <div className="bet-confirm__totals">
