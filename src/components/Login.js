@@ -20,9 +20,10 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                     let correctAccountIndex = accounts.findIndex(item => item.username === username);
                     setLoggedIn(accounts[correctAccountIndex]);
                     hideLogin(event);
+                    return
                 }
             }
-            {!loggedIn && setErrorMessage(true)}
+            setErrorMessage(true)
         }
         else    
             setErrorMessage(true);
