@@ -3,16 +3,12 @@ import GameDate from "./GameDate"
 import SlipForm from "./SlipForm"
 
 function Slip({matchup, exitClicked}) {
+    
+    // Fix point Issue with index of type total //
     let point = matchup.point;
     if (matchup.indexType === "Total") {
-        let totalPoint = [];
-        for (let i = point.length - 1; i > 0; i--) {
-            if (point[i] !== " " || point[i] !== "O" || point[i] !== "U")
-                totalPoint.unshift(point[i])
-        }
-        point = totalPoint.join("");
+        point = point.split(" ")[1];
     }
-
 
     return (
         <div className="box slip">
