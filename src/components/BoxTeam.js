@@ -23,8 +23,8 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
         }))
         setBetbarActive(prevValues => {
             if (prevValues.length) {
-                let something = prevValues.filter(value => value.id !== id)
-                if (something.length < prevValues.length) return something
+                let filteredBets = prevValues.filter(value => value.id !== id)
+                if (filteredBets.length < prevValues.length) return filteredBets;
             }
             return [...prevValues, {id: id, point: point, price: price, team: team, indexType: indexType, matchupInfo: matchupInfo, matchup: matchup}]
         })
