@@ -14,7 +14,7 @@ export default function Navbar({setGames, setSport}) {
     const [footballNcaa, setFootballNcaa] = React.useState(null);
     const [baseball, setBaseball] = React.useState(null);
 
-    const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn } = useContext(SportsbookContext)
+    const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn, setBetbarActive } = useContext(SportsbookContext)
 
     React.useEffect(() => {
         fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
@@ -83,6 +83,7 @@ export default function Navbar({setGames, setSport}) {
 
     function logoff() {
         setLoggedIn(null)
+        setBetbarActive([])
     }
     
     return (

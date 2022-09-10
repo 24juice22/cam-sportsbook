@@ -3,7 +3,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import BetConfirmBox from "./BetConfirmBox"
 
 function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
-    const {betbarActive, setBetbarActive, accounts, setAccounts, loggedIn, setLoggedIn, confirmedBets, setConfirmedBets} = useContext(SportsbookContext);
+    const {betbarActive, setBetbarActive, accounts, setAccounts, loggedIn, setLoggedIn} = useContext(SportsbookContext);
 
     const betConfirmStyles = {
         visibility: betConfirmVisible ? "visible" : "hidden",
@@ -26,10 +26,8 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
     function winTotal() {
         let winTotal = 0;
         for (let bets of betbarActive)
-            if (bets.winAmount > 0) {
-                console.log(bets)
+            if (bets.winAmount > 0) 
                 winTotal += bets.winAmount
-            }
         return winTotal.toFixed(2)
     }
 
@@ -38,20 +36,24 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
     }
 
     function betConfirmed() {
-        setConfirmedBets(prevValues => {
-            for (let bet of betbarActive)
-                if (bet.betAmount > 0) 
-                    prevValues.push(bet)
-                return prevValues; 
-        });
+        let newBets = []
+        for (let bet of betbarActive)
+            if (bet.betAmount > 0) 
+                newBets.push(bet)
         setAccounts(prevValue => prevValue.map(value =>{
             return value.username === loggedIn.username ?
-                {...value, bankroll: value.bankroll - betTotal(), bets: confirmedBets} :
+                {...value, bankroll: value.bankroll - betTotal(), bets: value.bets.concat(newBets)} :
                 value
         }))
+        console.log(accounts)
         setLoggedIn(prevValue => {
-            return {...prevValue, bankroll: prevValue.bankroll - betTotal(), bets: confirmedBets}
+            return {
+                ...prevValue, 
+                bankroll: prevValue.bankroll - betTotal(), 
+                bets: prevValue.bets.concat(newBets)
+            }
         })
+        console.log(loggedIn)
         hideBetConfirm()
         setBetbarActive(prevValues => {
             return prevValues.filter(value => !value.betAmount)
