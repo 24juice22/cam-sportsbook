@@ -12,6 +12,7 @@ import Account from "./pages/Account"
 import Login from "./components/Login"
 import Join from "./components/Join"
 import Deposit from "./components/Deposit"
+import ScrollToTop from "./components/ScrollToTop"
 import { SportsbookContext } from "./contexts/SportsbookContexts"
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
 
   if(games) return (
     <Router>
+      <ScrollToTop />
       <div className="body">
         <SportsbookContext.Provider value={{betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible}}>
           <Navbar setGames={setGames} setSport={setSport} />
