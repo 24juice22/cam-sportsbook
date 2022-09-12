@@ -269,17 +269,58 @@ h3 {
   color: white;
 }
 
-.thing {
+/* Slider */
+.slider {
   width: 100vw;
   height: 45vh;
-  background-color: red;
+  background-color: rgb(140, 0, 255);
+  position: relative;
 }
 
-.thing > div {
-  height: 80px;
-  width: 80px;
-  margin: auto 1.5rem;
-  background-color: yellow;
+.slider__arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+.slider__arrow--left {
+  left: 3rem;
+}
+
+.slider__arrow--right {
+  right: 3rem;
+}
+
+.slider__title {
+  text-align: center;
+  margin: 0;
+  padding: 2rem 0;
+}
+
+.slider__tagline {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.slider__dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+}
+
+.dot {
+  color: white;
+  font-size: 3rem;
+  margin: 0 .65rem;
+  cursor: pointer;
 }
 
 .page {

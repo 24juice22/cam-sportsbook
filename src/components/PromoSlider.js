@@ -27,6 +27,16 @@ function PromoSlider() {
         setCurrentIndex(newIndex);
     }
 
+    const dots = slides.map((slide, slideIndex) => {
+        console.log(slide + " " + slideIndex)
+        return <div 
+            className="dot"
+            key={slideIndex} 
+        >
+        ●   
+        </div>
+    })
+
     function nextPromo() {
         const isLastSlide = currentIndex === slides.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
@@ -34,17 +44,20 @@ function PromoSlider() {
     }
 
     return (
-        <div className="thing">
+        <div className="slider">
             <div>
-                <div onClick={previousPromo}>
+                <div onClick={previousPromo} className="slider__arrow slider__arrow--left">
                     <i class="fa-solid fa-angle-left"></i>
                 </div>
-                <div onClick={nextPromo}>
+                <div onClick={nextPromo} className="slider__arrow slider__arrow--right">
                     <i class="fa-solid fa-angle-right"></i>
                 </div>
             </div>
-             <h1>{slides[currentIndex].title}</h1> 
-             <p>{slides[currentIndex].description}</p>  
+            <h1 className="slider__title">{slides[currentIndex].title}</h1> 
+            <p className="slider__tagline">{slides[currentIndex].description}</p>
+            <div className="slider__dots">
+                {dots}
+            </div>  
         </div>
     )
 }
