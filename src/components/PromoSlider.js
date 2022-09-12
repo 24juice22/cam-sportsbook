@@ -21,21 +21,26 @@ function PromoSlider() {
         },
     ]
 
-    function previousPromo() {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-    }
-
     const dots = slides.map((slide, slideIndex) => {
         console.log(slide + " " + slideIndex)
         return <div 
             className="dot"
             key={slideIndex} 
+            onClick={() => chooseSlide(slideIndex)}
         >
         ●   
         </div>
     })
+
+    function chooseSlide(slideIndex) {
+        setCurrentIndex(slideIndex)
+    }
+
+    function previousPromo() {
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex);
+    }
 
     function nextPromo() {
         const isLastSlide = currentIndex === slides.length - 1;

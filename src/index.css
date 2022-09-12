@@ -285,6 +285,10 @@ h3 {
   cursor: pointer;
 }
 
+.slider__arrow:active {
+  transform: scale(.8);
+}
+
 .slider__arrow--left {
   left: 3rem;
 }
@@ -321,6 +325,10 @@ h3 {
   font-size: 3rem;
   margin: 0 .65rem;
   cursor: pointer;
+}
+
+.dot:active {
+  transform: scale(.8);
 }
 
 .page {
