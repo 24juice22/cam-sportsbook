@@ -164,7 +164,7 @@ h3 {
 /* Body */
 .body {
   height: 100%;
-  padding-bottom: 5rem;
+  background-color: var(--color-background);
 }
 
 .odds__title {
@@ -267,6 +267,23 @@ h3 {
 .navbar__link {
   padding: 0 .3rem;
   color: white;
+}
+
+.thing {
+  width: 100vw;
+  height: 45vh;
+  background-color: red;
+}
+
+.thing > div {
+  height: 80px;
+  width: 80px;
+  margin: auto 1.5rem;
+  background-color: yellow;
+}
+
+.page {
+  padding-bottom: 7rem;
 }
 
 /* Box */
@@ -398,7 +415,7 @@ h3 {
 
 /* Betslip */
 .betslip {
-  min-height: 100vh;
+  min-height: calc(100vh - 14.665rem);
   background-color: rgb(189, 252, 252);
   padding-bottom: 1rem;
 }
