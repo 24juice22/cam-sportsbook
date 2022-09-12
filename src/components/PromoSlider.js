@@ -22,11 +22,14 @@ function PromoSlider() {
     ]
 
     const dots = slides.map((slide, slideIndex) => {
-        console.log(slide + " " + slideIndex)
         return <div 
             className="dot"
             key={slideIndex} 
             onClick={() => chooseSlide(slideIndex)}
+            style = {currentIndex === slideIndex ? 
+                {color: "var(--color-secondary)"} : 
+                {color: "white"}
+            }
         >
         ●   
         </div>
