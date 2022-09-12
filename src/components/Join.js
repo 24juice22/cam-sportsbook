@@ -1,8 +1,8 @@
-import React, {useContext} from "react"
+import React, { useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Join() {
-    const { joinIsVisible, setJoinIsVisible, loggedIn, setLoggedIn, accounts, setAccounts } = useContext(SportsbookContext);
+    const { joinIsVisible, setJoinIsVisible, accounts, setAccounts } = useContext(SportsbookContext);
     
     const joinVisibleStyle = {
         visibility: joinIsVisible ? "visible" : "hidden",
