@@ -46,7 +46,7 @@ function App() {
           <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
           <Join />
           <Deposit />
-          <Betbar />
+          <Betbar setSport={setSport} />
         </SportsbookContext.Provider>
     </Router>
   );

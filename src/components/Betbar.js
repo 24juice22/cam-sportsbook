@@ -2,8 +2,8 @@ import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
-export default function Betbar() {
-    const {betbarActive, loggedIn, setSport,} = useContext(SportsbookContext);
+export default function Betbar({setSport}) {
+    const {betbarActive, loggedIn} = useContext(SportsbookContext);
 
     const slipCountStyles = {
         visibility: betbarActive.length ? "visible" : "hidden"
