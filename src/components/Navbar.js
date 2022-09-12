@@ -4,68 +4,27 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import mlb from "../images/mlb/mlb.png";
 import nfl from "../images/nfl/nfl.png";
 import nba from "../images/nba/nba.png";
-import Login from "./Login"
-import Join from "./Join"
-import Deposit from "./Deposit"
 
-export default function Navbar({setGames, setSport}) {
-    const [footballNfl, setFootballNfl] = React.useState(null);
-    const [basketball, setBasketball] = React.useState(null);
-    const [footballNcaa, setFootballNcaa] = React.useState(null);
-    const [baseball, setBaseball] = React.useState(null);
-
+export default function Navbar({setSport}) {
     const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn, setBetbarActive } = useContext(SportsbookContext)
 
-    React.useEffect(() => {
-        fetch("https://api.the-odds-api.com/v4/sports/baseball_mlb/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
-        .then(res => res.json())
-        .then(data => {
-          setBaseball(data);
-        }) 
-    }, [])
-
-    React.useEffect(() => {
-        fetch("https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
-        .then(res => res.json())
-        .then(data => {
-          setFootballNfl(data)
-        }) 
-    }, [])
-
-    React.useEffect(() => {
-        fetch("https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
-        .then(res => res.json())
-        .then(data => {
-          setBasketball(data);
-        }) 
-      }, [])
-    
-    React.useEffect(() => {
-        fetch("https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds/?regions=us&markets=spreads,totals,h2h&oddsFormat=american&apiKey=7e633aea1cc34e3ceec88cb2bb5d135d")
-        .then(res => res.json())
-        .then(data => {
-          setFootballNcaa(data);
-        }) 
-    }, [])
-    
+    function homeClick() {
+        setSport("MLB");
+    }
 
     function nflClick() {
-        setGames(footballNfl);
         setSport("NFL");
     }
 
     function mlbClick() {
-        setGames(baseball);
-        setSport("MLB");
+        setSport("MLB")
     }
 
     function nbaClick() {
-        setGames(basketball);
         setSport("NBA");
     }
 
     function ncaafClick() {
-        setGames(footballNcaa);
         setSport("NCAAF");
     }
 
@@ -90,10 +49,10 @@ export default function Navbar({setGames, setSport}) {
         <nav className="navbar">
             <div className="container">
                 <div className="navbar__top">
-                    <a href="#" className="navbar__brand">
+                    <Link to="/" className="navbar__brand" onClick={homeClick}>
                         <h3 className="navbar__logo">CAM</h3>
                         <span>Sportsbook</span>
-                    </a>
+                    </Link>
                     <div className="navbar__buttons">
                         {!loggedIn && <button className="btn btn--outline navbar__btn--login" onClick={loginDisplay}>Login</button>}
                         {!loggedIn && <button className="btn navbar__btn--join" onClick={joinDisplay}>JOIN NOW</button>}
