@@ -3,16 +3,23 @@ import { Link } from "react-router-dom"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 export default function Betbar() {
-    const {betbarActive, loggedIn} = useContext(SportsbookContext);
+    const {betbarActive, loggedIn, setSport,} = useContext(SportsbookContext);
 
     const slipCountStyles = {
         visibility: betbarActive.length ? "visible" : "hidden"
+    }
+
+    function homeClick() {
+        setSport("MLB")
     }
 
     return (
         <nav className="betbar">
             <div className="container--widest">
                 <ul className="list betbar__list">
+                    <li className="betbar__list-item">
+                        <Link className="betbar__link" to="/" onClick={homeClick}><i class="fa-solid fa-house-chimney"></i></Link>
+                    </li>
                     <li className="betbar__list-item">
                         <a className="betbar__link" href="#">Top</a>
                     </li>
