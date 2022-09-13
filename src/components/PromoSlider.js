@@ -1,21 +1,26 @@
-import React from "react"
+import React, {useContext} from "react"
+import { SportsbookContext } from "../contexts/SportsbookContexts"
+import sports from "../images/promos/sports.png"
+import money from "../images/promos/money.jpg"
+import stadium from "../images/promos/stadium.jpg"
 
 function PromoSlider() {
     const [currentIndex, setCurrentIndex] = React.useState(0);
+    const { setJoinIsVisible } = useContext(SportsbookContext);
 
     const slides = [
         {
-            url: "sports.png", 
+            url: sports, 
             title: "New Customer Promo", 
             description: "Sign Up Now and receive a RISK-FREE bet up to $500"
         },
         {
-            url: "sports.png", 
+            url: money, 
             title: "Refer A Friend", 
-            description: "Refer a friend and receive $50"
+            description: "And receive $50 on us"
         },
         {
-            url: "sports.png", 
+            url: stadium, 
             title: "No Sweat Bet", 
             description: "All Customers Invited"
         },
@@ -51,6 +56,18 @@ function PromoSlider() {
         setCurrentIndex(newIndex);
     }
 
+    function joinDisplay() {
+        setJoinIsVisible(true)
+    }
+
+    const backgroundImage = {
+        width: "100%",
+        height: "100%",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundImage: `url(${slides[currentIndex].url})`
+    }
+
     return (
         <div className="slider">
             <div>
@@ -61,8 +78,10 @@ function PromoSlider() {
                     <i class="fa-solid fa-angle-right"></i>
                 </div>
             </div>
+            <div style={backgroundImage}></div>
             <h1 className="slider__title">{slides[currentIndex].title}</h1> 
             <p className="slider__tagline">{slides[currentIndex].description}</p>
+            {currentIndex === 0 && <button className="btn slider__btn" onClick={joinDisplay}>JOIN NOW</button>}
             <div className="slider__dots">
                 {dots}
             </div>  

@@ -271,24 +271,22 @@ h3 {
 
 /* Slider */
 .slider {
-  width: 100vw;
-  height: 55vh;
-  background-image: url(./images/promos/sports.png);
   position: relative;
-  background-size: cover;
-  background-position: center;
+  height: 55vh;
+  width: 100vw;
 }
 
 .slider__arrow {
   position: absolute;
   top: 50%;
-  font-size: 3rem;
+  transform: translate(0, -50%);
+  font-size: 5rem;
   color: var(--color-secondary);
   cursor: pointer;
 }
 
 .slider__arrow:active {
-  transform: scale(.8);
+  font-size: 4rem;
 }
 
 .slider__arrow--left {
@@ -300,9 +298,11 @@ h3 {
 }
 
 .slider__title {
+  position: absolute;
+  top: 1%;
+  left: 0;
+  right: 0;
   text-align: center;
-  margin: 0;
-  padding: 2rem 0;
   color: var(--color-secondary);
   text-shadow: 2px 2px 2px black;
 }
@@ -317,6 +317,16 @@ h3 {
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 2px 2px 2px black;
+}
+
+.slider__btn {
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 8rem;
+  border-color: black;
 }
 
 .slider__dots {
