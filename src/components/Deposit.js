@@ -2,7 +2,7 @@ import React, {useContext} from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Deposit() {
-    const { depositIsVisible, setDepositIsVisible, accounts, setAccounts, loggedIn, setLoggedIn } = useContext(SportsbookContext);
+    const { depositIsVisible, setDepositIsVisible, accounts, setAccounts, loggedIn, setLoggedIn, setPopup } = useContext(SportsbookContext);
 
     const depositVisibleStyle = {
         visibility: depositIsVisible ? "visible" : "hidden",
@@ -28,6 +28,7 @@ function Deposit() {
 
     function hideDeposit() {
         setDepositIsVisible(false);
+        setPopup(false)
     }
     
     return (

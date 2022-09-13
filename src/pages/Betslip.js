@@ -5,7 +5,7 @@ import BetConfirm from "../components/BetConfirm"
 
 function Betslip() {
     const [betConfirmVisible, setBetConfirmVisible] = React.useState(false);
-    const {betbarActive, setBetbarActive, loggedIn, setLoginIsVisible} = useContext(SportsbookContext)
+    const {betbarActive, setBetbarActive, loggedIn, setLoginIsVisible, setPopup} = useContext(SportsbookContext)
 
     const slipElements = betbarActive.map(matchup => <Slip matchup={matchup} exitClicked={exitClicked}/>);
 
@@ -22,6 +22,7 @@ function Betslip() {
 
     function betDisplay() {
         setBetConfirmVisible(true);
+        setPopup(true)
     }
 
     return (

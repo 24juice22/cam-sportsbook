@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Join() {
-    const { joinIsVisible, setJoinIsVisible, accounts, setAccounts } = useContext(SportsbookContext);
+    const { joinIsVisible, setJoinIsVisible, accounts, setAccounts, setPopup } = useContext(SportsbookContext);
     
     const joinVisibleStyle = {
         visibility: joinIsVisible ? "visible" : "hidden",
@@ -26,6 +26,7 @@ function Join() {
     function hideJoin(event) {
         setJoinIsVisible(false);
         clearInputs(event);
+        setPopup(false)
     }
 
     function clearInputs(event) {

@@ -2,7 +2,7 @@ import React, {useContext} from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Login({loginIsVisible, setLoginIsVisible}) {
-    const { setLoggedIn, accounts, setJoinIsVisible } = useContext(SportsbookContext);
+    const { setLoggedIn, accounts, setJoinIsVisible, setPopup } = useContext(SportsbookContext);
     const [errorMessage, setErrorMessage] = React.useState(false);
     
     const loginVisibleStyle = {
@@ -33,6 +33,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
         setLoginIsVisible(false);
         clearInputs(event);
         setErrorMessage(false);
+        setPopup(false)
     }
 
     function clearInputs(event) {

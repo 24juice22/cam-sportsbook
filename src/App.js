@@ -23,14 +23,22 @@ function App() {
   const [loginIsVisible, setLoginIsVisible] = React.useState(false)
   const [joinIsVisible, setJoinIsVisible] = React.useState(false)
   const [depositIsVisible, setDepositIsVisible] = React.useState(false)
+  const [popup, setPopup] = React.useState(false)
   const [accounts, setAccounts] = React.useState(
     JSON.parse(localStorage.getItem("accounts")) || []
   )
 
+  React.useEffect(() => {
+    if (popup)
+      document.body.style.overflow = 'hidden'
+    else
+      document.body.style.overflow = 'unset'
+  }, [popup])
+
   return (
     <Router>
       <ScrollToTop />
-        <SportsbookContext.Provider value={{ betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, setSport}}>
+        <SportsbookContext.Provider value={{ betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, setSport, setPopup}}>
           <Navbar setSport={setSport} />
           <Routes>
               <Route index path="/" element={<Home sport={sport}/>}/>

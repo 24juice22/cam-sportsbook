@@ -6,7 +6,7 @@ import nfl from "../images/nfl/nfl.png";
 import nba from "../images/nba/nba.png";
 
 export default function Navbar({setSport}) {
-    const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn, setBetbarActive } = useContext(SportsbookContext)
+    const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn, setBetbarActive, setPopup } = useContext(SportsbookContext)
 
     function homeClick() {
         setSport("MLB");
@@ -30,14 +30,17 @@ export default function Navbar({setSport}) {
 
     function loginDisplay() {
         setLoginIsVisible(true)
+        setPopup(true)
     }
 
     function joinDisplay() {
         setJoinIsVisible(true)
+        setPopup(true)
     }
 
     function depositDisplay() {
         setDepositIsVisible(true)
+        setPopup(true)
     }
 
     function logoff() {
