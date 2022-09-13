@@ -1,15 +1,12 @@
 import React from "react" 
 import Layout from "./Layout"
 import Mlb from "./Mlb"
+import PromoSlider from "../components/PromoSlider"
 
 function Home({sport}) {
     return (
         <>
-            <div className="thing flex">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <PromoSlider />
             <Layout sport={sport}/>
             <Mlb />
         </>
