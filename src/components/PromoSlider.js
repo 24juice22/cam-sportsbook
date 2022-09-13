@@ -5,17 +5,17 @@ function PromoSlider() {
 
     const slides = [
         {
-            url: "dfvdfvdfvfdv", 
+            url: "sports.png", 
             title: "New Customer Promo", 
             description: "Sign Up Now and receive a RISK-FREE bet up to $500"
         },
         {
-            url: "dfvdfvdfvfdv", 
+            url: "sports.png", 
             title: "Refer A Friend", 
             description: "Refer a friend and receive $50"
         },
         {
-            url: "dfvdfvdfvfdv", 
+            url: "sports.png", 
             title: "No Sweat Bet", 
             description: "All Customers Invited"
         },
