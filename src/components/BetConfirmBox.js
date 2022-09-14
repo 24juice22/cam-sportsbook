@@ -21,8 +21,8 @@ function BetConfirmBox({item}) {
                 <GameDate matchup={item.matchup}/>
             </div>
             <div className="wager">
-                <p className="wager__amount">Bet Amount: <span>${item.betAmount}</span></p>
-                <p className="wager__amount">Payout: <span>${item.winAmount}</span></p>
+                <p className="wager__amount">Bet Amount: <span>${item.betAmount.toFixed(2)}</span></p>
+                <p className="wager__amount">Payout: <span>${item.winAmount.toFixed(2)}</span></p>
             </div>
         </div>
     )
