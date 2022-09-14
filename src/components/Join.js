@@ -57,6 +57,8 @@ function Join() {
                             className="join__input"
                             required
                             autoComplete="off"
+                            pattern="[A-Za-z]+"
+                            title="First name must contain only upper and lowercase letters"
                         />
                     </div>
                     <div className="input-container">
@@ -67,6 +69,8 @@ function Join() {
                             className="join__input"
                             required
                             autoComplete="off"
+                            pattern="[A-Za-z]+"
+                            title="Last name must contain only upper and lowercase letters"
                         />
                     </div>
                     <div className="input-container">
@@ -77,6 +81,8 @@ function Join() {
                             className="join__input"
                             required
                             autoComplete="off"
+                            pattern="[A-Za-z0-9]{1,15}"
+                            title="Username can only contain upper and lower case letters and numbers"
                         />
                     </div>
                     <div className="input-container">
