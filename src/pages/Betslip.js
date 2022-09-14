@@ -26,7 +26,7 @@ function Betslip() {
     }
 
     return (
-        <div className="betslip">
+        <div className="page betslip">
             <h1 className="title title--page">Betslip</h1>
             {!betbarActive.length && <p className="betslip__message">The betslip is empty! Please add selections to make a bet.</p>}
             {slipElements}

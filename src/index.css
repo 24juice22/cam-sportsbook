@@ -180,15 +180,14 @@ h3 {
 }
 
 .line-descriptions__item {
-  width: 5.55rem;
+  width: 19.25%;
   text-align: center;
   font-weight: 500;
   color: var(--color-secondary);
-  margin-left: .5rem;
 }
 
 .line-descriptions__item:last-of-type {
-  padding-right: .7rem;
+  padding-right: 1.5%;
 }
 
 /* Navbar */
@@ -383,12 +382,13 @@ h3 {
 .box__lines {
   display: flex;
   justify-content: center;
+  min-width: 60%;
 }
 
 .line {
   border: 2px solid lightblue;
   border-radius: .8rem;
-  width: 4.75rem;
+  width: 32%;
   height: 4rem;
   padding: 0.2rem;
   margin: 0 .3rem;
@@ -429,12 +429,17 @@ h3 {
 .betbar__list {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .betbar__list-item {
   position: relative;
   color: white;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22%;
+  max-width: 12rem;
 }
 
 .betbar__list-item:hover {
@@ -442,8 +447,13 @@ h3 {
 }
 
 .betbar__link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding: 2.25rem 1.75rem;
+  width: 100%;
+  padding: 2.25rem;
   font-size: 1.6rem;
 }
 
@@ -453,6 +463,7 @@ h3 {
 
 .betbar__bankroll {
   position: absolute;
+  font-size: 1.3rem;
   font-weight: 500;
   top: .5rem;
   left: 50%;
@@ -469,8 +480,8 @@ h3 {
   position: absolute;
   color: blue;
   font-weight: 500;
-  top: .25rem;
-  left: .25rem;
+  top: 3%;
+  left: 10%;
   background: var(--color-secondary);
   border-radius: 50%;
   padding: .15rem .55rem;
@@ -486,7 +497,6 @@ h3 {
 .betslip {
   min-height: calc(100vh - 14.665rem);
   background-color: rgb(189, 252, 252);
-  padding-bottom: 1rem;
 }
 
 .betslip__message {
