@@ -17,7 +17,7 @@ import ScrollToTop from "./components/ScrollToTop"
 import { SportsbookContext } from "./contexts/SportsbookContexts"
 
 function App() {
-  const [sport, setSport] = React.useState(null);
+  const [sport, setSport] = React.useState("MLB");
   const [betbarActive, setBetbarActive] = React.useState([])
   const [loggedIn, setLoggedIn] = React.useState(null)
   const [loginIsVisible, setLoginIsVisible] = React.useState(false)
@@ -42,7 +42,7 @@ function App() {
           <Navbar setSport={setSport} />
           <Routes>
               <Route index path="/" element={<Home sport={sport}/>}/>
-              <Route path="" element={<Layout sport={sport} />}>
+              <Route element={<Layout sport={sport} />}>
                 <Route path="mlb"  element={<Mlb setSport={setSport}/>} />
                 <Route path="nfl" element={<Nfl setSport={setSport} />} />
                 <Route path="nba" element={<Nba setSport={setSport} />} />
