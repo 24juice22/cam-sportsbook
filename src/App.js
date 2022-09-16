@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Mlb from "./pages/Mlb"
 import Nfl from "./pages/Nfl"
 import Nba from "./pages/Nba"
@@ -24,6 +24,7 @@ function App() {
   const [joinIsVisible, setJoinIsVisible] = React.useState(false)
   const [depositIsVisible, setDepositIsVisible] = React.useState(false)
   const [popup, setPopup] = React.useState(false)
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
   const [accounts, setAccounts] = React.useState(
     JSON.parse(localStorage.getItem("accounts")) || []
   )
@@ -34,6 +35,16 @@ function App() {
     else
       document.body.style.overflow = 'unset'
   }, [popup])
+
+  React.useEffect(() => {
+    function watchWidth() {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener("resize", watchWidth)
+    return () => {
+      window.removeEventListener("resize", watchWidth)
+    }
+  }, [])
 
   return (
     <Router>
@@ -48,12 +59,13 @@ function App() {
                 <Route path="nba" element={<Nba setSport={setSport} />} />
                 <Route path="ncaaf" element={<Ncaaf setSport={setSport}/>} />
               </Route>
-              <Route path="betslip" element={<Betslip />} />
+              <Route path="betslip" element={windowWidth < 1024 ? <Betslip /> : <Navigate to="/" />} />
               <Route path="account" element={<Account />} />
           </Routes>
           <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
           <Join />
           <Deposit />
+          {windowWidth >= 1024 && <Betslip />}
           <Betbar setSport={setSport} />
         </SportsbookContext.Provider>
     </Router>
@@ -61,5 +73,4 @@ function App() {
 }
 
 export default App;
-
 
