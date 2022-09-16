@@ -63,7 +63,9 @@ export default function Navbar({setSport}) {
                         {loggedIn && <button className="btn navbar__btn--deposit" onClick={depositDisplay}>Deposit</button>}
                     </div>
                 </div>
-                <div className="navbar__bottom">
+            </div>
+            <div className="navbar__bottom">
+                <div className="container--widest">
                     <ul className="list navbar__list">
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--baseball" src={mlb}></img>
