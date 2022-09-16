@@ -4,6 +4,8 @@
   --color-font: #5c555c;
   --color-background: rgb(48, 46, 46);
   --color-exit: red;
+  --betslip-width: 32rem;
+  --betbar-width: 15rem;
 }
 
 html {
@@ -247,7 +249,7 @@ h3 {
 .navbar__list-item {
   display: flex;
   align-items: center;
-  padding: 0 1.1rem;
+  padding: 0 3%;
 }
 
 .navbar__icon {
@@ -350,6 +352,17 @@ h3 {
 
 .page {
   padding-bottom: 7rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .slider {
+    width: calc(100vw - var(--betslip-width) - var(--betbar-width));
+    margin-left: var(--betbar-width);
+  }
+  .body {
+    width: calc(100vw - var(--betslip-width) - var(--betbar-width));
+    margin-left: var(--betbar-width);
+  }
 }
 
 /* Box */
@@ -493,6 +506,37 @@ h3 {
   background-color: var(--color-primary);
 }
 
+@media screen and (min-width: 1024px) {
+  .betbar {
+    height: calc(100vh - 8.365rem);
+    left: 0;
+    width: var(--betbar-width);
+  }
+
+  .betbar__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .betbar__list-item {
+    height: 20vh;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .betbar__link {
+    font-size: 2rem;
+  }
+
+  .betbar__bankroll {
+    font-size: 1.8rem;
+  }
+
+  .betslip__count {
+    top: -10%;
+  }
+}
+
 /* Betslip */
 .betslip {
   min-height: calc(100vh - 14.665rem);
@@ -509,9 +553,24 @@ h3 {
   font-size: 1.7rem;
   border-color: var(--color-primary);
   padding: .75rem;
-  width: 50vw;
+  width: 50%;
+  max-width: 20rem;
   display: block;
   margin: 1.5rem auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .betslip {
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 65vh;
+    top: 8rem;
+    margin: auto 0;
+    right: 0;
+    width: var(--betslip-width);
+    border-left: .5rem solid var(--color-primary);
+  }
 }
 
 /* Slip */
