@@ -4,7 +4,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 
 function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) {
-    const {betbarActive, setBetbarActive} = useContext(SportsbookContext)
+    const { betbarActive, setBetbarActive, betslipRemoved } = useContext(SportsbookContext)
 
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
@@ -15,7 +15,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
     
     const [bettingLines, setBettingLines] = React.useState(allNewLines())
     
-    function wasClicked(id, point, price, team, indexType, matchupInfo) {
+    function lineClicked(id, point, price, team, indexType, matchupInfo) {
         setBettingLines(oldLines => oldLines.map(line => {
             return line.id === id ?
                 {...line, isClicked: !line.isClicked} :
@@ -29,6 +29,14 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
             return [...prevValues, {id: id, point: point, price: price, team: team, indexType: indexType, matchupInfo: matchupInfo, matchup: matchup}]
         })
     }
+
+    React.useEffect(() => {
+        setBettingLines(oldLines => oldLines.map(line => {
+            return betslipRemoved.id === line.id ?
+                {...line, isClicked: false} :
+                line
+        }))
+    }, [betslipRemoved])
 
     function allNewLines() {
         let betID = betbarActive.map(item => item.id)
@@ -70,7 +78,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
             team={line.team}
             matchupInfo={line.matchupInfo}
             id={line.id}
-            wasClicked={wasClicked}
+            lineClicked={lineClicked}
             indexType={line.indexType}
             matchup={matchup}
         />

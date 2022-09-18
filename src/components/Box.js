@@ -28,7 +28,8 @@ export default function Box({matchup}) {
                     homeTeam={homeTeam} 
                     totalTeam={underTeam} 
                     teamImageName={homeTeamImageName} 
-                    matchup={matchup}/>
+                    matchup={matchup}
+                /> 
                 <GameDate matchup={matchup}/>
             </div>
         </div>
