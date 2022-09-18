@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 export default function Betbar({setSport}) {
-    const {betbarActive, loggedIn} = useContext(SportsbookContext);
+    const {betbarActive, loggedIn, windowWidth} = useContext(SportsbookContext);
 
     const slipCountStyles = {
         visibility: betbarActive.length ? "visible" : "hidden"
@@ -23,12 +23,12 @@ export default function Betbar({setSport}) {
                     <li className="betbar__list-item">
                         <a className="betbar__link" href="#">Top</a>
                     </li>
-                    <li className="betbar__list-item">
+                    {windowWidth < 1024 && <li className="betbar__list-item">
                         <Link className="betbar__link betslip__link" to="/betslip">
                             <p className="betslip__count" style={slipCountStyles}>{betbarActive.length}</p>
                             <p>Betslip</p>
                         </Link>
-                    </li>
+                    </li>}
                     <li className="betbar__list-item">
                         <Link className="betbar__link" to="/Account">
                             {loggedIn && <p className="betbar__bankroll" >${(loggedIn.bankroll)}</p>}
