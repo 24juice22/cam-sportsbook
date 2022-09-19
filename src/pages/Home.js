@@ -3,7 +3,9 @@ import Layout from "./Layout"
 import Mlb from "./Mlb"
 import PromoSlider from "../components/PromoSlider"
 
-function Home({sport}) {
+function Home({sport, setSport}) {
+    setSport("MLB")
+
     return (
         <>
             <PromoSlider />
