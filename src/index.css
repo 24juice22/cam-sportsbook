@@ -4,8 +4,11 @@
   --color-font: #5c555c;
   --color-background: rgb(48, 46, 46);
   --color-exit: red;
-  --betslip-width: 32rem;
+  --betslip-width: 32.5rem;
   --betbar-width: 15rem;
+  --scrollbar-width: calc(100vw - 100%);
+  --navbar-height: 8.365rem;
+  --betbar-height: 6.84rem;
 }
 
 html {
@@ -116,8 +119,9 @@ h3 {
 .btn--popup {
   font-size: 1.6rem;
   border-color: var(--color-primary);
-  width: 100%;
-  margin: 1rem 0;
+  width: 50%;
+  margin: 3rem auto;
+  display: block;
 }
 
 .btn:active {
@@ -147,18 +151,19 @@ h3 {
   background-color: white;
   box-shadow: 0 4px 15px 0 rgb(51, 50, 50);
   width: 85vw;
+  max-width: 70rem;
   height: 75vh;
   position: fixed;
   overflow: auto;
   padding: 2rem;
-  top: 8.365rem;
-  bottom: 6.34rem;
+  top: var(--navbar-height);
+  bottom: var(--betbar-height);
   left: 0;
   right: 0;
   margin: auto;
   transform: scale(0.1);
   visibility: hidden;
-  z-index: 10;
+  z-index: 3;
   box-sizing: border-box;
   transition: transform .4s, visibility .05s ease-in-out;
 }
@@ -351,17 +356,22 @@ h3 {
 }
 
 .page {
-  padding-bottom: 7rem;
+  padding-bottom: var(--betbar-height);
 }
 
 @media screen and (min-width: 1024px) {
   .slider {
-    width: calc(100vw - var(--betslip-width) - var(--betbar-width));
+    width: calc(100vw - var(--betslip-width) - var(--betbar-width) - var(--scrollbar-width));
     margin-left: var(--betbar-width);
   }
+
   .body {
-    width: calc(100vw - var(--betslip-width) - var(--betbar-width));
+    width: calc(100vw - var(--betslip-width) - var(--betbar-width) - var(--scrollbar-width) );
     margin-left: var(--betbar-width);
+  }
+
+  .page {
+    padding-bottom: 2rem;
   }
 }
 
@@ -508,7 +518,7 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   .betbar {
-    height: calc(100vh - 8.365rem);
+    height: calc(100vh - var(--navbar-height));
     left: 0;
     width: var(--betbar-width);
   }
@@ -544,7 +554,7 @@ h3 {
 
 /* Betslip */
 .betslip {
-  min-height: calc(100vh - 14.665rem);
+  min-height: calc(100vh - var(--navbar-height) - var(--betbar-height));
   background-color: rgb(189, 252, 252);
 }
 
@@ -569,10 +579,10 @@ h3 {
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 65vh;
-    top: 8rem;
-    margin: auto 0;
+    height: calc(100vh - var(--navbar-height));
+    top: var(--navbar-height);
     right: 0;
+    box-sizing: border-box;
     width: var(--betslip-width);
     border-left: .5rem solid var(--color-primary);
   }
@@ -726,7 +736,7 @@ h3 {
 
 /* Account */
 .account {
-  min-height: calc(100vh - 14.665rem);
+  min-height: calc(100vh - var(--navbar-height) - var(--betbar-height));
   background-color: white;
   padding: 2rem 0 4rem;
 }
@@ -758,8 +768,10 @@ h3 {
   border-color: var(--color-primary);
   color: var(--color-primary);
   font-size: 2rem;
-  margin-top: 3rem;
-  width: 100%;
+  width: 50%;
+  max-width: 20rem;
+  margin: 3rem auto 0;
+  display: block;
 }
 
 .account__btn:hover {
@@ -767,6 +779,13 @@ h3 {
   color: var(--color-secondary);
 }
 
+@media screen and (min-width: 1024px) {
+  .account {
+    width: calc(100vw - var(--betbar-width) - var(--betslip-width) - var(--scrollbar-width));
+    margin-left: var(--betbar-width);
+    min-height: calc(100vh - var(--navbar-height));
+  }
+}
 
 
 
