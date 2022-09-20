@@ -1,4 +1,3 @@
-import { hasSelectionSupport } from "@testing-library/user-event/dist/utils"
 import React from "react"
 import Box from "../components/Box"
 
