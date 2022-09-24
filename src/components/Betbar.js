@@ -18,19 +18,19 @@ export default function Betbar({setSport}) {
             <div className="container--widest">
                 <ul className="list betbar__list">
                     <li className="betbar__list-item">
-                        <Link className="betbar__link" to="/" onClick={homeClick}><i class="fa-solid fa-house-chimney"></i></Link>
+                        <Link className="betbar__link" to="/cam-sportsbook/" onClick={homeClick}><i class="fa-solid fa-house-chimney"></i></Link>
                     </li>
                     <li className="betbar__list-item">
                         <a className="betbar__link" href="#">Top</a>
                     </li>
                     {windowWidth < 1024 && <li className="betbar__list-item">
-                        <Link className="betbar__link betslip__link" to="/betslip">
+                        <Link className="betbar__link betslip__link" to="/cam-sportsbook/betslip">
                             <p className="betslip__count" style={slipCountStyles}>{betbarActive.length}</p>
                             <p>Betslip</p>
                         </Link>
                     </li>}
                     <li className="betbar__list-item">
-                        <Link className="betbar__link" to="/Account">
+                        <Link className="betbar__link" to="/cam-sportsbook/Account">
                             {loggedIn && <p className="betbar__bankroll" >${(loggedIn.bankroll)}</p>}
                             <p>Account</p>
                         </Link>

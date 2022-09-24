@@ -51,7 +51,7 @@ export default function Navbar({setSport}) {
         <nav className="navbar">
             <div className="container">
                 <div className="navbar__top">
-                    <Link to="/" className="navbar__brand" onClick={homeClick}>
+                    <Link to="/cam-sportsbook/" className="navbar__brand" onClick={homeClick}>
                         <h3 className="navbar__logo">CAM</h3>
                         <span>Sportsbook</span>
                     </Link>
@@ -68,19 +68,19 @@ export default function Navbar({setSport}) {
                     <ul className="list navbar__list">
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--baseball" src={mlb}></img>
-                            <Link className="navbar__link" to="/mlb" onClick={mlbClick}>MLB</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/mlb" onClick={mlbClick}>MLB</Link>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nfl" src={nfl}></img>
-                            <Link className="navbar__link" to="/nfl" onClick={nflClick}>NFL</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nfl" onClick={nflClick}>NFL</Link>
                         </li>
                         <li className="navbar__list-item">
                             <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
-                            <Link className="navbar__link nav__link-baseball" to="/ncaaf" onClick={ncaafClick}>NCAAF</Link>
+                            <Link className="navbar__link nav__link-baseball" to="/cam-sportsbook/ncaaf" onClick={ncaafClick}>NCAAF</Link>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nba" src={nba}></img>
-                            <Link className="navbar__link" to="/nba" onClick={nbaClick}>NBA</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nba" onClick={nbaClick}>NBA</Link>
                         </li>
                     </ul>
                 </div>

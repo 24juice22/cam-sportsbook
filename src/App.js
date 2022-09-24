@@ -31,10 +31,13 @@ function App() {
   )
   
   React.useEffect(() => {
-    if (popup)
-      document.body.style.overflow = 'hidden'
+    if (popup) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+    }
     else
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
+      document.body.style.touchAction = "auto";
   }, [popup])
 
   React.useEffect(() => {
@@ -53,15 +56,15 @@ function App() {
         <SportsbookContext.Provider value={{ windowWidth, betslipRemoved, setBetslipRemoved, betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, setSport, setPopup}}>
           <Navbar setSport={setSport} />
           <Routes>
-              <Route index path="/" element={<Home sport={sport} setSport={setSport}/>}/>
+              <Route index path="/cam-sportsbook/" element={<Home sport={sport} setSport={setSport}/>}/>
               <Route element={<Layout sport={sport} />}>
-                <Route path="mlb"  element={<Mlb setSport={setSport}/>} />
-                <Route path="nfl" element={<Nfl setSport={setSport} />} />
-                <Route path="nba" element={<Nba setSport={setSport} />} />
-                <Route path="ncaaf" element={<Ncaaf setSport={setSport}/>} />
+                <Route path="/cam-sportsbook/mlb"  element={<Mlb setSport={setSport}/>} />
+                <Route path="/cam-sportsbook/nfl" element={<Nfl setSport={setSport} />} />
+                <Route path="/cam-sportsbook/nba" element={<Nba setSport={setSport} />} />
+                <Route path="/cam-sportsbook/ncaaf" element={<Ncaaf setSport={setSport}/>} />
               </Route>
-              <Route path="betslip" element={windowWidth < 1024 ? <Betslip /> : <Navigate to="/" />} />
-              <Route path="account" element={<Account />} />
+              <Route path="/cam-sportsbook/betslip" element={windowWidth < 1024 ? <Betslip /> : <Navigate to="/cam-sportsbook/" />} />
+              <Route path="/cam-sportsbook/account" element={<Account />} />
           </Routes>
           <Login loginIsVisible={loginIsVisible} setLoginIsVisible={setLoginIsVisible}/>
           <Join />
