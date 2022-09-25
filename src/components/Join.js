@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Join() {
+    const [joinError, setJoinError] = React.useState(false);
     const { joinIsVisible, setJoinIsVisible, accounts, setAccounts, setPopup } = useContext(SportsbookContext);
     
     const joinVisibleStyle = {
@@ -11,22 +12,29 @@ function Join() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        let newAccount = {
-            first: event.target[0].value,
-            last: event.target[1].value,
-            username: event.target[2].value,
-            password: event.target[3].value,
-            bankroll: 0,
-            bets: []
-        };
-        setAccounts([...accounts, newAccount]);
-        hideJoin(event);
+        let username = event.target[2].value;
+        let accountsUsernames = accounts.map(account => account.username)
+        if (accountsUsernames.includes(username))
+            setJoinError(true)
+        else {
+            let newAccount = {
+                first: event.target[0].value,
+                last: event.target[1].value,
+                username: username,
+                password: event.target[3].value,
+                bankroll: 0,
+                bets: []
+            };
+            setAccounts([...accounts, newAccount]);
+            hideJoin(event);
+        }
     }
 
     function hideJoin(event) {
         setJoinIsVisible(false);
         clearInputs(event);
-        setPopup(false)
+        setPopup(false);
+        setJoinError(false);
     }
 
     function clearInputs(event) {
@@ -36,6 +44,10 @@ function Join() {
             else 
                 event.target.nextSibling.childNodes[1][i].value = "";
         } 
+    }
+
+    function inputChange() {
+        setJoinError(false);
     }
 
     React.useEffect(() => {
@@ -83,6 +95,7 @@ function Join() {
                             autoComplete="off"
                             pattern="[A-Za-z0-9]{1,15}"
                             title="Username can only contain upper and lower case letters and numbers"
+                            onChange={inputChange}
                         />
                     </div>
                     <div className="input-container">
@@ -102,6 +115,7 @@ function Join() {
                         Create Account
                     </button>
                 </form>
+                {joinError && <p className="login__error">The username is unavailable. Please try a different username.</p>}
                 </div>
             </div>
         </div>
