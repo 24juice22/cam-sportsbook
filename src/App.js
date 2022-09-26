@@ -35,9 +35,10 @@ function App() {
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
     }
-    else
+    else {
       document.body.style.overflow = "unset";
       document.body.style.touchAction = "auto";
+    }
   }, [popup])
 
   React.useEffect(() => {
