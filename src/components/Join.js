@@ -115,7 +115,7 @@ function Join() {
                         Create Account
                     </button>
                 </form>
-                {joinError && <p className="login__error">The username is unavailable. Please try a different username.</p>}
+                {joinError && <p className="error-message">The username is unavailable. Please try a different username.</p>}
                 </div>
             </div>
         </div>

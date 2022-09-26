@@ -90,7 +90,7 @@ function Login({loginIsVisible, setLoginIsVisible}) {
                     </button>
                 </form>
                 <a className="join-link" onClick={joinDisplay}>Don't have an account? JOIN NOW</a>
-                {errorMessage && <p className="login__error">Incorrect username and/or password</p>}
+                {errorMessage && <p className="error-message">Incorrect username and/or password</p>}
                 </div>
             </div>
         </div>
