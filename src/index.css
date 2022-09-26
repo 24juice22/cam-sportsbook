@@ -373,6 +373,11 @@ h3 {
   .page {
     padding-bottom: 2rem;
   }
+
+  .page--home {
+    width: calc(100vw - var(--betslip-width) - var(--betbar-width) - var(--scrollbar-width));
+    margin-left: var(--betbar-width);
+  }
 }
 
 /* Box */
@@ -660,7 +665,7 @@ h3 {
   cursor: pointer;
 }
 
-.login__error {
+.error-message {
   color: red;
   text-align: center;
   font-size: 2rem;
