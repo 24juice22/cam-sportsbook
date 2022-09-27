@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, { useEffect, useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Deposit() {
@@ -22,7 +22,7 @@ function Deposit() {
         hideDeposit();
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         localStorage.setItem("accounts", JSON.stringify(accounts))
     }, [accounts])
 

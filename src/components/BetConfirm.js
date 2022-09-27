@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useEffect, useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 import BetConfirmBox from "./BetConfirmBox"
 
@@ -46,7 +46,6 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
                 {...value, bankroll: value.bankroll - betTotal(), bets: value.bets.concat(newBets)} :
                 value
         }))
-        console.log(accounts)
         setLoggedIn(prevValue => {
             return {
                 ...prevValue, 
@@ -54,14 +53,13 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
                 bets: prevValue.bets.concat(newBets)
             }
         })
-        console.log(loggedIn)
         hideBetConfirm()
         setBetbarActive(prevValues => {
             return prevValues.filter(value => !value.betAmount)
         })
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         localStorage.setItem("accounts", JSON.stringify(accounts))
     }, [accounts])
 

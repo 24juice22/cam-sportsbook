@@ -1,10 +1,10 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 import Slip from "../components/Slip"
 import BetConfirm from "../components/BetConfirm"
 
 function Betslip() {
-    const [betConfirmVisible, setBetConfirmVisible] = React.useState(false);
+    const [betConfirmVisible, setBetConfirmVisible] = useState(false);
     const {setBetslipRemoved, betbarActive, setBetbarActive, loggedIn, setLoginIsVisible, setPopup} = useContext(SportsbookContext)
 
     const slipElements = betbarActive.map(matchup => <Slip matchup={matchup} exitClicked={exitClicked}/>);

@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useEffect, useContext } from "react"
 import Lines from "./Lines"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
@@ -30,7 +30,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
         })
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         setBettingLines(oldLines => oldLines.map(line => {
             return betslipRemoved.id === line.id ?
                 {...line, isClicked: false} :

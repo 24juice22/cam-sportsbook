@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Join() {
-    const [joinError, setJoinError] = React.useState(false);
+    const [joinError, setJoinError] = useState(false);
     const { joinIsVisible, setJoinIsVisible, accounts, setAccounts, setPopup } = useContext(SportsbookContext);
     
     const joinVisibleStyle = {
@@ -50,7 +50,7 @@ function Join() {
         setJoinError(false);
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         localStorage.setItem("accounts", JSON.stringify(accounts))
       }, [accounts])
 

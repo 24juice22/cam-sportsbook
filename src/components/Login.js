@@ -1,9 +1,9 @@
-import React, {useContext} from "react"
+import React, { useState, useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function Login({loginIsVisible, setLoginIsVisible}) {
     const { setLoggedIn, accounts, setJoinIsVisible, setPopup } = useContext(SportsbookContext);
-    const [errorMessage, setErrorMessage] = React.useState(false);
+    const [errorMessage, setErrorMessage] = useState(false);
     
     const loginVisibleStyle = {
         visibility: loginIsVisible ? "visible" : "hidden",

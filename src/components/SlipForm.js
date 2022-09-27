@@ -1,9 +1,9 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 
 function SlipForm({price, id}) {
-    const [wagerAmount, setWagerAmount] = React.useState("")
+    const [wagerAmount, setWagerAmount] = useState("")
     const {setBetbarActive} = useContext(SportsbookContext)
 
     function winAmount(bet) {

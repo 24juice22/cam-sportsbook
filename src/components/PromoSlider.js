@@ -1,11 +1,11 @@
-import React, {useContext} from "react"
+import React, { useState, useContext } from "react"
 import { SportsbookContext } from "../contexts/SportsbookContexts"
 import sports from "../images/promos/sports.png"
 import money from "../images/promos/money.jpg"
 import stadium from "../images/promos/stadium.jpg"
 
 function PromoSlider() {
-    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const { setJoinIsVisible } = useContext(SportsbookContext);
 
     const slides = [

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Mlb from "./pages/Mlb"
 import Nfl from "./pages/Nfl"
@@ -17,20 +17,20 @@ import ScrollToTop from "./components/ScrollToTop"
 import { SportsbookContext } from "./contexts/SportsbookContexts"
 
 function App() {
-  const [sport, setSport] = React.useState("MLB");
-  const [betbarActive, setBetbarActive] = React.useState([])
-  const [loggedIn, setLoggedIn] = React.useState(null)
-  const [loginIsVisible, setLoginIsVisible] = React.useState(false)
-  const [joinIsVisible, setJoinIsVisible] = React.useState(false)
-  const [depositIsVisible, setDepositIsVisible] = React.useState(false)
-  const [popup, setPopup] = React.useState(false)
-  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
-  const [betslipRemoved, setBetslipRemoved] = React.useState({id: null, count: 0})
-  const [accounts, setAccounts] = React.useState(
+  const [sport, setSport] = useState("MLB");
+  const [betbarActive, setBetbarActive] = useState([])
+  const [loggedIn, setLoggedIn] = useState(null)
+  const [loginIsVisible, setLoginIsVisible] = useState(false)
+  const [joinIsVisible, setJoinIsVisible] = useState(false)
+  const [depositIsVisible, setDepositIsVisible] = useState(false)
+  const [popup, setPopup] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [betslipRemoved, setBetslipRemoved] = useState({id: null, count: 0})
+  const [accounts, setAccounts] = useState(
     JSON.parse(localStorage.getItem("accounts")) || []
   )
   
-  React.useEffect(() => {
+  useEffect(() => {
     if (popup) {
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
@@ -41,7 +41,7 @@ function App() {
     }
   }, [popup])
 
-  React.useEffect(() => {
+  useEffect(() => {
     function watchWidth() {
       setWindowWidth(window.innerWidth)
     }
