@@ -31,7 +31,7 @@ export default function Betbar({setSport}) {
                     </li>}
                     <li className="betbar__list-item">
                         <Link className="betbar__link" to="/cam-sportsbook/Account">
-                            {loggedIn && <p className="betbar__bankroll" >${(loggedIn.bankroll)}</p>}
+                            {loggedIn && <p className="betbar__bankroll" >${loggedIn.bankroll.toFixed(2)}</p>}
                             <p>Account</p>
                         </Link>
                     </li>
