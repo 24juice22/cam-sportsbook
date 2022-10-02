@@ -3,6 +3,7 @@
   --color-secondary: rgb(13, 253, 5);
   --color-font: #5c555c;
   --color-background: rgb(48, 46, 46);
+  --color-betslip: rgb(240, 240, 240);
   --color-exit: red;
   --betslip-width: 32.5rem;
   --betbar-width: 15rem;
@@ -177,7 +178,7 @@ h3 {
 .odds__title {
   text-align: center;
   color: white;
-  text-shadow: 2px 2px 4px rgb(12, 182, 238);
+  text-shadow: 1.5px 1.5px var(--color-secondary);
 }
 
 .line-descriptions {
@@ -560,7 +561,7 @@ h3 {
 /* Betslip */
 .betslip {
   min-height: calc(100vh - var(--navbar-height) - var(--betbar-height));
-  background-color: rgb(189, 252, 252);
+  background-color: var(--color-betslip);
 }
 
 .betslip__message {
@@ -693,7 +694,8 @@ h3 {
 
 /* BetConfirm */
 .bet-confirm {
-  height: 65vh;
+  height: 40rem;
+  width: 25rem;
   color: red;
   font-size: 2rem;
   font-weight: 500;
