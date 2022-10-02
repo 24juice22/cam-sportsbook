@@ -48,7 +48,7 @@ function Deposit() {
                     placeholder="Amount"
                     required
                     autoComplete="off"
-                    pattern="[1-9][0-9]{0,3}(.[0-9]{2})?$"
+                    pattern="[1-9][0-9]{0,3}\.[0-9]{2}"
                 />
                 </div>
                 <button 
