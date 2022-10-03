@@ -54,7 +54,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-        <SportsbookContext.Provider value={{ windowWidth, betslipRemoved, setBetslipRemoved, betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, setSport, setPopup}}>
+        <SportsbookContext.Provider value={{ windowWidth, betslipRemoved, setBetslipRemoved, betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, setSport, setPopup, popup }}>
           <Navbar setSport={setSport} />
           <Routes>
               <Route index path="/cam-sportsbook/" element={<Home sport={sport} setSport={setSport}/>}/>

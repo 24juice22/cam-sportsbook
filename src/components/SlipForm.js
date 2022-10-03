@@ -4,7 +4,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 
 function SlipForm({price, id}) {
     const [wagerAmount, setWagerAmount] = useState("")
-    const {setBetbarActive} = useContext(SportsbookContext)
+    const { setBetbarActive, popup } = useContext(SportsbookContext)
 
     function winAmount(bet) {
         return price < 0 ? 
@@ -13,24 +13,26 @@ function SlipForm({price, id}) {
     }
 
     function handleChange(event) {
-        let splitValue = event.target.value.toString().split("")
-        if (splitValue[splitValue.length - 4] === ".") {
-            splitValue.pop()
-            let joinedValue = Number(splitValue.join("")).toFixed(2)
-            setWagerAmount(joinedValue)
-            setBetbarActive(prevValue => prevValue.map(value => {
-                return value.id === event.target.id ?
-                    {...value, betAmount: Number(joinedValue), winAmount: Number(winAmount(joinedValue))} :
-                    value
-            }))
-        }
-        else {
-            setWagerAmount(event.target.value)
-            setBetbarActive(prevValue => prevValue.map(value => {
-                return value.id === event.target.id ?
-                    {...value, betAmount: Number(event.target.value), winAmount: Number(winAmount(event.target.value))} :
-                    value
-            }))
+        if (!popup) {
+            let splitValue = event.target.value.toString().split("")
+            if (splitValue[splitValue.length - 4] === ".") {
+                splitValue.pop()
+                let joinedValue = Number(splitValue.join("")).toFixed(2)
+                setWagerAmount(joinedValue)
+                setBetbarActive(prevValue => prevValue.map(value => {
+                    return value.id === event.target.id ?
+                        {...value, betAmount: Number(joinedValue), winAmount: Number(winAmount(joinedValue))} :
+                        value
+                }))
+            }
+            else {
+                setWagerAmount(event.target.value)
+                setBetbarActive(prevValue => prevValue.map(value => {
+                    return value.id === event.target.id ?
+                        {...value, betAmount: Number(event.target.value), winAmount: Number(winAmount(event.target.value))} :
+                        value
+                }))
+            }
         }
     }
 
