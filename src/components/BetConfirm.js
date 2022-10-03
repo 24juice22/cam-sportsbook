@@ -63,12 +63,15 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
         localStorage.setItem("accounts", JSON.stringify(accounts))
     }, [accounts])
 
-    if (betTotal() > loggedIn.bankroll)
+    if (betTotal() > loggedIn.bankroll || betTotal() === "0.00")
         return (
             <div className="popup bet-confirm" style={betConfirmStyles}>
-                <button className="btn--exit" onClick={hideBetConfirm}>X</button>
+                <button className="btn btn--exit" onClick={hideBetConfirm}>X</button>
                 <h2 className="bet-confirm__error">Error</h2>
-                <p>Your total bet amount exceeds your bankroll. Please adjust your bets.</p>
+                {betTotal() === "0.00" ? 
+                    <p>You have not made any bets. Please input a wager amount.</p> : 
+                    <p>Your total bet amount exceeds your bankroll. Please adjust your bets.</p>
+                }
             </div>
         )
 
