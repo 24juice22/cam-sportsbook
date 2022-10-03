@@ -5,6 +5,7 @@
   --color-background: rgb(48, 46, 46);
   --color-betslip: rgb(240, 240, 240);
   --color-exit: red;
+  --color-deposit: rgb(189, 252, 252);
   --betslip-width: 32.5rem;
   --betbar-width: 15rem;
   --scrollbar-width: calc(100vw - 100%);
@@ -239,8 +240,8 @@ h3 {
 }
 
 .navbar__btn--deposit {
-  background-color: rgb(189, 252, 252);
-  border-color: var(--color-primary);
+  background-color: var(--color-deposit);
+  border-color: var(--color-deposit);
   color: var(--color-primary);
   margin-left: 1rem;
 }
@@ -274,6 +275,20 @@ h3 {
 .navbar__link {
   padding: 0 .3rem;
   color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar__brand {
+    font-size: 2.5rem;
+  }
+
+  .navbar__logo {
+    font-size: 2.5rem;
+  }
+
+  .navbar__btn {
+    font-size: 1.5rem;
+  }
 }
 
 /* Slider */
@@ -507,7 +522,7 @@ h3 {
 
 .betslip__count {
   position: absolute;
-  color: blue;
+  color: var(--color-primary);
   font-weight: 500;
   top: 3%;
   left: 10%;
@@ -597,7 +612,7 @@ h3 {
 /* Slip */
 .slip {
   border-color: var(--color-secondary);
-  padding: 1.5rem 0;
+  padding: 2rem 0 1.5rem;
 }
 
 .slip__btn--exit {
@@ -662,12 +677,12 @@ h3 {
 
 .join-link {
   font-size: 1.5rem;
-  color: blue;
+  color: var(--color-primary);
   cursor: pointer;
 }
 
 .error-message {
-  color: red;
+  color: var(--color-exit);
   text-align: center;
   font-size: 2rem;
 }
@@ -696,7 +711,7 @@ h3 {
 .bet-confirm {
   height: 40rem;
   width: 25rem;
-  color: red;
+  color: var(--color-exit);
   font-size: 2rem;
   font-weight: 500;
 }
@@ -723,7 +738,7 @@ h3 {
 }
 
 .wager__amount > span{
-  color: blue;
+  color: var(--color-primary);
 }
 
 .bet-confirm__totals {
@@ -733,7 +748,7 @@ h3 {
 }
 
 .bet-confirm__total > span {
-  color: blue;
+  color: var(--color-primary);
 }
 
 .flex {
