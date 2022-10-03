@@ -13,12 +13,25 @@ function SlipForm({price, id}) {
     }
 
     function handleChange(event) {
-        setWagerAmount(event.target.value)
-        setBetbarActive(prevValue => prevValue.map(value => {
-            return value.id === event.target.id ?
-                {...value, betAmount: Number(event.target.value), winAmount: Number(winAmount(event.target.value))} :
-                value
-        }))
+        let splitValue = event.target.value.toString().split("")
+        if (splitValue[splitValue.length - 4] === ".") {
+            splitValue.pop()
+            let joinedValue = Number(splitValue.join("")).toFixed(2)
+            setWagerAmount(joinedValue)
+            setBetbarActive(prevValue => prevValue.map(value => {
+                return value.id === event.target.id ?
+                    {...value, betAmount: Number(joinedValue), winAmount: Number(winAmount(joinedValue))} :
+                    value
+            }))
+        }
+        else {
+            setWagerAmount(event.target.value)
+            setBetbarActive(prevValue => prevValue.map(value => {
+                return value.id === event.target.id ?
+                    {...value, betAmount: Number(event.target.value), winAmount: Number(winAmount(event.target.value))} :
+                    value
+            }))
+        }
     }
 
     return (
@@ -27,8 +40,9 @@ function SlipForm({price, id}) {
                 <label className="wager-label">Bet Amount $ </label>
                 <input 
                     className="wager-input"
-                    type="text"
+                    type="number"
                     name="wager"
+                    step=".01"
                     placeholder="Amount"
                     required
                     value={wagerAmount}
