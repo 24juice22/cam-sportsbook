@@ -12,7 +12,7 @@ function Home({sport, setSport}) {
         <>
             <PromoSlider />
             <Layout sport={sport} />
-            <Mlb homeClassName={homeClassName} />
+            
         </>
     )
 }  

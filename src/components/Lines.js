@@ -11,7 +11,8 @@ function Lines({index, betMarkets, lineClicked, isClicked, team, id, indexType, 
     }
 
     const styles = {
-        backgroundColor: isClicked ? "var(--color-secondary)" : "white"
+        backgroundColor: isClicked ? "var(--color-secondary)" : "white",
+        borderColor: isClicked ? "var(--color-primary)" : "lightblue"
     }
     
     let indexTeam = betMarkets[index].outcomes.findIndex(item => item.name === team)
