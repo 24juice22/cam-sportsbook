@@ -618,6 +618,8 @@ h3 {
 .slip__btn--exit {
   font-size: 1.2rem;
   padding: 0 .3rem;
+  top: .5rem;
+  left: .5rem;
 }
 
 .slip__line-numbers {
