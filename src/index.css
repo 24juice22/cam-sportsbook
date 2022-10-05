@@ -108,8 +108,8 @@ h3 {
 
 .btn--exit {
   position: absolute;
-  top: 2%;
-  left: 1%;
+  top: 1rem;
+  left: 1rem;
   border-color: var(--color-exit);
   background-color: transparent;
   border-radius: .3rem;
