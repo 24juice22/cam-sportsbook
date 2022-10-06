@@ -10,6 +10,10 @@ function Join() {
         transform: joinIsVisible ? "scale(1)" : "scale(0.1)"
     }
 
+    const usernameStyle = {
+        color: joinError ? "red" : "initial"
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
         let username = event.target[2].value;
@@ -59,7 +63,7 @@ function Join() {
             <div className="container--wide">
                 <button className="btn btn--exit" onClick={hideJoin}>X</button>
                 <div className="container--widest">
-                <h2 className="title">Create Account</h2>
+                <h2 className="title account__title">Create Account</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-container">
                         <label>First Name </label>
@@ -85,8 +89,8 @@ function Join() {
                             title="Last name must contain only upper and lowercase letters"
                         />
                     </div>
-                    <div className="input-container">
-                        <label>Username </label>
+                    <div className="input-container" style={usernameStyle}>
+                        {joinError ? <label>Username Unavailable</label> : <label>Username</label>}
                         <input 
                             type="text"
                             name="username"
@@ -96,6 +100,7 @@ function Join() {
                             pattern="[A-Za-z0-9]{1,15}"
                             title="Username can only contain upper and lower case letters and numbers"
                             onChange={inputChange}
+                            style={usernameStyle}
                         />
                     </div>
                     <div className="input-container">
@@ -115,7 +120,6 @@ function Join() {
                         Create Account
                     </button>
                 </form>
-                {joinError && <p className="error-message">The username is unavailable. Please try a different username.</p>}
                 </div>
             </div>
         </div>
