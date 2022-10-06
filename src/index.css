@@ -47,7 +47,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-top: 1rem;
 }
 
@@ -329,10 +329,18 @@ h3 {
   text-shadow: 2px 2px 2px black;
 }
 
+.slider__title--refer {
+  color: red;
+}
+
+.slider__title--noSweat {
+  color: yellow;
+}
+
 .slider__tagline {
   color: cyan;
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
   left: 0;
   right: 0;
   text-align: center;
@@ -341,9 +349,17 @@ h3 {
   text-shadow: 2px 2px 2px black;
 }
 
+.slider__tagline--refer {
+  color: var(--color-secondary);
+}
+
+.slider__tagline--noSweat {
+  color: yellow;
+}
+
 .slider__btn {
   position: absolute;
-  bottom: 25%;
+  bottom: 30%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -362,7 +378,7 @@ h3 {
 
 .dot {
   color: white;
-  font-size: 3rem;
+  font-size: 1.5rem;
   margin: 0 .65rem;
   cursor: pointer;
 }
@@ -393,6 +409,10 @@ h3 {
   .page--home {
     width: calc(100vw - var(--betslip-width) - var(--betbar-width) - var(--scrollbar-width));
     margin-left: var(--betbar-width);
+  }
+
+  .dot {
+    font-size: 3rem;
   }
 }
 
@@ -763,6 +783,10 @@ h3 {
   min-height: calc(100vh - var(--navbar-height) - var(--betbar-height));
   background-color: white;
   padding: 2rem 0 4rem;
+}
+
+.account__title {
+  font-size: 3.25rem;
 }
 
 .account__name {

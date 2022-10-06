@@ -10,17 +10,20 @@ function PromoSlider() {
 
     const slides = [
         {
-            url: sports, 
+            url: sports,
+            id: "newCustomer", 
             title: "New Customer Promo", 
             description: "Sign Up Now and receive a RISK-FREE bet up to $500"
         },
         {
             url: money, 
+            id: "refer",
             title: "Refer A Friend", 
             description: "And receive $50 on us"
         },
         {
             url: stadium, 
+            id: "noSweat",
             title: "No Sweat Bet", 
             description: "All Customers Invited"
         },
@@ -79,8 +82,8 @@ function PromoSlider() {
                 </div>
             </div>
             <div style={backgroundImage}></div>
-            <h1 className="slider__title">{slides[currentIndex].title}</h1> 
-            <p className="slider__tagline">{slides[currentIndex].description}</p>
+            <h1 className={`slider__title slider__title--${slides[currentIndex].id}`}>{slides[currentIndex].title}</h1> 
+            <p className={`slider__tagline slider__tagline--${slides[currentIndex].id}`}>{slides[currentIndex].description}</p>
             {currentIndex === 0 && <button className="btn slider__btn" onClick={joinDisplay}>JOIN NOW</button>}
             <div className="slider__dots">
                 {dots}
