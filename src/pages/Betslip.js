@@ -32,6 +32,7 @@ function Betslip() {
         <div className="page betslip">
             <h1 className="title title--page">Betslip</h1>
             {!betbarActive.length && <p className="betslip__message">The betslip is empty! Please add selections to make a bet.</p>}
+            {!betbarActive.length && <h3 className="betslip__logo">CAM</h3>}
             {slipElements}
             {betbarActive.length > 0 && !loggedIn && <button className="btn betslip__button" onClick={loginDisplay}>Login to Bet</button>}
             {betbarActive.length > 0 && loggedIn && <button className="btn betslip__button" onClick={betDisplay}>Bet</button>}
