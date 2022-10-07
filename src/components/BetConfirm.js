@@ -84,7 +84,7 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
                 <p className="bet-confirm__total">Total Bet Amount: <span>${betTotal()}</span></p>
                 <p className="bet-confirm__total">Total Payout: <span>${winTotal()}</span></p>
             </div>
-            <div className="flex">
+            <div className="bet-confirm__button">
                 <button className="btn btn--popup" onClick={betConfirmed}>Confirm</button>
             </div>
         </div>
