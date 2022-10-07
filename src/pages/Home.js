@@ -6,13 +6,13 @@ import PromoSlider from "../components/PromoSlider"
 function Home({sport, setSport}) {
     setSport("MLB");
 
-    const homeClassName = "page--home";
+    const homeClassName = "homepage";
 
     return (
         <>
             <PromoSlider />
             <Layout sport={sport} />
-            <Mlb homeClassName={homeClassName} />
+            <Mlb homeClassName={homeClassName}/>
         </>
     )
 }  
