@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 
 function Layout({sport}) {
     return (
-        <div className="body">
+        <div className="layout">
             {sport && <h1 className="odds__title">{`${sport} Odds`}</h1>}
             <ul className="container--wide list line-descriptions">
                 <li className="line-descriptions__item">Spread</li>

@@ -14,9 +14,9 @@ function Ncaaf({setSport}) {
     }, [])
 
     if (footballNcaa) return (
-        <div className="page">
+        <>
             {footballNcaa.map(matchup => <Box matchup={matchup} key={matchup.id}/>)}
-        </div> 
+        </> 
     )
 }
 

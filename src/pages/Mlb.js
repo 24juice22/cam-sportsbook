@@ -14,7 +14,7 @@ function Mlb({setSport, homeClassName}) {
     }, [])
 
     if (baseball) return (
-        <div className={`page ${homeClassName}`}>
+        <div className={`${homeClassName}`}>
             {baseball.map(matchup => <Box matchup={matchup} key={matchup.id}/>)}
         </div>
     )

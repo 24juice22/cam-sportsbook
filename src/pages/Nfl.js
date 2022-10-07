@@ -14,9 +14,9 @@ function Nfl({setSport}) {
     }, [])
 
     if (footballNfl) return (
-        <div className="page">
+        <>
             {footballNfl.map(matchup => <Box matchup={matchup} key={matchup.id}/>)}
-        </div>
+        </>
     )
 }
 
