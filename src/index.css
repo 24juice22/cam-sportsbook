@@ -13,6 +13,12 @@
   --betbar-height: 6.84rem;
 }
 
+@media screen and (min-width: 1024px) {
+  :root {
+    --navbar-height: 8.825rem;
+  }
+}
+
 html {
   font-size: 62.5%;
 }
