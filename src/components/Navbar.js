@@ -67,11 +67,11 @@ export default function Navbar({setSport}) {
                 <div className="container--widest">
                     <ul className="list navbar__list">
                         <li className="navbar__list-item">
-                            <img className="navbar__icon navbar__icon--baseball" src={mlb}></img>
+                            <img className="navbar__icon navbar__icon--baseball" src={mlb} alt="Major League Baseball Logo"></img>
                             <Link className="navbar__link" to="/cam-sportsbook/mlb" onClick={mlbClick}>MLB</Link>
                         </li>
                         <li className="navbar__list-item">
-                            <img className="navbar__icon navbar__icon--nfl" src={nfl}></img>
+                            <img className="navbar__icon navbar__icon--nfl" src={nfl} alt="National Football League Logo"></img>
                             <Link className="navbar__link" to="/cam-sportsbook/nfl" onClick={nflClick}>NFL</Link>
                         </li>
                         <li className="navbar__list-item">
@@ -79,7 +79,7 @@ export default function Navbar({setSport}) {
                             <Link className="navbar__link nav__link-baseball" to="/cam-sportsbook/ncaaf" onClick={ncaafClick}>NCAAF</Link>
                         </li>
                         <li className="navbar__list-item">
-                            <img className="navbar__icon navbar__icon--nba" src={nba}></img>
+                            <img className="navbar__icon navbar__icon--nba" src={nba} alt="National Basketball Association Logo"></img>
                             <Link className="navbar__link" to="/cam-sportsbook/nba" onClick={nbaClick}>NBA</Link>
                         </li>
                     </ul>
