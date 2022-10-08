@@ -4,15 +4,13 @@ import Mlb from "./Mlb"
 import PromoSlider from "../components/PromoSlider"
 
 function Home({sport, setSport}) {
-    setSport("MLB");
-
     const homeClassName = "homepage";
 
     return (
         <>
             <PromoSlider />
             <Layout sport={sport} />
-            <Mlb homeClassName={homeClassName}/>
+            <Mlb setSport={setSport} homeClassName={homeClassName}/>
         </>
     )
 }  

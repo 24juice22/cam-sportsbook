@@ -8,7 +8,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
 
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
-    let betMarkets = matchup.bookmakers[unibetIndex].markets; /* Shorthand */
+    let betMarkets = matchup.bookmakers[unibetIndex].markets; 
     let indexSpread = betMarkets.findIndex(item => item.key === 'spreads');
     let indexTotal = betMarkets.findIndex(item => item.key === 'totals');
     let indexMoneyline = betMarkets.findIndex(item => item.key === 'h2h');
