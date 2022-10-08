@@ -12,7 +12,7 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
 
     let betElements = betbarActive.map(item => {
         if (item.betAmount > 0)
-            return <BetConfirmBox item={item} />
+            return <BetConfirmBox item={item} key={item.id} />
     });
 
     function betTotal() {
