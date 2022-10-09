@@ -31,7 +31,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
     }
 
     useEffect(() => {
-        if (betslipRemoved.id.length) {
+        if (betslipRemoved.count > 0) {
             setBettingLines(oldLines => oldLines.map(line => {
                 return betslipRemoved.id.includes(line.id) ?
                     {...line, isClicked: false} :
