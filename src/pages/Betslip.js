@@ -14,9 +14,10 @@ function Betslip() {
             let filteredBets = prevValues.filter(value => value.id !== id)
             return filteredBets
         })
-        setBetslipRemoved(prevValue => (
-            {id: id, count: prevValue.count + 1}
-        ))
+        setBetslipRemoved(prevValue => {
+            let betID = [id];
+            return {id: betID, count: prevValue.count + 1}
+        })
     }
 
     function loginDisplay() {

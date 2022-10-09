@@ -3,7 +3,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import BetConfirmBox from "./BetConfirmBox"
 
 function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
-    const {betbarActive, setBetbarActive, accounts, setAccounts, loggedIn, setLoggedIn, setPopup} = useContext(SportsbookContext);
+    const {betbarActive, setBetbarActive, accounts, setAccounts, loggedIn, setLoggedIn, setPopup, setBetslipRemoved} = useContext(SportsbookContext);
 
     const betConfirmStyles = {
         visibility: betConfirmVisible ? "visible" : "hidden",
@@ -52,6 +52,10 @@ function BetConfirm({betConfirmVisible, setBetConfirmVisible}) {
                 bankroll: prevValue.bankroll - betTotal(), 
                 bets: prevValue.bets.concat(newBets)
             }
+        })
+        setBetslipRemoved(prevValue => {
+            let betslipID = newBets.map(bet => bet.id);
+            return {id: betslipID, count: prevValue.count + 1}
         })
         hideBetConfirm()
         setBetbarActive(prevValues => {

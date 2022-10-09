@@ -31,11 +31,13 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
     }
 
     useEffect(() => {
-        setBettingLines(oldLines => oldLines.map(line => {
-            return betslipRemoved.id === line.id ?
-                {...line, isClicked: false} :
-                line
-        }))
+        if (betslipRemoved.id.length) {
+            setBettingLines(oldLines => oldLines.map(line => {
+                return betslipRemoved.id.includes(line.id) ?
+                    {...line, isClicked: false} :
+                    line
+            })) 
+        }
     }, [betslipRemoved])
 
     function allNewLines() {
