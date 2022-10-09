@@ -620,6 +620,7 @@ h3 {
 .betslip {
   min-height: calc(100vh - var(--navbar-height) - var(--betbar-height));
   background-color: var(--color-betslip);
+  padding-bottom: var(--betbar-height);
 }
 
 .betslip__message {
@@ -641,7 +642,7 @@ h3 {
   width: 50%;
   max-width: 20rem;
   display: block;
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -655,6 +656,7 @@ h3 {
     box-sizing: border-box;
     width: var(--betslip-width);
     border-left: .5rem solid var(--color-primary);
+    padding: 0;
   }
 }
 
