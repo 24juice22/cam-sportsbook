@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Box from "../components/Box"
 
-function Nfl({setSport}) {
+function Nfl({setSport, homeClassName}) {
     const [footballNfl, setFootballNfl] = useState(null);
 
     useEffect(() => {
@@ -14,9 +14,9 @@ function Nfl({setSport}) {
     }, [])
 
     if (footballNfl) return (
-        <>
+        <div className={`${homeClassName}`}>
             {footballNfl.map(matchup => <Box matchup={matchup} key={matchup.id}/>)}
-        </>
+        </div>
     )
 }
 
