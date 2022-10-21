@@ -21,12 +21,13 @@ function Betslip() {
     }
 
     function loginDisplay() {
-        setLoginIsVisible(true)
+        setLoginIsVisible(true);
+        setPopup(true);
     }
 
     function betDisplay() {
         setBetConfirmVisible(true);
-        setPopup(true)
+        setPopup(true);
     }
 
     return (
