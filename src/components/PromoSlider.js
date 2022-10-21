@@ -6,7 +6,7 @@ import stadium from "../images/promos/stadium.jpg"
 
 function PromoSlider() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const { setJoinIsVisible } = useContext(SportsbookContext);
+    const { setJoinIsVisible, setPopup } = useContext(SportsbookContext);
 
     const slides = [
         {
@@ -27,7 +27,7 @@ function PromoSlider() {
             title: "No Sweat Bet", 
             description: "All Customers Invited"
         },
-    ]
+    ];
 
     const dots = slides.map((slide, slideIndex) => {
         return <div 
@@ -44,7 +44,7 @@ function PromoSlider() {
     })
 
     function chooseSlide(slideIndex) {
-        setCurrentIndex(slideIndex)
+        setCurrentIndex(slideIndex);
     }
 
     function previousPromo() {
@@ -60,7 +60,8 @@ function PromoSlider() {
     }
 
     function joinDisplay() {
-        setJoinIsVisible(true)
+        setJoinIsVisible(true);
+        setPopup(true);
     }
 
     const backgroundImage = {
