@@ -10,7 +10,7 @@ Use the navigation menu to choose which sport you would like to bet on, unless y
 
 ### `Wager Types`
 
-![Game Screenshot](./src/images/wager-type.png)
+![Game Screenshot](./src/images/readMe/wager-type.png)
 
 For each game, you will have at most 3 wager types that you can make. (Note: some wager types may not have data provided yet from the api and will appear blank for the time being). The wager types are as follows:
 
