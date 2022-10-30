@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Getting Started with CAM Sportsbook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to make bets
 
-## Available Scripts
+If you are familiar with betting at online sportsbooks such as betMGM or FanDuel then you already know how to navigate this app. CAM Sportsbook is modeled after the top online sprotsbooks in the industry. However, if you are new to the betting world then please keep reading.
 
-In the project directory, you can run:
+### `Choosing a Sport`
 
-### `npm start`
+Use the navigation menu to choose which sport you would like to bet on, unless you wish to bet on the sport that is displayed on the homepage. You have the option of the NFL, MLB, NBA, or NCAAF (College Football). Once you have chosen your sport you will then be presented with a list of games to bet on.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Wager Types`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Game Screenshot](./src/images/wager-type.png)
 
-### `npm test`
+For each game, you will have at most 3 wager types that you can make. (Note: some wager types may not have data provided yet from the api and will appear blank for the time being). The wager types are as follows:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Spread
+  **Indicates the expected result of the game. From the screenshot above, the Carolina Panthers (+5.5) are expected to lose by 5.5 points. By choosing this wager, you are betting that they lose by less than this amount (or possibly even win). The Atlanta Falcons (-5.5) are expected to win by 5.5 points. By choosing the falcons, you are betting that they will win by more than 5.5 points**
 
-### `npm run build`
+- Total
+  **Indicates the expected combined points scored by both teams. Using the screenshot (O 45.5) means that you are betting for the two teams to combine for Over 45.5 points scored. (U 45.5) means you are betting for the teams to score Under 45.5 points.**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Moneyline
+  **Indicates which team you think will win the game. The margin of victory does not matter**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Wager Price`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For each wager type there appears a blue number which represents the wager price and is either positive or negative.
 
-### `npm run eject`
+- Negative
+  **A negative wager price indicates that you must bet that amount in order to win $100. For instance, a price of (-105) means that for every $105 you bet, you would win $100. However, if you lose, then you lose the full $105.**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Positive
+  **A positive wager price indicates that for every $100 that you bet, you will win that amount. For example if the price is (+250) then for every $100 you bet you will win $250. However, if you lose then you only lose the $100.**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Lets look at the screenshot to go over some example wagers:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- The green box above (which is the color a box will turn when you choose to make that bet) says +5.5 in black and -120 in blue and is next to the Carolina Panthers. Therefore, you are betting that the Panthers don't lose by 6 or more points and for every $120 you bet you can win $100. So if you choose this box and bet $60 and the Panthers lose by 3 points, you will win $50. This is because you are paid .833 (100/120) times what you bet.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- If you choose the box on the top right (Moneyline) that says +370 in blue and is next to the Carolina Panthers then you are betting that the Panthers will win the game and you will be paid $370 for every $100 that you bet. Therefore, if you bet $60 and the Panthers win you will win $222. This is because you are paid 3.7 (370/100) times what you bet.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `Making a Wager`
