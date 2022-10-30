@@ -9,7 +9,7 @@ export default function Navbar({setSport}) {
     const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn,  setPopup } = useContext(SportsbookContext)
 
     function homeClick() {
-        setSport("MLB");
+        setSport("NFL");
     }
 
     function nflClick() {
