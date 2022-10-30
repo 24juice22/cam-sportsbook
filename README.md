@@ -15,23 +15,26 @@ Use the navigation menu to choose which sport you would like to bet on, unless y
 For each game, you will have at most 3 wager types that you can make. (Note: some wager types may not have data provided yet from the api and will appear blank for the time being). The wager types are as follows:
 
 - Spread
-  \*\*Indicates the expected result of the game. From the screenshot above, the Carolina Panthers (+5.5) are expected to lose by 5.5 points. By choosing this wager, you are betting that they lose by less than this amount (or possibly even win). The Atlanta Falcons (-5.5) are expected to win by 5.5 points. By choosing the falcons, you are betting that they will win by more than 5.5 points
+
+  > **Indicates the expected result of the game. From the screenshot above, the Carolina Panthers (+5.5) are expected to lose by 5.5 points. By choosing this wager, you are betting that they lose by less than this amount (or possibly even win). The Atlanta Falcons (-5.5) are expected to win by 5.5 points. By choosing the falcons, you are betting that they will win by more than 5.5 points**
 
 - Total
-  \*\*Indicates the expected combined points scored by both teams. Using the screenshot (O 45.5) means that you are betting for the two teams to combine for Over 45.5 points scored. (U 45.5) means you are betting for the teams to score Under 45.5 points.
+
+  > **Indicates the expected combined points scored by both teams. Using the screenshot (O 45.5) means that you are betting for the two teams to combine for Over 45.5 points scored. (U 45.5) means you are betting for the teams to score Under 45.5 points.**
 
 - Moneyline
-  \*\*Indicates which team you think will win the game. The margin of victory does not matter
+  > **Indicates which team you think will win the game. The margin of victory does not matter**
 
 ### `Wager Price`
 
 For each wager type there appears a blue number which represents the wager price and is either positive or negative.
 
 - Negative
-  \*\*A negative wager price indicates that you must bet that amount in order to win $100. For instance, a price of (-105) means that for every $105 you bet, you would win $100. However, if you lose, then you lose the full $105.
+
+  > **A negative wager price indicates that you must bet that amount in order to win $100. For instance, a price of (-105) means that for every $105 you bet, you would win $100. However, if you lose, then you lose the full $105.**
 
 - Positive
-  \*\*A positive wager price indicates that for every $100 that you bet, you will win that amount. For example if the price is (+250) then for every $100 you bet you will win $250. However, if you lose then you only lose the $100.
+  > **A positive wager price indicates that for every $100 that you bet, you will win that amount. For example if the price is (+250) then for every $100 you bet you will win $250. However, if you lose then you only lose the $100.**
 
 Lets look at the screenshot to go over some example wagers:
 
