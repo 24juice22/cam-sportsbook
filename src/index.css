@@ -664,6 +664,7 @@ h3 {
 .slip {
   border-color: var(--color-secondary);
   padding: 2rem 0 1.5rem;
+  font-size: 1.5rem
 }
 
 .slip__btn--exit {
