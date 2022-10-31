@@ -1,6 +1,10 @@
 # Getting Started with CAM Sportsbook
 
-## How to make bets
+## Where to Use the Sportsbook
+
+Simply click on the following link: [https://24juice22.github.io/cam-sportsbook/](https://24juice22.github.io/cam-sportsbook/)
+
+## How to Make Bets
 
 If you are familiar with betting at online sportsbooks such as betMGM or FanDuel then you already know how to navigate this app. CAM Sportsbook is modeled after the top online sprotsbooks in the industry. However, if you are new to the betting world then please keep reading.
 
