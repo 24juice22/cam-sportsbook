@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cam-sportsbook/static/css/main.b0d08976.css",
-    "main.js": "/cam-sportsbook/static/js/main.bcc55bd9.js",
+    "main.css": "/cam-sportsbook/static/css/main.1c38b00f.css",
+    "main.js": "/cam-sportsbook/static/js/main.978cabc1.js",
     "static/media/sports.png": "/cam-sportsbook/static/media/sports.7905a6b2b29ab8426938.png",
     "static/media/Cleveland-Browns.png": "/cam-sportsbook/static/media/Cleveland-Browns.44698b9180ad40deb1c2.png",
     "static/media/stadium.jpg": "/cam-sportsbook/static/media/stadium.044c1cf5cfece231311c.jpg",
@@ -33,6 +33,7 @@
     "static/media/Golden-State-Warriors.png": "/cam-sportsbook/static/media/Golden-State-Warriors.fed7a29953d9b71a16f4.png",
     "static/media/Buffalo-Bills.png": "/cam-sportsbook/static/media/Buffalo-Bills.d9c8e5e7088d09087bcf.png",
     "static/media/Indianapolis-Colts.png": "/cam-sportsbook/static/media/Indianapolis-Colts.37775aab17bd223ccbac.png",
+    "static/media/betslip.png": "/cam-sportsbook/static/media/betslip.d173ae91749536a6a2dc.png",
     "static/media/Atlanta-Hawks.png": "/cam-sportsbook/static/media/Atlanta-Hawks.34c14d87a3eb3e2064bd.png",
     "static/media/money.jpg": "/cam-sportsbook/static/media/money.6de4738c8233ba3924c5.jpg",
     "static/media/Denver-Nuggets.png": "/cam-sportsbook/static/media/Denver-Nuggets.3e9106d39126911564d3.png",
@@ -76,6 +77,7 @@
     "static/media/Chicago-Bulls.png": "/cam-sportsbook/static/media/Chicago-Bulls.62edda3cddcaa4189fd8.png",
     "static/media/Las-Vegas-Raiders.png": "/cam-sportsbook/static/media/Las-Vegas-Raiders.7f124e2c30a58569b21b.png",
     "static/media/Milwaukee-Bucks.png": "/cam-sportsbook/static/media/Milwaukee-Bucks.0b9ec291dacbf429fce6.png",
+    "static/media/wager-type.png": "/cam-sportsbook/static/media/wager-type.f37044d19f6763f4ccf7.png",
     "static/media/Utah-Jazz.png": "/cam-sportsbook/static/media/Utah-Jazz.fa51a1e71811cce9aab2.png",
     "static/media/Pittsburgh-Steelers.png": "/cam-sportsbook/static/media/Pittsburgh-Steelers.f5bc05297693d4cff58b.png",
     "static/media/Miami-Dolphins.png": "/cam-sportsbook/static/media/Miami-Dolphins.5243f014fe40d6736e80.png",
@@ -101,11 +103,11 @@
     "static/media/New-York-Giants.png": "/cam-sportsbook/static/media/New-York-Giants.1aea418819ee62908a58.png",
     "static/media/Los-Angeles-Rams.png": "/cam-sportsbook/static/media/Los-Angeles-Rams.8127f661837b789048ce.png",
     "index.html": "/cam-sportsbook/index.html",
-    "main.b0d08976.css.map": "/cam-sportsbook/static/css/main.b0d08976.css.map",
-    "main.bcc55bd9.js.map": "/cam-sportsbook/static/js/main.bcc55bd9.js.map"
+    "main.1c38b00f.css.map": "/cam-sportsbook/static/css/main.1c38b00f.css.map",
+    "main.978cabc1.js.map": "/cam-sportsbook/static/js/main.978cabc1.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0d08976.css",
-    "static/js/main.bcc55bd9.js"
+    "static/css/main.1c38b00f.css",
+    "static/js/main.978cabc1.js"
   ]
 }
