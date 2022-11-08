@@ -4,6 +4,7 @@ import { SportsbookContext } from "../contexts/SportsbookContexts"
 import mlb from "../images/mlb/mlb.png";
 import nfl from "../images/nfl/nfl.png";
 import nba from "../images/nba/nba.png";
+import nhl from "../images/nhl/nhl.png";
 
 export default function Navbar({setSport}) {
     const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn,  setPopup } = useContext(SportsbookContext)
@@ -22,6 +23,10 @@ export default function Navbar({setSport}) {
 
     function nbaClick() {
         setSport("NBA");
+    }
+
+    function nhlClick() {
+        setSport("NHL");
     }
 
     function ncaafClick() {
@@ -81,6 +86,10 @@ export default function Navbar({setSport}) {
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nba" src={nba} alt="National Basketball Association Logo"></img>
                             <Link className="navbar__link" to="/cam-sportsbook/nba" onClick={nbaClick}>NBA</Link>
+                        </li>
+                        <li className="navbar__list-item">
+                            <img className="navbar__icon navbar__icon--nhl" src={nhl} alt="National Basketball Association Logo"></img>
+                            <Link className="navbar__link" to="/cam-sportsbook/nhl" onClick={nhlClick}>NHL</Link>
                         </li>
                         <li className="navbar__list-item">
                             <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
