@@ -4,6 +4,7 @@ import Mlb from "./pages/Mlb"
 import Nfl from "./pages/Nfl"
 import Nba from "./pages/Nba"
 import Ncaaf from "./pages/Ncaaf"
+import Ncaab from "./pages/Ncaab";
 import Navbar from "./components/Navbar"
 import Betbar from "./components/Betbar"
 import Layout from "./pages/Layout"
@@ -63,6 +64,7 @@ function App() {
                 <Route path="/cam-sportsbook/nfl" element={<Nfl setSport={setSport} />} />
                 <Route path="/cam-sportsbook/nba" element={<Nba setSport={setSport} />} />
                 <Route path="/cam-sportsbook/ncaaf" element={<Ncaaf setSport={setSport}/>} />
+                <Route path="/cam-sportsbook/ncaab" element={<Ncaab setSport={setSport}/>} />
               </Route>
               <Route path="/cam-sportsbook/betslip" element={windowWidth < 1024 ? <Betslip /> : <Navigate to="/cam-sportsbook/" />} />
               <Route path="/cam-sportsbook/account" element={<Account />} />
