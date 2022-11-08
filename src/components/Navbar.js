@@ -28,6 +28,10 @@ export default function Navbar({setSport}) {
         setSport("NCAAF");
     }
 
+    function ncaabClick() {
+        setSport("NCAAB")
+    }
+
     function loginDisplay() {
         setLoginIsVisible(true)
         setPopup(true)
@@ -75,12 +79,16 @@ export default function Navbar({setSport}) {
                             <Link className="navbar__link" to="/cam-sportsbook/nfl" onClick={nflClick}>NFL</Link>
                         </li>
                         <li className="navbar__list-item">
-                            <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
-                            <Link className="navbar__link nav__link-baseball" to="/cam-sportsbook/ncaaf" onClick={ncaafClick}>NCAAF</Link>
-                        </li>
-                        <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nba" src={nba} alt="National Basketball Association Logo"></img>
                             <Link className="navbar__link" to="/cam-sportsbook/nba" onClick={nbaClick}>NBA</Link>
+                        </li>
+                        <li className="navbar__list-item">
+                            <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
+                            <Link className="navbar__link" to="/cam-sportsbook/ncaaf" onClick={ncaafClick}>NCAAF</Link>
+                        </li>
+                        <li className="navbar__list-item">
+                            <i class="fa-solid fa-basketball navbar__icon navbar__icon--ncaaf"></i>
+                            <Link className="navbar__link" to="/cam-sportsbook/ncaab" onClick={ncaabClick}>NCAAB</Link>
                         </li>
                     </ul>
                 </div>
