@@ -89,7 +89,7 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
 
     return (
         <div className="box__team">
-            {matchup.sport_title !== 'NCAAF' && <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${teamImageName}.png`)} alt={`${teamImageName} Logo`}></img>}
+            {(matchup.sport_title !== 'NCAAF' && matchup.sport_title !== 'NCAAB') && <img className="team-logo" src={require(`../images/${matchup.sport_title.toLowerCase()}/${teamImageName}.png`)} alt={`${teamImageName} Logo`}></img>}
             <p className="box__team-name">{team}</p>
             <div className="box__lines">
                 {lineElements}
