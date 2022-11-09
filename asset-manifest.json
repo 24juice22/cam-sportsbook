@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cam-sportsbook/static/css/main.1c1caabb.css",
-    "main.js": "/cam-sportsbook/static/js/main.4097edc8.js",
+    "main.js": "/cam-sportsbook/static/js/main.b9564d66.js",
     "static/media/sports.png": "/cam-sportsbook/static/media/sports.7905a6b2b29ab8426938.png",
     "static/media/Cleveland-Browns.png": "/cam-sportsbook/static/media/Cleveland-Browns.44698b9180ad40deb1c2.png",
     "static/media/Chicago-Blackhawks.png": "/cam-sportsbook/static/media/Chicago-Blackhawks.4f43d0a67b23a6901a73.png",
@@ -137,10 +137,10 @@
     "static/media/Los-Angeles-Rams.png": "/cam-sportsbook/static/media/Los-Angeles-Rams.8127f661837b789048ce.png",
     "index.html": "/cam-sportsbook/index.html",
     "main.1c1caabb.css.map": "/cam-sportsbook/static/css/main.1c1caabb.css.map",
-    "main.4097edc8.js.map": "/cam-sportsbook/static/js/main.4097edc8.js.map"
+    "main.b9564d66.js.map": "/cam-sportsbook/static/js/main.b9564d66.js.map"
   },
   "entrypoints": [
     "static/css/main.1c1caabb.css",
-    "static/js/main.4097edc8.js"
+    "static/js/main.b9564d66.js"
   ]
 }
