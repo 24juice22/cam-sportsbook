@@ -325,8 +325,16 @@ h3 {
 }
 
 .navbar__link {
-  padding: 0 .3rem;
+  padding: 0 .25rem;
   color: white;
+}
+
+@media screen and (min-width: 676px) {
+  .navbar__list {
+    justify-content: center;
+    overflow: hidden;
+    white-space: unset;
+  }
 }
 
 @media screen and (min-width: 1024px) {
