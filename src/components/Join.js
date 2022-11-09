@@ -117,7 +117,7 @@ function Join() {
                         type="submit"
                         className="btn btn--popup"
                     >
-                        Create Account
+                        Join Now
                     </button>
                 </form>
                 </div>
