@@ -19,7 +19,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { SportsbookContext } from "./contexts/SportsbookContexts";
 
 function App() {
-  const [sport, setSport] = useState("MLB");
+  const [sport, setSport] = useState("NFL");
   const [betbarActive, setBetbarActive] = useState([]);
   const [loggedIn, setLoggedIn] = useState(null);
   const [loginIsVisible, setLoginIsVisible] = useState(false);
