@@ -56,17 +56,17 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-        <SportsbookContext.Provider value={{ windowWidth, betslipRemoved, setBetslipRemoved, betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, setSport, setPopup, popup }}>
+        <SportsbookContext.Provider value={{ windowWidth, betslipRemoved, setBetslipRemoved, betbarActive, setBetbarActive, loggedIn, setLoggedIn, loginIsVisible, setLoginIsVisible, joinIsVisible, setJoinIsVisible, accounts, setAccounts, depositIsVisible, setDepositIsVisible, setSport, setPopup, popup, sport }}>
           <Navbar setSport={setSport} />
           <Routes>
               <Route index path="/cam-sportsbook/" element={<Home sport={sport} setSport={setSport}/>}/>
               <Route element={<Layout sport={sport} />}>
-                <Route path="/cam-sportsbook/mlb"  element={<Mlb setSport={setSport}/>} />
+                <Route path="/cam-sportsbook/mlb"  element={<Mlb setSport={setSport} />} />
                 <Route path="/cam-sportsbook/nfl" element={<Nfl setSport={setSport} />} />
                 <Route path="/cam-sportsbook/nba" element={<Nba setSport={setSport} />} />
                 <Route path="/cam-sportsbook/nhl" element={<Nhl setSport={setSport} />} />
-                <Route path="/cam-sportsbook/ncaaf" element={<Ncaaf setSport={setSport}/>} />
-                <Route path="/cam-sportsbook/ncaab" element={<Ncaab setSport={setSport}/>} />
+                <Route path="/cam-sportsbook/ncaaf" element={<Ncaaf setSport={setSport} />} />
+                <Route path="/cam-sportsbook/ncaab" element={<Ncaab setSport={setSport} />} />
               </Route>
               <Route path="/cam-sportsbook/betslip" element={windowWidth < 1024 ? <Betslip /> : <Navigate to="/cam-sportsbook/" />} />
               <Route path="/cam-sportsbook/account" element={<Account />} />

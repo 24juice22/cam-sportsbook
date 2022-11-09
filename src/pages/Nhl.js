@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
-import Box from "../components/Box"
+import React, { useState, useEffect } from "react";
+import Box from "../components/Box";
+import OddsError from "../components/OddsError";
 
 function Nhl({setSport}) {
     const [hockey, setHockey] = useState(null)
@@ -9,13 +10,16 @@ function Nhl({setSport}) {
         .then(res => res.json())
         .then(data => {
           setHockey(data);
-          setSport("NHL")
+          setSport("NHL");
         }) 
       }, [])
 
     if (hockey) return (
       <>
-        {hockey.map(matchup => <Box matchup={matchup} key={matchup.id}/>)}
+        {hockey.length === 0 ? 
+            <OddsError /> : 
+            hockey.map(matchup => <Box matchup={matchup} key={matchup.id}/>)
+        }
       </>
     )
 }

@@ -246,6 +246,14 @@ h3 {
   }
 }
 
+/* OddsError */
+.odds-error {
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+  font-size: 4rem;
+}
+
 /* Navbar */
 .navbar {
   background: linear-gradient(var(--color-dark-blue), var(--color-primary) 90%);

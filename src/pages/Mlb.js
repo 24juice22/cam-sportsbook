@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react"
-import Box from "../components/Box"
+import React, { useState, useEffect } from "react";
+import Box from "../components/Box";
+import OddsError from "../components/OddsError";
 
-function Mlb({setSport, homeClassName}) {
+function Mlb({setSport}) {
     const [baseball, setBaseball] = useState(null);
    
     useEffect(() => {
@@ -10,12 +11,16 @@ function Mlb({setSport, homeClassName}) {
         .then(data => {
           setBaseball(data);
           setSport("MLB");
+          console.log(data)
         }) 
     }, [])
 
     if (baseball) return (
-        <>
-            {baseball.map(matchup => <Box matchup={matchup} key={matchup.id}/>)}
+        <>   
+            {baseball.length === 0 ? 
+                <OddsError /> : 
+                baseball.map(matchup => <Box matchup={matchup} key={matchup.id}/>)
+            }
         </>
     )
 }  

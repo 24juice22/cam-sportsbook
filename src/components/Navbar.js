@@ -7,25 +7,25 @@ import nba from "../images/nba/nba.png";
 import nhl from "../images/nhl/nhl.png";
 
 export default function Navbar({setSport}) {
-    const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn,  setPopup } = useContext(SportsbookContext)
+    const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn,  setPopup } = useContext(SportsbookContext);
 
     function loginDisplay() {
-        setLoginIsVisible(true)
-        setPopup(true)
+        setLoginIsVisible(true);
+        setPopup(true);
     }
 
     function joinDisplay() {
-        setJoinIsVisible(true)
-        setPopup(true)
+        setJoinIsVisible(true);
+        setPopup(true);
     }
 
     function depositDisplay() {
-        setDepositIsVisible(true)
-        setPopup(true)
+        setDepositIsVisible(true);
+        setPopup(true);
     }
 
     function logoff() {
-        setLoggedIn(null)
+        setLoggedIn(null);
     }
     
     return (
