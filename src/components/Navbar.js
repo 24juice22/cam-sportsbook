@@ -48,28 +48,40 @@ export default function Navbar({setSport}) {
                 <div className="container--widest">
                     <ul className="list navbar__list">
                         <li className="navbar__list-item">
-                            <img className="navbar__icon navbar__icon--baseball" src={mlb} alt="Major League Baseball Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/mlb">MLB</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/mlb">
+                                <img className="navbar__icon navbar__icon--baseball" src={mlb} alt="Major League Baseball Logo"/>
+                                <span>MLB</span>
+                            </Link>
                         </li>
                         <li className="navbar__list-item">
-                            <img className="navbar__icon navbar__icon--nfl" src={nfl} alt="National Football League Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/nfl">NFL</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nfl">
+                                <img className="navbar__icon navbar__icon--nfl" src={nfl} alt="National Football League Logo"/>
+                                <span>NFL</span>
+                            </Link>
                         </li>
                         <li className="navbar__list-item">
-                            <img className="navbar__icon navbar__icon--nba" src={nba} alt="National Basketball Association Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/nba">NBA</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nba">
+                                <img className="navbar__icon navbar__icon--nba" src={nba} alt="National Basketball Association Logo"/>
+                                <span>NBA</span>
+                            </Link>
                         </li>
                         <li className="navbar__list-item">
-                            <img className="navbar__icon navbar__icon--nhl" src={nhl} alt="National Basketball Association Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/nhl">NHL</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nhl">
+                                <img className="navbar__icon navbar__icon--nhl" src={nhl} alt="National Basketball Association Logo"/> 
+                                <span>NHL</span>
+                            </Link>
                         </li>
                         <li className="navbar__list-item">
-                            <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
-                            <Link className="navbar__link" to="/cam-sportsbook/ncaaf">NCAAF</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/ncaaf">
+                                <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
+                                <span>NCAAF</span>
+                            </Link>
                         </li>
                         <li className="navbar__list-item">
-                            <i class="fa-solid fa-basketball navbar__icon navbar__icon--ncaaf"></i>
-                            <Link className="navbar__link" to="/cam-sportsbook/ncaab">NCAAB</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/ncaab">
+                                <i class="fa-solid fa-basketball navbar__icon navbar__icon--ncaaf"></i>
+                                <span>NCAAB</span>
+                            </Link>
                         </li>
                     </ul>
                 </div>

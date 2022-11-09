@@ -327,6 +327,8 @@ h3 {
 .navbar__link {
   padding: 0 .25rem;
   color: white;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 676px) {
