@@ -365,7 +365,7 @@ h3 {
 .slider {
   position: relative;
   height: 45vh;
-  width: 100vw;
+  width: calc(100vw - var(--scrollbar-width));
   border-bottom: 4px solid var(--color-secondary);
 }
 
