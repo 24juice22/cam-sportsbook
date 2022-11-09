@@ -8,10 +8,21 @@ function BoxTeam({team, teamImageName, matchup, totalTeam, awayTeam, homeTeam}) 
 
     let unibetIndex = matchup.bookmakers.findIndex(item => item.key === 'unibet');
     if (unibetIndex < 0) unibetIndex = 0;
-    let betMarkets = matchup.bookmakers[unibetIndex].markets; 
-    let indexSpread = betMarkets.findIndex(item => item.key === 'spreads');
-    let indexTotal = betMarkets.findIndex(item => item.key === 'totals');
-    let indexMoneyline = betMarkets.findIndex(item => item.key === 'h2h');
+
+    // In case matchup.bookmakers is an empty array 
+    let betMarkets = [];
+    let indexSpread = -1;
+    let indexTotal = -1;
+    let indexMoneyline = -1;
+    ///////////////////////////////////////////////
+
+    if (matchup.bookmakers.length !== 0) {
+        betMarkets = matchup.bookmakers[unibetIndex].markets; 
+        indexSpread = betMarkets.findIndex(item => item.key === 'spreads');
+        indexTotal = betMarkets.findIndex(item => item.key === 'totals');
+        indexMoneyline = betMarkets.findIndex(item => item.key === 'h2h');
+    }
+    
     
     const [bettingLines, setBettingLines] = React.useState(allNewLines())
     
