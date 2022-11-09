@@ -9,34 +9,6 @@ import nhl from "../images/nhl/nhl.png";
 export default function Navbar({setSport}) {
     const { setLoginIsVisible, setJoinIsVisible, setDepositIsVisible, loggedIn, setLoggedIn,  setPopup } = useContext(SportsbookContext)
 
-    function homeClick() {
-        setSport("NFL");
-    }
-
-    function nflClick() {
-        setSport("NFL");
-    }
-
-    function mlbClick() {
-        setSport("MLB")
-    }
-
-    function nbaClick() {
-        setSport("NBA");
-    }
-
-    function nhlClick() {
-        setSport("NHL");
-    }
-
-    function ncaafClick() {
-        setSport("NCAAF");
-    }
-
-    function ncaabClick() {
-        setSport("NCAAB")
-    }
-
     function loginDisplay() {
         setLoginIsVisible(true)
         setPopup(true)
@@ -60,7 +32,7 @@ export default function Navbar({setSport}) {
         <nav className="navbar">
             <div className="container">
                 <div className="navbar__top">
-                    <Link to="/cam-sportsbook/" className="navbar__brand" onClick={homeClick}>
+                    <Link to="/cam-sportsbook/" className="navbar__brand">
                         <h3 className="navbar__logo">CAM</h3>
                         <span>Sportsbook</span>
                     </Link>
@@ -77,27 +49,27 @@ export default function Navbar({setSport}) {
                     <ul className="list navbar__list">
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--baseball" src={mlb} alt="Major League Baseball Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/mlb" onClick={mlbClick}>MLB</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/mlb">MLB</Link>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nfl" src={nfl} alt="National Football League Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/nfl" onClick={nflClick}>NFL</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nfl">NFL</Link>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nba" src={nba} alt="National Basketball Association Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/nba" onClick={nbaClick}>NBA</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nba">NBA</Link>
                         </li>
                         <li className="navbar__list-item">
                             <img className="navbar__icon navbar__icon--nhl" src={nhl} alt="National Basketball Association Logo"></img>
-                            <Link className="navbar__link" to="/cam-sportsbook/nhl" onClick={nhlClick}>NHL</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/nhl">NHL</Link>
                         </li>
                         <li className="navbar__list-item">
                             <i class="fa-solid fa-football navbar__icon navbar__icon--ncaaf"></i>
-                            <Link className="navbar__link" to="/cam-sportsbook/ncaaf" onClick={ncaafClick}>NCAAF</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/ncaaf">NCAAF</Link>
                         </li>
                         <li className="navbar__list-item">
                             <i class="fa-solid fa-basketball navbar__icon navbar__icon--ncaaf"></i>
-                            <Link className="navbar__link" to="/cam-sportsbook/ncaab" onClick={ncaabClick}>NCAAB</Link>
+                            <Link className="navbar__link" to="/cam-sportsbook/ncaab">NCAAB</Link>
                         </li>
                     </ul>
                 </div>
