@@ -6,11 +6,11 @@ Simply click on the following link: [https://24juice22.github.io/cam-sportsbook/
 
 ## How to Make Bets
 
-If you are familiar with betting at online sportsbooks such as betMGM or FanDuel then you already know how to navigate this app. CAM Sportsbook is modeled after the top online sprotsbooks in the industry. However, if you are new to the betting world then please keep reading.
+If you are familiar with betting at online sportsbooks such as BetMGM or FanDuel then you already know how to navigate this app. CAM Sportsbook is modeled after the top online sprotsbooks in the industry. However, if you are new to the betting world then please keep reading.
 
 ### `Choosing a Sport`
 
-Use the navigation menu to choose which sport you would like to bet on, unless you wish to bet on the sport that is displayed on the homepage. You have the option of the NFL, MLB, NBA, or NCAAF (College Football). Once you have chosen your sport you will then be presented with a list of games to bet on.
+Use the navigation menu to choose which sport you would like to bet on, unless you wish to bet on the sport that is displayed on the homepage. You have the option of the NFL, MLB, NBA, NHL, NCAAF (College Football), or NCAAB (College Basketball). Once you have chosen your sport you will then be presented with a list of games to bet on.
 
 ### `Wager Types`
 
