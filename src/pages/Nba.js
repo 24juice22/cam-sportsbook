@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Box from "../components/Box";
 import OddsError from "../components/OddsError";
 
-function Nba({setSport}) {
+function Nba({setSport, homeClassName}) {
     const [basketball, setBasketball] = useState(null)
 
     useEffect(() => {
@@ -15,12 +15,12 @@ function Nba({setSport}) {
       }, [])
 
     if (basketball) return (
-      <>
+      <div className={`${homeClassName}`}>
         {basketball.length === 0 ? 
           <OddsError /> : 
           basketball.map(matchup => <Box matchup={matchup} key={matchup.id}/>)
         }
-      </>
+      </div>
     )
 }
 

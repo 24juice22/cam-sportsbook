@@ -10,7 +10,7 @@ export default function Betbar({setSport}) {
     }
 
     function homeClick() {
-        setSport("NFL")
+        setSport("NBA")
     }
 
     return (

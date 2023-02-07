@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Box from "../components/Box";
 import OddsError from "../components/OddsError";
 
-function Nfl({setSport, homeClassName}) {
+function Nfl({ setSport }) {
     const [footballNfl, setFootballNfl] = useState(null);
 
     useEffect(() => {
@@ -11,16 +11,17 @@ function Nfl({setSport, homeClassName}) {
         .then(data => {
           setFootballNfl(data);
           setSport("NFL");
+          console.log(data)
         }) 
     }, [])
 
     if (footballNfl) return (
-        <div className={`${homeClassName}`}>
+        <>
             {footballNfl.length === 0 ? 
                 <OddsError /> : 
                 footballNfl.map(matchup => <Box matchup={matchup} key={matchup.id}/>)
             }
-        </div>
+        </>
     )
 }
 

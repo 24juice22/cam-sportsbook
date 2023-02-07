@@ -1,7 +1,7 @@
 import React from "react" 
 import Layout from "./Layout"
 import PromoSlider from "../components/PromoSlider"
-import Nfl from "./Nfl";
+import Nba from "./Nba";
 
 function Home({sport, setSport}) {
     const homeClassName = "homepage";
@@ -10,7 +10,7 @@ function Home({sport, setSport}) {
         <>
             <PromoSlider />
             <Layout sport={sport} />
-            <Nfl setSport={setSport} homeClassName={homeClassName}/>
+            <Nba setSport={setSport} homeClassName={homeClassName}/>
         </>
     )
 }  
